@@ -14,9 +14,11 @@ app.set('view engine', 'ejs');
 // app.use(bodyParser.json({ verify: verifyRequestSignature }));
 app.use(express.static('public'));
 
+PAGE_ACCESS_TOKEN = "EAACATjSv7U4BAKNb8zwhNNKOyVizeBZAy9uBsP34UuFhCmjAQndpbc6ZBitLjA8rwbcuOJT7z0ZA8reG4JC7vfV9KNp7eZBb1TRR8uXQ9rY1hF9GWfKNYdXuWgCcvx3PwCKE2BKqNSDNzximTjq7ZC4wXYVZABCNXif2QsbZC19dwZDZD";
+
 app.get('/webhook', function(req, res) {
   if (req.query['hub.mode'] === 'subscribe' &&
-      req.query['hub.verify_token'] === 'EAACATjSv7U4BAKOrrXdI7gxqn8WeJYVNTusrmUju2TXD3Eto2yH6cdTWZAPrxWwqMPats83mNrBvBZBrA8aJ1y053XxNr0Jc0Gnpau3w9BrMy02ZBWphAoUs15COcObWXtMQdhXVcy1ZCCGDRWEYnXrlGF6dTf5NT1XL9wmdSwZDZD') {
+      req.query['hub.verify_token'] === 'ansontesting') {
     console.log("Validating webhook");
     res.status(200).send(req.query['hub.challenge']);
   } else {
