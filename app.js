@@ -77,6 +77,10 @@ function receivedMessage(event) {
     // If we receive a text message, check to see if it matches a keyword
     // and send back the example. Otherwise, just echo the text we received.
     switch (messageText) {
+      case 'testing':
+        sendTestingMessage(senderID);
+        break;
+
       case 'generic':
         sendGenericMessage(senderID);
         break;
@@ -98,6 +102,37 @@ function sendTextMessage(recipientId, messageText) {
       text: messageText
     }
   };
+
+  callSendAPI(messageData);
+}
+
+function sendTestingMessage(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    "message":{
+        "attachment":{
+          "type":"template",
+          "payload":{
+            "template_type":"button",
+            "text":"What do you want to do next?",
+            "buttons":[
+              {
+                "type":"web_url",
+                "url":"https://petersapparel.parseapp.com",
+                "title":"Show Website"
+              },
+              {
+                "type":"postback",
+                "title":"Start Chatting",
+                "payload":"USER_DEFINED_PAYLOAD"
+              }
+            ]
+          }
+        }
+    }
+  };  
 
   callSendAPI(messageData);
 }
