@@ -69,6 +69,7 @@ function receivedMessage(event) {
 
   var messageId = message.mid;
 
+  console.log(message.text);
   var messageText = message.text;
   var messageAttachments = message.attachments;
 
@@ -109,27 +110,27 @@ function sendTextMessage(recipientId, messageText) {
 function sendTestingMessage(recipientId) {
   var messageData = {
     recipient: {
-      id: recipientId
+        id: recipientId
     },
     "message":{
         "attachment":{
-          "type":"template",
-          "payload":{
-            "template_type":"button",
-            "text":"What do you want to do next?",
-            "buttons":[
-              {
-                "type":"web_url",
-                "url":"https://petersapparel.parseapp.com",
-                "title":"Show Website"
-              },
-              {
-                "type":"postback",
-                "title":"Start Chatting",
-                "payload":"Start Chatting"
-              }
-            ]
-          }
+            "type":"template",
+            "payload":{
+                "template_type":"button",
+                "text":"What do you want to do next?",
+                "buttons":[
+                    {
+                        "type":"web_url",
+                        "url":"https://petersapparel.parseapp.com",
+                        "title":"Show Website"
+                    },
+                    {
+                        "type":"postback",
+                        "title":"Start Chatting",
+                        "payload":"USER_DEFINED_PAYLOAD"
+                    }
+                ]
+            }
         }
     }
   };  
