@@ -16,7 +16,7 @@ app.use(express.static('public'));
 
 app.get('/webhook', function(req, res) {
   if (req.query['hub.mode'] === 'subscribe' &&
-      req.query['hub.verify_token'] === 'EAAFpPoZApMt8BADLfUWmKXT15JvoZBZC9ZAu0GjWpS67JqJyinrTrzo44UNxkvnZBoAZAr4qbWxO3ZBj2PiHfhSxdZAOYUVFTcPxOaVJQ7fNFRoGMXFgnNuJE66jr9ZAb2vGCcWb9radDXEX8d6VIwJx9UWTOnjGQZAXgPYyVWUWYODgZDZD') {
+      req.query['hub.verify_token'] === 'EAAFpPoZApMt8BAJ8D0dlCOndhit6teAgK984wxy6iYnn8EbJKfdW81bZCQDfSvR8P5XCktFhucZAPAgMGLpA8BFPncRHmGm7TBjWhiFAujjJYwnZAuM7YoAmKbBKJhozNe8engM9PwTZBuLZBUa6RbSRY5191pecXhnK0jr4S3ugZDZD') {
     console.log("Validating webhook");
     res.status(200).send(req.query['hub.challenge']);
   } else {
