@@ -69,8 +69,13 @@ function receivedMessage(event) {
 
   var messageId = message.mid;
 
-  console.log(message.text);
-  var messageText = message.text;
+  var messageText;
+  if (message.text === '') {
+    messageText = 'testing2';
+  } else {
+    messageText = 'testing1';
+  }
+ 
   var messageAttachments = message.attachments;
 
   if (messageText) {
