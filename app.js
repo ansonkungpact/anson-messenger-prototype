@@ -69,13 +69,7 @@ function receivedMessage(event) {
 
   var messageId = message.mid;
 
-  var messageText;
-  if (message.text === '') {
-    messageText = 'testing2';
-  } else {
-    messageText = message.text;
-  }
- 
+  var messageText = message.text;
   var messageAttachments = message.attachments;
 
   if (messageText) {
@@ -92,7 +86,7 @@ function receivedMessage(event) {
         break;
 
       default:
-        sendTextMessage(senderID, 'ok');
+        sendTextMessage(senderID, messageText);
     }
   } else if (messageAttachments) {
     sendTextMessage(senderID, "Message with attachment received");
