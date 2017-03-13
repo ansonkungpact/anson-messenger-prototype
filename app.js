@@ -6,7 +6,7 @@ const request = require('request');
 
 const app = express();
 
-var token = "EAACATjSv7U4BAKNe30LjYCBhaD9EQ51aixFve4tOwLfy3KWZBmunynCXyhFIGxmzKTcYq7AokY5YZApVp8d4kFcGLHz72KwZCLJYZCX1uq6Jf3frf6270yU5n9VdXe8jCUydK0OvcZA00VWSDOSMNTWJT07TyidZAbv24QxoCKGQZDZD";
+var token = "EAAaQmdrMnZBoBABYGKQFBzhK4Jdk5C0Luob4QJrvODUyDIuysn8D82WudaX9hXsdZCyNiFEVOptk6OHErOoKmrSezzf04C4IhUlpZANKYlR4yReb23UyxLriq9D2YsQyFYRlf8QPPYhPtw5SBMnakTtqsYwkxZBkxYbXZAFwxFQZDZD";
 
 app.set('port', (process.env.PORT || 5000));
 
