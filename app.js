@@ -16,7 +16,7 @@ app.use(express.static('public'));
 
 app.get('/webhook', function(req, res) {
   if (req.query['hub.mode'] === 'subscribe' &&
-      req.query['hub.verify_token'] === 'my_voice_is_my_password_verify_me') {
+      req.query['hub.verify_token'] === 'EAAFpPoZApMt8BADLfUWmKXT15JvoZBZC9ZAu0GjWpS67JqJyinrTrzo44UNxkvnZBoAZAr4qbWxO3ZBj2PiHfhSxdZAOYUVFTcPxOaVJQ7fNFRoGMXFgnNuJE66jr9ZAb2vGCcWb9radDXEX8d6VIwJx9UWTOnjGQZAXgPYyVWUWYODgZDZD') {
     console.log("Validating webhook");
     res.status(200).send(req.query['hub.challenge']);
   } else {
