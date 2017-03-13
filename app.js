@@ -14,7 +14,7 @@ app.set('view engine', 'ejs');
 // app.use(bodyParser.json({ verify: verifyRequestSignature }));
 app.use(express.static('public'));
 
-PAGE_ACCESS_TOKEN = "EAACATjSv7U4BAKNb8zwhNNKOyVizeBZAy9uBsP34UuFhCmjAQndpbc6ZBitLjA8rwbcuOJT7z0ZA8reG4JC7vfV9KNp7eZBb1TRR8uXQ9rY1hF9GWfKNYdXuWgCcvx3PwCKE2BKqNSDNzximTjq7ZC4wXYVZABCNXif2QsbZC19dwZDZD";
+const PAGE_ACCESS_TOKEN = "EAACATjSv7U4BAKNb8zwhNNKOyVizeBZAy9uBsP34UuFhCmjAQndpbc6ZBitLjA8rwbcuOJT7z0ZA8reG4JC7vfV9KNp7eZBb1TRR8uXQ9rY1hF9GWfKNYdXuWgCcvx3PwCKE2BKqNSDNzximTjq7ZC4wXYVZABCNXif2QsbZC19dwZDZD";
 
 app.get('/webhook', function(req, res) {
   if (req.query['hub.mode'] === 'subscribe' &&
