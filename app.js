@@ -126,7 +126,7 @@ function sendTestingMessage(recipientId) {
               {
                 "type":"postback",
                 "title":"Start Chatting",
-                "payload":"USER_DEFINED_PAYLOAD"
+                "payload":"Start Chatting"
               }
             ]
           }
