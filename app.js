@@ -90,6 +90,7 @@ function receivedMessage(event) {
         sendGenericMessage(senderID);
         break;
 
+      case 'Get Started':
       case 'hello':
       case 'hey':
       case 'hi':
