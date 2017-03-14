@@ -238,15 +238,15 @@ function sendGreetingMessage(recipientId) {
       "quick_replies":[
         {
           "content_type":"text",
-          "title":"Dinning",
+          "title":"Dining",
           "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED",
-          "image_url":"http://petersfantastichats.com/img/red.png"
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/cat/dining.png"
         },
         {
           "content_type":"text",
           "title":"Shopping",
           "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN",
-          "image_url":"http://petersfantastichats.com/img/red.png"
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/cat/shopping.png"
         }
       ]
     }
@@ -270,7 +270,7 @@ function sendShopMessage(recipientId) {
             title: "The Body Shop",
             subtitle: "The original, ethical and natural beaty bran",
             item_url: "http://www.thebodyshop.com.hk",               
-            image_url: "https://anson-messenger.herokuapp.com/shop_img/bodyshop.jpg",
+            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/bodyshop.jpg",
             buttons: [{
               type:"phone_number",
               title:"Call the shop",
@@ -280,7 +280,7 @@ function sendShopMessage(recipientId) {
             title: "Fancl",
             subtitle: "Leading the evolution in PRESERVATIVE-FREE BEAUTY",
             item_url: "www.fancl-hk.com",               
-            image_url: "https://anson-messenger.herokuapp.com/shop_img/fancl.jpg",
+            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/fancl.jpg",
             buttons: [{
               type:"phone_number",
               title:"Call the shop",
@@ -290,7 +290,7 @@ function sendShopMessage(recipientId) {
             title: "Inisfree",
             subtitle: "Korea No.1 natural brand",
             item_url: "http://www.innisfree.com",               
-            image_url: "https://anson-messenger.herokuapp.com/shop_img/inisfree.jpg",
+            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/inisfree.jpg",
             buttons: [{
               type:"phone_number",
               title:"Call the shop",
@@ -300,7 +300,7 @@ function sendShopMessage(recipientId) {
             title: "Lush",
             subtitle: "natural handmade bath and body products",
             item_url: "https://hk.lush.com",               
-            image_url: "https://anson-messenger.herokuapp.com/shop_img/lush.jpg",
+            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/lush.jpg",
             buttons: [{
               type:"phone_number",
               title:"Call the shop",
@@ -310,7 +310,7 @@ function sendShopMessage(recipientId) {
             title: "Shiseido",
             subtitle: "highest quality products in brightening and anti-aging skincare, makeup and fragrance ",
             item_url: "https://www.shiseido.com.hk",               
-            image_url: "https://anson-messenger.herokuapp.com/shop_img/shiseido.jpg",
+            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/shiseido.jpg",
             buttons: [{
               type:"phone_number",
               title:"Call the shop",
@@ -320,7 +320,7 @@ function sendShopMessage(recipientId) {
             title: "YSL",
             subtitle: "French luxury fashion house",
             item_url: "www.ysl.com",               
-            image_url: "https://anson-messenger.herokuapp.com/shop_img/ysl.jpg",
+            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/ysl.jpg",
             buttons: [{
               type:"phone_number",
               title:"Call the shop",
