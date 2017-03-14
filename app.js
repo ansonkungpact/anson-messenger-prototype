@@ -100,7 +100,6 @@ function receivedMessage(event) {
       case 'makeup':
       case 'facial cream':
       case 'beauty':
-        Q1 = true;
         sendShopMessage(senderID);
         break;
 
