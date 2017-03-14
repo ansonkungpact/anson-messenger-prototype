@@ -82,10 +82,6 @@ function receivedMessage(event) {
     // If we receive a text message, check to see if it matches a keyword
     // and send back the example. Otherwise, just echo the text we received.
     switch (messageText) {
-      case 'cosmetics':
-      case 'makeup':
-      case 'facial cream':
-        Q1 = true;
       case 'testing':
         sendTestingMessage(senderID);
         break;
@@ -97,6 +93,11 @@ function receivedMessage(event) {
       case 'shop':
         sendShopMessage(senderID);
         break;
+        
+      case 'cosmetics':
+      case 'makeup':
+      case 'facial cream':
+        Q1 = true;
 
       default:
         sendTextMessage(senderID, messageText);
