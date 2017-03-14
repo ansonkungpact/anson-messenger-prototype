@@ -220,32 +220,19 @@ function sendShopMessage(recipientId) {
           template_type: "generic",
           elements: [{
             title: "The Body Shop",
-            subtitle: "Next-generation virtual reality",
+            subtitle: "The original, ethical and natural beaty bran",
             item_url: "http://www.thebodyshop.com.hk",               
             image_url: "https://anson-messenger.herokuapp.com/shop_img/bodyshop.jpg",
-            // buttons: [{
-            //   type:"phone_number",
-            //   title:"Call Representative",
-            //   payload:"+15105551234"
-            // }, {
-            //   type: "postback",
-            //   title: "Call Postback",
-            //   payload: "Payload for first bubble",
-            // }],
+            buttons: [{
+              type:"phone_number",
+              title:"Call the shop",
+              payload:"+85225426322"
+            }]
           }, {
             title: "Fancl",
             subtitle: "Leading the evolution in PRESERVATIVE-FREE BEAUTY",
             item_url: "www.fancl-hk.com",               
-            image_url: "https://anson-messenger.herokuapp.com/shop_img/fancl.jpg",
-            // buttons: [{
-            //   type: "web_url",
-            //   url: "https://www.oculus.com/en-us/touch/",
-            //   title: "Open Web URL"
-            // }, {
-            //   type: "postback",
-            //   title: "Call Postback",
-            //   payload: "Payload for second bubble",
-            // }]
+            image_url: "https://anson-messenger.herokuapp.com/shop_img/fancl.jpg"
           }, {
             title: "Inisfree",
             subtitle: "Korea No.1 natural brand",
