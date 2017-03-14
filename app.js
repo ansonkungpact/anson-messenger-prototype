@@ -233,33 +233,58 @@ function sendShopMessage(recipientId) {
             buttons: [{
               type:"phone_number",
               title:"Call the shop",
-              payload:"+85225426322"
+              payload:"+85229150962"
             }]
           }, {
             title: "Fancl",
             subtitle: "Leading the evolution in PRESERVATIVE-FREE BEAUTY",
             item_url: "www.fancl-hk.com",               
-            image_url: "https://anson-messenger.herokuapp.com/shop_img/fancl.jpg"
+            image_url: "https://anson-messenger.herokuapp.com/shop_img/fancl.jpg",
+            buttons: [{
+              type:"phone_number",
+              title:"Call the shop",
+              payload:"+85236220780"
+            }]
           }, {
             title: "Inisfree",
             subtitle: "Korea No.1 natural brand",
             item_url: "http://www.innisfree.com",               
-            image_url: "https://anson-messenger.herokuapp.com/shop_img/inisfree.jpg"
+            image_url: "https://anson-messenger.herokuapp.com/shop_img/inisfree.jpg",
+            buttons: [{
+              type:"phone_number",
+              title:"Call the shop",
+              payload:"+85234285640"
+            }]
           }, {
             title: "Lush",
             subtitle: "natural handmade bath and body products",
             item_url: "https://hk.lush.com",               
-            image_url: "https://anson-messenger.herokuapp.com/shop_img/lush.jpg"
+            image_url: "https://anson-messenger.herokuapp.com/shop_img/lush.jpg",
+            buttons: [{
+              type:"phone_number",
+              title:"Call the shop",
+              payload:"+85228380060"
+            }]
           }, {
             title: "Shiseido",
             subtitle: "highest quality products in brightening and anti-aging skincare, makeup and fragrance ",
             item_url: "https://www.shiseido.com.hk",               
-            image_url: "https://anson-messenger.herokuapp.com/shop_img/shiseido.jpg"
+            image_url: "https://anson-messenger.herokuapp.com/shop_img/shiseido.jpg",
+            buttons: [{
+              type:"phone_number",
+              title:"Call the shop",
+              payload:"+85228334563"
+            }]
           }, {
             title: "YSL",
             subtitle: "French luxury fashion house",
             item_url: "www.ysl.com",               
-            image_url: "https://anson-messenger.herokuapp.com/shop_img/ysl.jpg"
+            image_url: "https://anson-messenger.herokuapp.com/shop_img/ysl.jpg",
+            buttons: [{
+              type:"phone_number",
+              title:"Call the shop",
+              payload:"+85228318484"
+            }]
           }]
         }
       }
