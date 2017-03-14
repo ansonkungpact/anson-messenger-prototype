@@ -235,7 +235,11 @@ function sendGreetingMessage(recipientId) {
       id: recipientId
     },
     message: {
+<<<<<<< HEAD
       "text":"Welcome to Hysan Place! What are you looking for today?",
+=======
+      "text":"Welcome to Hysan Place! \u000A What are you looking for today?",
+>>>>>>> 2b694fc4604d6052a019c0ee3ded668128a182c4
       "quick_replies":[
         {
           "content_type":"text",
