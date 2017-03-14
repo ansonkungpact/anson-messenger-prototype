@@ -246,7 +246,7 @@ function sendGreetingMessage(recipientId) {
         {
           "content_type":"text",
           "title":"Shopping",
-          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN",
+          "payload":"sendShopMessage",
           "image_url":"https://anson-messenger.herokuapp.com/img/icon/cat/shopping.png"
         },
         {
