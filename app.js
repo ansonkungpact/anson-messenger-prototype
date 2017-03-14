@@ -248,6 +248,12 @@ function sendGreetingMessage(recipientId) {
           "title":"Shopping",
           "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN",
           "image_url":"https://anson-messenger.herokuapp.com/img/icon/cat/shopping.png"
+        },
+        {
+          "content_type":"text",
+          "title":"Entertainment",
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN",
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/cat/entertainment.png"
         }
       ]
     }
