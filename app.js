@@ -223,32 +223,6 @@ function sendGenericMessage(recipientId) {
 ////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////
 
-function sendGreetingMessage(recipientId) {
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      "text":"Welcome to Hysan Place!<br>What are you looking for today?",
-      "quick_replies":[
-        {
-          "content_type":"text",
-          "title":"Dinning",
-          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED"
-        },
-        {
-          "content_type":"text",
-          "title":"Green",
-          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
-        }
-      ]
-    }
-  };  
-
-  callSendAPI(messageData);
-}
-
-
 function sendShopMessage(recipientId) {
   var messageData = {
     recipient: {
