@@ -15,8 +15,9 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json());
 
 // Route
+app.use(express.static('public'))
 app.get('/', function(req, res) {
-    res.send('i am chatbot');
+    res.send(path.join(__dirname, '/public'));
 })
 
 // Facebook
@@ -145,7 +146,7 @@ function sendTestingMessage(recipientId) {
                     {
                         "type":"postback",
                         "title":"Start Chatting",
-                        "payload":"USER_DEFINED_PAYLOAD"
+                        "payload": "Start Chatting"
                     }
                 ]
             }
