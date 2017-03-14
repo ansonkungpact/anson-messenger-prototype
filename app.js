@@ -6,6 +6,8 @@ const request = require('request');
 
 const app = express();
 
+var Q1 = false;
+
 let token = "EAACATjSv7U4BAPxQaFaUnT59ZCM87ddLsb3kOLbxIp8s7npPySrbcCHFQLzBbCxXR0GG3quA0UnrOK08SZCtxwf74Az0lg6OkrcCZAuKtacaZCqYyw0ZAIqVsVUeOS2fjFh2LTclBsr0TLRVLcRJFzTKfO3vV9eYwjsFKWwaI9QZDZD";
 
 app.set('port', (process.env.PORT || 5000));
@@ -80,6 +82,10 @@ function receivedMessage(event) {
     // If we receive a text message, check to see if it matches a keyword
     // and send back the example. Otherwise, just echo the text we received.
     switch (messageText) {
+      case 'cosmetics':
+      case 'makeup':
+      case 'facial cream':
+        Q1 = true;
       case 'testing':
         sendTestingMessage(senderID);
         break;
@@ -118,6 +124,7 @@ function receivedPostback(event) {
 }
 
 function sendTextMessage(recipientId, messageText) {
+  console.log('Q1: ' + Q1);
   var messageData = {
     recipient: {
       id: recipientId
