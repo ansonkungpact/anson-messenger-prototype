@@ -108,6 +108,10 @@ function receivedMessage(event) {
         sendShopMessage(senderID);
         break;
 
+      case 'where':
+        getLocationMessage(senderID);
+        break;
+
       default:
         sendTextMessage(senderID, messageText);
     }
