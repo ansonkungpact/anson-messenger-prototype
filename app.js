@@ -229,6 +229,20 @@ function sendGenericMessage(recipientId) {
 ////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////
 
+function sendWelcomeMessage(recipientId) {
+
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: 'Hello! How can I help you today'
+    }
+  };
+
+  callSendAPI(messageData);
+}
+
 function sendGreetingMessage(recipientId) {
   var messageData = {
     recipient: {
@@ -369,6 +383,8 @@ function callSendAPI(messageData) {
 
       console.log("Successfully sent generic message with id %s to recipient %s", 
         messageId, recipientId);
+      console.log(body);
+      // sendWelcomeMessage
     } else {
       console.error("Unable to send message.");
       console.error(response);
