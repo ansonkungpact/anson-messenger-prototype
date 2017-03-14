@@ -62,6 +62,32 @@ app.post('/webhook', function (req, res) {
   }
 });
 
+function createGreetingApi(data) {
+  request({
+    uri: 'https://graph.facebook.com/v2.6/me/thread_settings',
+    qs: { access_token: token },
+    method: 'POST',
+    json: data
+
+    }, function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      console.log("Greeting set successfully!");
+    } else {
+      console.error("Failed calling Thread Reference API", response.statusCode, response.statusMessage, body.error);
+    }
+  });  
+}
+
+function setGreetingText() {
+  var greetingData = {
+    setting_type: "greeting",
+    greeting:{
+      text:"Hi {{user_first_name}}, welcome!"
+    }
+  };
+  createGreetingApi(greetingData);
+}
+
 function receivedMessage(event) {
   var senderID = event.sender.id;
   var recipientID = event.recipient.id;
@@ -229,6 +255,20 @@ function sendGenericMessage(recipientId) {
 ////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////
 
+function sendWelcomeMessage(recipientId) {
+
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: 'Hello! How can I help you today'
+    }
+  };
+
+  callSendAPI(messageData);
+}
+
 function sendGreetingMessage(recipientId) {
   var messageData = {
     recipient: {
@@ -379,4 +419,5 @@ function callSendAPI(messageData) {
 
 app.listen(app.get('port'), function() {
     console.log("running: port")
+    setGreetingText();
 })
