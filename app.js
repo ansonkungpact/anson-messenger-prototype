@@ -171,7 +171,7 @@ function sendGenericMessage(recipientId) {
             title: "rift",
             subtitle: "Next-generation virtual reality",
             item_url: "https://www.oculus.com/en-us/rift/",               
-            image_url: "http://messengerdemo.parseapp.com/img/rift.png",
+            image_url: "https://anson-messenger.herokuapp.com/shop_img/bodyshop.jpg",
             buttons: [{
               type:"phone_number",
               title:"Call Representative",
@@ -184,8 +184,8 @@ function sendGenericMessage(recipientId) {
           }, {
             title: "touch",
             subtitle: "Your Hands, Now in VR",
-            item_url: "https://www.oculus.com/en-us/touch/",               
-            image_url: "http://messengerdemo.parseapp.com/img/touch.png",
+            item_url: "",               
+            image_url: "https://anson-messenger.herokuapp.com/shop_img/fancl.jpg",
             buttons: [{
               type: "web_url",
               url: "https://www.oculus.com/en-us/touch/",
