@@ -90,14 +90,18 @@ function receivedMessage(event) {
         sendGenericMessage(senderID);
         break;
 
-      case 'shop':
-        sendShopMessage(senderID);
-        break;
+      case 'hello':
+      case 'hey':
+      case 'hi':
+        sendGreetingMessage(senderID);
         
       case 'cosmetics':
       case 'makeup':
       case 'facial cream':
+      case 'beauty':
         Q1 = true;
+        sendShopMessage(senderID);
+        break;
 
       default:
         sendTextMessage(senderID, messageText);
@@ -216,6 +220,42 @@ function sendGenericMessage(recipientId) {
   callSendAPI(messageData);
 }
 
+
+////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+
+function sendGreetingMessage(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      "text":"Welcome to Hysan Place!<br>What are you looking for today?",
+      "quick_replies":[
+        {
+          "content_type":"text",
+          "title":"Dinning",
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED",
+          "image_url":"http://petersfantastichats.com/img/red.png"
+        },
+        {
+          "content_type":"text",
+          "title":"Shopping",
+          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN",
+          "image_url":"http://petersfantastichats.com/img/red.png"
+        }
+      ]
+    }
+  };  
+
+  callSendAPI(messageData);
+}
+
+
 function sendShopMessage(recipientId) {
   var messageData = {
     recipient: {
@@ -294,6 +334,19 @@ function sendShopMessage(recipientId) {
 
   callSendAPI(messageData);
 }
+
+////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
 
 function callSendAPI(messageData) {
   request({
