@@ -235,7 +235,7 @@ function sendGreetingMessage(recipientId) {
       id: recipientId
     },
     message: {
-      "text":"Welcome to Hysan Place! /n What are you looking for today?",
+      "text":"Welcome to Hysan Place! What are you looking for today?",
       "quick_replies":[
         {
           "content_type":"text",
