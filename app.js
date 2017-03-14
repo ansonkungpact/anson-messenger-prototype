@@ -100,6 +100,7 @@ function receivedMessage(event) {
       case 'makeup':
       case 'facial cream':
       case 'beauty':
+      case 'shopping':
       case 'Shopping':
         Q1 = true;
         sendShopMessage(senderID);
@@ -256,19 +257,19 @@ function sendGreetingMessage(recipientId) {
         {
           "content_type":"text",
           "title":"Dining",
-          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED",
+          "payload":"",
           "image_url":"https://anson-messenger.herokuapp.com/img/icon/cat/dining.png"
         },
         {
           "content_type":"text",
           "title":"Shopping",
-          "payload":"sendShopMessage",
+          "payload":"",
           "image_url":"https://anson-messenger.herokuapp.com/img/icon/cat/shopping.png"
         },
         {
           "content_type":"text",
           "title":"Entertainment",
-          "payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN",
+          "payload":"",
           "image_url":"https://anson-messenger.herokuapp.com/img/icon/cat/entertainment.png"
         }
       ]
