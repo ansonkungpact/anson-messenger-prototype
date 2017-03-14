@@ -306,7 +306,9 @@ function sendShopMessage(recipientId) {
               type:"phone_number",
               title:"Call the shop",
               payload:"+85229150962"
-            }]
+            },{
+        "type":"element_share"
+      } ]
           }, {
             title: "Fancl",
             subtitle: "Leading the evolution in PRESERVATIVE-FREE BEAUTY",
