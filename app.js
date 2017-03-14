@@ -94,6 +94,7 @@ function receivedMessage(event) {
       case 'hey':
       case 'hi':
         sendGreetingMessage(senderID);
+        break;
         
       case 'cosmetics':
       case 'makeup':
