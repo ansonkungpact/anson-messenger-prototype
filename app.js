@@ -105,8 +105,14 @@ function receivedMessage(event) {
       case 'beauty':
       case 'shopping':
       case 'Shopping':
+      case 'Dining':
+      case 'Entertainment':
         Q1 = true;
         sendShopMessage(senderID);
+        break;
+
+      case 'where':
+        getLocationMessage(senderID);
         break;
 
       default:
@@ -234,6 +240,7 @@ function sendGenericMessage(recipientId) {
 ////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
 
 function sendWelcomeMessage(recipientId) {
 
@@ -302,7 +309,9 @@ function sendShopMessage(recipientId) {
               type:"phone_number",
               title:"Call the shop",
               payload:"+85229150962"
-            }]
+            },{
+        "type":"element_share"
+      } ]
           }, {
             title: "Fancl",
             subtitle: "Leading the evolution in PRESERVATIVE-FREE BEAUTY",
@@ -362,6 +371,27 @@ function sendShopMessage(recipientId) {
   callSendAPI(messageData);
 }
 
+
+function getLocationMessage(recipientId) {
+
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      "text":"Please share your location:",
+      "quick_replies":[
+        {
+          "content_type":"location",
+        }
+      ]
+    }
+  };
+
+  callSendAPI(messageData);
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////
