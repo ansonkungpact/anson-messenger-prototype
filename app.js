@@ -82,9 +82,6 @@ function receivedMessage(event) {
     // If we receive a text message, check to see if it matches a keyword
     // and send back the example. Otherwise, just echo the text we received.
     switch (messageText) {
-      case 'Get Started':
-        sendTextMessage(senderID, 'Hello! How can I help you today');
-        break;
       case 'testing':
         sendTestingMessage(senderID);
         break;
@@ -93,6 +90,7 @@ function receivedMessage(event) {
         sendGenericMessage(senderID);
         break;
 
+      case 'Get Started':
       case 'hello':
       case 'hey':
       case 'hi':
