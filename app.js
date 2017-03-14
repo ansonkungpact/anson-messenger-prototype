@@ -168,33 +168,53 @@ function sendGenericMessage(recipientId) {
         payload: {
           template_type: "generic",
           elements: [{
-            title: "rift",
+            title: "The Body Shop",
             subtitle: "Next-generation virtual reality",
-            item_url: "https://www.oculus.com/en-us/rift/",               
+            item_url: "http://www.thebodyshop.com.hk",               
             image_url: "https://anson-messenger.herokuapp.com/shop_img/bodyshop.jpg",
-            buttons: [{
-              type:"phone_number",
-              title:"Call Representative",
-              payload:"+15105551234"
-            }, {
-              type: "postback",
-              title: "Call Postback",
-              payload: "Payload for first bubble",
-            }],
+            // buttons: [{
+            //   type:"phone_number",
+            //   title:"Call Representative",
+            //   payload:"+15105551234"
+            // }, {
+            //   type: "postback",
+            //   title: "Call Postback",
+            //   payload: "Payload for first bubble",
+            // }],
           }, {
-            title: "touch",
-            subtitle: "Your Hands, Now in VR",
-            item_url: "",               
+            title: "Fancl",
+            subtitle: "Leading the evolution in PRESERVATIVE-FREE BEAUTY",
+            item_url: "www.fancl-hk.com",               
             image_url: "https://anson-messenger.herokuapp.com/shop_img/fancl.jpg",
-            buttons: [{
-              type: "web_url",
-              url: "https://www.oculus.com/en-us/touch/",
-              title: "Open Web URL"
-            }, {
-              type: "postback",
-              title: "Call Postback",
-              payload: "Payload for second bubble",
-            }]
+            // buttons: [{
+            //   type: "web_url",
+            //   url: "https://www.oculus.com/en-us/touch/",
+            //   title: "Open Web URL"
+            // }, {
+            //   type: "postback",
+            //   title: "Call Postback",
+            //   payload: "Payload for second bubble",
+            // }]
+          }, {
+            title: "Inisfree",
+            subtitle: "Korea No.1 natural brand",
+            item_url: "http://www.innisfree.com",               
+            image_url: "https://anson-messenger.herokuapp.com/shop_img/inisfree.jpg"
+          }, {
+            title: "Lush",
+            subtitle: "natural handmade bath and body products",
+            item_url: "https://hk.lush.com",               
+            image_url: "https://anson-messenger.herokuapp.com/shop_img/lush.jpg"
+          }, {
+            title: "Shiseido",
+            subtitle: "highest quality products in brightening and anti-aging skincare, makeup and fragrance ",
+            item_url: "https://www.shiseido.com.hk",               
+            image_url: "https://anson-messenger.herokuapp.com/shop_img/shiseido.jpg"
+          }, {
+            title: "YSL",
+            subtitle: "French luxury fashion house",
+            item_url: "www.ysl.com",               
+            image_url: "https://anson-messenger.herokuapp.com/shop_img/ysl.jpg"
           }]
         }
       }
