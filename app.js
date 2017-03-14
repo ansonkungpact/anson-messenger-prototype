@@ -295,6 +295,7 @@ function sendShopMessage(recipientId) {
     message: {
       attachment: {
         type: "template",
+  "sender_action":"typing_on",
         payload: {
           template_type: "generic",
           elements: [{
@@ -307,8 +308,8 @@ function sendShopMessage(recipientId) {
               title:"Call the shop",
               payload:"+85229150962"
             },{
-        "type":"element_share"
-      } ]
+              "type":"element_share"
+            }]
           }, {
             title: "Fancl",
             subtitle: "Leading the evolution in PRESERVATIVE-FREE BEAUTY",
@@ -318,6 +319,8 @@ function sendShopMessage(recipientId) {
               type:"phone_number",
               title:"Call the shop",
               payload:"+85236220780"
+            },{
+              "type":"element_share"
             }]
           }, {
             title: "Inisfree",
@@ -328,6 +331,8 @@ function sendShopMessage(recipientId) {
               type:"phone_number",
               title:"Call the shop",
               payload:"+85234285640"
+            },{
+              "type":"element_share"
             }]
           }, {
             title: "Lush",
@@ -338,6 +343,8 @@ function sendShopMessage(recipientId) {
               type:"phone_number",
               title:"Call the shop",
               payload:"+85228380060"
+            },{
+              "type":"element_share"
             }]
           }, {
             title: "Shiseido",
@@ -348,6 +355,8 @@ function sendShopMessage(recipientId) {
               type:"phone_number",
               title:"Call the shop",
               payload:"+85228334563"
+            },{
+              "type":"element_share"
             }]
           }, {
             title: "YSL",
@@ -358,6 +367,8 @@ function sendShopMessage(recipientId) {
               type:"phone_number",
               title:"Call the shop",
               payload:"+85228318484"
+            },{
+              "type":"element_share"
             }]
           }]
         }
