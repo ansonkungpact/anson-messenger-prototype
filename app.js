@@ -90,7 +90,6 @@ function receivedMessage(event) {
         sendGenericMessage(senderID);
         break;
 
-      case 'Get Started':
       case 'hello':
       case 'hey':
       case 'hi':
@@ -293,10 +292,10 @@ function sendShopMessage(recipientId) {
     recipient: {
       id: recipientId
     },
+    sender_action:"typing_on",
     message: {
       attachment: {
         type: "template",
-  "sender_action":"typing_on",
         payload: {
           template_type: "generic",
           elements: [{
