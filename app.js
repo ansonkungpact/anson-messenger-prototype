@@ -286,7 +286,7 @@ function sendGreetingMessage(recipientId) {
         {
           "content_type":"text",
           "title":"Shopping",
-          "payload":"sendShopMessage",
+          "payload":"sendShopMessage(recipientId)",
           "image_url":"https://anson-messenger.herokuapp.com/img/icon/cat/shopping.png"
         },
         {
