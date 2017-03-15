@@ -348,18 +348,11 @@ function sendShopMessage(recipientId) {
         type: "template",
         payload: {
           template_type: "list",
-          top_element_style: "compact",
           elements: [{
             title: "The Body Shop",
             subtitle: "The original, ethical and natural beaty bran",
+            item_url: "http://www.thebodyshop.com.hk",               
             image_url: "https://anson-messenger.herokuapp.com/img/shop_img/bodyshop.jpg",
-            default_action: {
-                "type": "web_url",
-                "url": "https://peterssendreceiveapp.ngrok.io/shop_collection",
-                "messenger_extensions": true,
-                "webview_height_ratio": "tall",
-                "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
-            },
             buttons: [{
               type:"phone_number",
               title:"Call the shop",
@@ -368,16 +361,58 @@ function sendShopMessage(recipientId) {
               "type":"element_share"
             }]
           }, {
+            title: "Fancl",
+            subtitle: "Leading the evolution in PRESERVATIVE-FREE BEAUTY",
+            item_url: "www.fancl-hk.com",               
+            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/fancl.jpg",
+            buttons: [{
+              type:"phone_number",
+              title:"Call the shop",
+              payload:"+85236220780"
+            },{
+              "type":"element_share"
+            }]
+          }, {
+            title: "Inisfree",
+            subtitle: "Korea No.1 natural brand",
+            item_url: "http://www.innisfree.com",               
+            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/inisfree.jpg",
+            buttons: [{
+              type:"phone_number",
+              title:"Call the shop",
+              payload:"+85234285640"
+            },{
+              "type":"element_share"
+            }]
+          }, {
+            title: "Lush",
+            subtitle: "natural handmade bath and body products",
+            item_url: "https://hk.lush.com",               
+            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/lush.jpg",
+            buttons: [{
+              type:"phone_number",
+              title:"Call the shop",
+              payload:"+85228380060"
+            },{
+              "type":"element_share"
+            }]
+          }, {
+            title: "Shiseido",
+            subtitle: "highest quality products in brightening and anti-aging skincare, makeup and fragrance ",
+            item_url: "https://www.shiseido.com.hk",               
+            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/shiseido.jpg",
+            buttons: [{
+              type:"phone_number",
+              title:"Call the shop",
+              payload:"+85228334563"
+            },{
+              "type":"element_share"
+            }]
+          }, {
             title: "YSL",
             subtitle: "French luxury fashion house",
+            item_url: "www.ysl.com",               
             image_url: "https://anson-messenger.herokuapp.com/img/shop_img/ysl.jpg",
-            default_action: {
-                "type": "web_url",
-                "url": "https://peterssendreceiveapp.ngrok.io/shop_collection",
-                "messenger_extensions": true,
-                "webview_height_ratio": "tall",
-                "fallback_url": "https://peterssendreceiveapp.ngrok.io/"
-            },
             buttons: [{
               type:"phone_number",
               title:"Call the shop",
