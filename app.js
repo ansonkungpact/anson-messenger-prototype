@@ -248,21 +248,6 @@ function sendGenericMessage(recipientId) {
 ////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////
-
-function sendWelcomeMessage(recipientId) {
-
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      text: 'Hello! How can I help you today'
-    }
-  };
-
-  callSendAPI(messageData);
-}
-
 var shop_options = [
         {
           "content_type":"text",
@@ -290,7 +275,7 @@ function sendGreetingMessage(recipientId) {
       id: recipientId
     },
     message: {
-      "text":"Welcome to Hysan Place! \u000AWhat are you looking for today?",
+      "text":"Welcome to Hysan Place! \u000AWhat are you looking for today? :)",
       "quick_replies":shop_options
     }
   };  
@@ -304,7 +289,7 @@ function sendWelcomeMessage(recipientId) {
       id: recipientId
     },
     message: {
-      "text":"You're welcome! \u000AAnything else are you looking for?",
+      "text":"You're welcome! \u000AAnything else are you looking for? :)",
       "quick_replies":shop_options
     }
   };  
