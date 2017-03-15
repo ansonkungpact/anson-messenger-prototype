@@ -352,7 +352,6 @@ function sendShopMessage(recipientId) {
           elements: [{
             title: "The Body Shop",
             subtitle: "The original, ethical and natural beaty bran",
-            item_url: "http://www.thebodyshop.com.hk",               
             image_url: "https://anson-messenger.herokuapp.com/img/shop_img/bodyshop.jpg",
             default_action: {
                 "type": "web_url",
@@ -371,7 +370,6 @@ function sendShopMessage(recipientId) {
           }, {
             title: "YSL",
             subtitle: "French luxury fashion house",
-            item_url: "www.ysl.com",               
             image_url: "https://anson-messenger.herokuapp.com/img/shop_img/ysl.jpg",
             default_action: {
                 "type": "web_url",
