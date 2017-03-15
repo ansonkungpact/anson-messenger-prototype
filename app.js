@@ -105,6 +105,13 @@ function receivedMessage(event) {
       case 'thanks':
         sendWelcomeMessage(senderID);
       break;
+
+      case 'Bye':
+      case 'bye':
+      case 'See you':
+      case 'see you':
+        sendByeMessage(senderID);
+      break
         
       case 'cosmetics':
       case 'makeup':
@@ -275,7 +282,7 @@ function sendGreetingMessage(recipientId) {
       id: recipientId
     },
     message: {
-      "text":"Welcome to Hysan Place! \u000AWhat are you looking for today? :)",
+      "text":"Welcome to Hysan Place! :) \u000AWhat are you looking for today?",
       "quick_replies":shop_options
     }
   };  
@@ -289,8 +296,27 @@ function sendWelcomeMessage(recipientId) {
       id: recipientId
     },
     message: {
-      "text":"You're welcome! \u000AAnything else are you looking for? :)",
+      "text":"You're welcome! :) \u000AAnything else are you looking for?",
       "quick_replies":shop_options
+    }
+  };  
+
+  callSendAPI(messageData);
+}
+
+function sendByeMessage(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      "text":"We hope to see you soon! :) To know more about us, watch this clip!",
+      "attachment":{
+        "type":"video",
+        "payload":{
+          "url":"https://www.youtube.com/user/hysanplace/videos"
+        }
+      }
     }
   };  
 
