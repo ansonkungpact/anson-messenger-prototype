@@ -556,9 +556,10 @@ function sendLocationMessage(recipientId) {
                 "template_type": "generic",
                 "elements": {
                     "element": {
-                        "title": "Your location",
-                        "image_url": "https://maps.googleapis.com/maps/api/staticmap?size=764x400&center=22.279643,114.1838249&zoom=25&markers=22.279643,114.1838249",
-                        "item_url": "https://www.google.com.hk/maps?q=hysan+place&client=safari&rls=en&biw=1079&bih=575&um=1&ie=UTF-8&sa=X&ved=0ahUKEwiA9uvKjNjSAhVKUrwKHUIjA2IQ_AUICCgB"
+                        "title": "Hysan Place",
+                        "subtitle": "Causeway Bay",
+                        "image_url": "https://anson-messenger.herokuapp.com/img/map.jpg",
+                        "item_url": "https://www.google.com.hk/maps/place/Hysan+Place/@22.279764,114.1815696,17z/data=!3m1!5s0x34040056c77437e9:0x571df46027613945!4m8!1m2!2m1!1shysan+place!3m4!1s0x34040056c37d08bb:0xe2b51a38d4d91669!8m2!3d22.2797509!4d114.183808"
                     }
                 }
             }
