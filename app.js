@@ -282,7 +282,7 @@ function sendGreetingMessage(recipientId) {
       id: recipientId
     },
     message: {
-      "text":"Welcome to Hysan Place! :) \u000AWhat are you looking for today?",
+      "text":"Welcome to Hysan Place!:) \u000AWhat are you looking for today?",
       "quick_replies":shop_options
     }
   };  
@@ -296,7 +296,7 @@ function sendWelcomeMessage(recipientId) {
       id: recipientId
     },
     message: {
-      "text":"You're welcome! :) \u000AAnything else are you looking for?",
+      "text":"You're welcome!:) \u000AAnything else are you looking for?",
       "quick_replies":shop_options
     }
   };  
@@ -310,7 +310,7 @@ function sendByeMessage(recipientId) {
       id: recipientId
     },
     message: {
-      "text":"We hope to see you soon! :) To know more about us, watch this clip!",
+      "text":"We hope to see you soon!:) To know more about us, watch this clip! https://www.youtube.com/watch?v=qTaosUUYUjU",
       // "attachment":{
       //   "type":"video",
       //   "payload":{
