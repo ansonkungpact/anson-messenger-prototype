@@ -90,10 +90,20 @@ function receivedMessage(event) {
         sendGenericMessage(senderID);
         break;
 
+      case 'Hello':
       case 'hello':
+      case 'Hey':
       case 'hey':
+      case 'Hi':
       case 'hi':
         sendGreetingMessage(senderID);
+      break;
+
+      case 'Thank you':
+      case 'thank you':
+      case 'Thanks':
+      case 'thanks':
+        sendWelcomeMessage(senderID);
       break;
         
       case 'cosmetics':
@@ -253,7 +263,7 @@ function sendWelcomeMessage(recipientId) {
   callSendAPI(messageData);
 }
 
-var optionss = [
+var shop_options = [
         {
           "content_type":"text",
           "title":"Dining",
@@ -281,7 +291,21 @@ function sendGreetingMessage(recipientId) {
     },
     message: {
       "text":"Welcome to Hysan Place! \u000AWhat are you looking for today?",
-      "quick_replies":optionss
+      "quick_replies":shop_options
+    }
+  };  
+
+  callSendAPI(messageData);
+}
+
+function sendWelcomeMessage(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      "text":"You're welcome! \u000AAnything else are you looking for?",
+      "quick_replies":shop_options
     }
   };  
 
