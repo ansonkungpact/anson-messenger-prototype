@@ -353,8 +353,14 @@ function sendShopMessage(recipientId) {
           elements: [{
             title: "The Body Shop",
             subtitle: "The original, ethical and natural beaty bran",
-            item_url: "http://www.thebodyshop.com.hk",               
+            // item_url: "http://www.thebodyshop.com.hk",               
             image_url: "https://anson-messenger.herokuapp.com/img/shop_img/bodyshop.jpg",
+            default_action: {
+              "type": "web_url",
+              "url": "http://www.thebodyshop.com.hk",
+              "messenger_extensions": true,
+              "webview_height_ratio": "tall"
+            },
             buttons: [{
               type:"phone_number",
               title:"Call the shop",
