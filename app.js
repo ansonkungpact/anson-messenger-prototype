@@ -111,7 +111,6 @@ function receivedMessage(event) {
       case 'See you':
       case 'see you':
         sendByeMessage(senderID);
-        // sendVideoMessage(senderID)
       break
         
       case 'cosmetics':
