@@ -310,6 +310,7 @@ function sendByeMessage(recipientId) {
       id: recipientId
     },
     message: {
+      "text":"We hope to see you soon! :) To know more about us, watch this clip!",
       "attachment":{
         "type":"video",
         "payload":{
