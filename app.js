@@ -342,8 +342,8 @@ function sendShopMessage(recipientId) {
   var messageData = {
     recipient: {
       id: recipientId
-    },,
-  sender_action:typing_on,
+    },
+  sender_action:"typing_on",
     message: {
       attachment: {
         type: "template",
