@@ -130,6 +130,9 @@ function receivedMessage(event) {
       case 'where':
         getLocationMessage(senderID);
         break;
+      case 'how to go':
+        sendLocationMessage(senderID);
+        break;
 
       default:
         sendTextMessage(senderID, messageText);
@@ -535,6 +538,31 @@ function getLocationMessage(recipientId) {
           "content_type":"location",
         }
       ]
+    }
+  };
+
+  callSendAPI(messageData);
+}
+function sendLocationMessage(recipientId) {
+
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": {
+                    "element": {
+                        "title": "Your location",
+                        "image_url": "https:\/\/maps.googleapis.com\/maps\/api\/staticmap?size=764x400&center="+lat+","+long+"&zoom=25&markers="+lat+","+long,
+                        "item_url": "http:\/\/maps.apple.com\/maps?q="+lat+","+long+"&z=16"
+                    }
+                }
+            }
+        }
     }
   };
 
