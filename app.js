@@ -314,7 +314,7 @@ function sendByeMessage(recipientId) {
       "attachment":{
         "type":"video",
         "payload":{
-          "url":"https://youtu.be/qTaosUUYUjU"
+          "url":"https://anson-messenger.herokuapp.com/video/leegardens.mp4"
         }
       }
     }
