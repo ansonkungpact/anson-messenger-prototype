@@ -130,7 +130,7 @@ function receivedMessage(event) {
       case 'where':
         getLocationMessage(senderID);
         break;
-      case 'how to go':
+      case 'how':
         sendLocationMessage(senderID);
         break;
 
