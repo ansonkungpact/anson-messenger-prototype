@@ -311,12 +311,12 @@ function sendByeMessage(recipientId) {
     },
     message: {
       "text":"We hope to see you soon! :) To know more about us, watch this clip!",
-      "attachment":{
-        "type":"video",
-        "payload":{
-          "url":"https://petersapparel.com/bin/clip.mp4"
-        }
-      }
+      // "attachment":{
+      //   "type":"video",
+      //   "payload":{
+      //     "url":"https://petersapparel.com/bin/clip.mp4"
+      //   }
+      // }
     }
   };  
 
