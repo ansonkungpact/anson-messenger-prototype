@@ -557,7 +557,7 @@ function sendLocationMessage(recipientId) {
                 "elements": {
                     "element": {
                         "title": "Your location",
-                        "image_url": "https://maps.googleapis.com/maps/api/staticmap?size=764x400&center="+lat+","+long+"&zoom=25&markers="+lat+","+long,
+                        "image_url": "https://maps.googleapis.com/maps/api/staticmap?size=764x400&center=22.279643,114.1838249&zoom=25&markers=22.279643,114.1838249",
                         "item_url": "http://maps.apple.com/maps?q=22.279643,114.1838249&z=16"
                     }
                 }
