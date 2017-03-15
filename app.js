@@ -253,14 +253,7 @@ function sendWelcomeMessage(recipientId) {
   callSendAPI(messageData);
 }
 
-function sendGreetingMessage(recipientId) {
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      "text":"Welcome to Hysan Place! \u000AWhat are you looking for today?",
-      "quick_replies":[
+var optionss = [
         {
           "content_type":"text",
           "title":"Dining",
@@ -279,7 +272,16 @@ function sendGreetingMessage(recipientId) {
           "payload":"",
           "image_url":"https://anson-messenger.herokuapp.com/img/icon/cat/entertainment.png"
         }
-      ]
+      ];
+
+function sendGreetingMessage(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      "text":"Welcome to Hysan Place! \u000AWhat are you looking for today?",
+      "quick_replies":optionss
     }
   };  
 
