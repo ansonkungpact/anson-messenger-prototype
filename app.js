@@ -343,7 +343,6 @@ function sendShopMessage(recipientId) {
     recipient: {
       id: recipientId
     },
-  sender_action:typing_on,
     message: {
       attachment: {
         type: "template",
