@@ -111,6 +111,7 @@ function receivedMessage(event) {
       case 'See you':
       case 'see you':
         sendByeMessage(senderID);
+        // sendVideoMessage(senderID)
       break
         
       case 'cosmetics':
@@ -303,14 +304,12 @@ function sendWelcomeMessage(recipientId) {
 
   callSendAPI(messageData);
 }
-
-function sendByeMessage(recipientId) {
+function sendVideoMessage(recipientId) {
   var messageData = {
     recipient: {
       id: recipientId
     },
     message: {
-      "text":"We hope to see you soon! :) To know more about us, watch this clip!",
       "attachment":{
         "type":"video",
         "payload":{
@@ -321,6 +320,20 @@ function sendByeMessage(recipientId) {
   };  
 
   callSendAPI(messageData);
+}
+
+function sendByeMessage(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      "text":"We hope to see you soon! :) To know more about us, watch this clip!"
+    }
+  };  
+
+  callSendAPI(messageData);
+  sendVideoMessage(recipientId);
 }
 
 
