@@ -119,6 +119,8 @@ function receivedMessage(event) {
       case 'beauty':
       case 'shopping':
       case 'Shopping':
+      case 'shop':
+      case 'Shop':
       case 'Dining':
       case 'Entertainment':
         Q1 = true;
