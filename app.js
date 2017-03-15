@@ -314,7 +314,7 @@ function sendByeMessage(recipientId) {
       "attachment":{
         "type":"video",
         "payload":{
-          "url":"https://www.youtube.com/user/hysanplace/videos"
+          "url":"https://petersapparel.com/bin/clip.mp4"
         }
       }
     }
