@@ -169,10 +169,10 @@ function receivedMessage(event) {
         break;
 
       case 'how': //how to get there
-        getLocationMessage(senderID);
+        sendLocationMessage(senderID);
         break;
       case 'where': //where is it
-        sendLocationMessage(senderID);
+        getLocationMessage(senderID);
         break;
 
 
