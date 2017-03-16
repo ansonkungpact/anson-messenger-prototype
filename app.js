@@ -186,7 +186,7 @@ function receivedMessage(event) {
     console.log(long);
     }
     console.log('------------------------');
-    sendTextMessage(senderID, "Message with attachment received"+lat+long);
+    sendTextMessage(senderID, "Message with attachment received"+lat+long+"~");
     // console.log(message.attachments.delivery);
   }
 }
