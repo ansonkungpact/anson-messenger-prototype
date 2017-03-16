@@ -156,6 +156,7 @@ function receivedMessage(event) {
         sendTextMessage(senderID, messageText);
     }
   } else if (messageAttachments) {
+    console.log('------------------------');
     sendTextMessage(senderID, "Message with attachment received");
     console.log(message);
   }
