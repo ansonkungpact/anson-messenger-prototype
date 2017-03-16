@@ -643,7 +643,7 @@ function sendLocationMessage(recipientId) {
               "title": "Hysan Place",
               "subtitle": "Causeway Bay",
               "image_url": "https://anson-messenger.herokuapp.com/img/map.jpg",
-              "item_url": "https://www.google.com.hk/maps/place/Hysan+Place/
+              "item_url": "https://www.google.com.hk/maps/place/Hysan+Place/"
             }
           }
         }
@@ -670,7 +670,7 @@ function sendDirectionMessage(recipientId,x,y) {
               "title": "Hysan Place",
               "subtitle": "Causeway Bay",
               "image_url": "https://anson-messenger.herokuapp.com/img/map.jpg",
-              "item_url": "https://www.google.com.hk/maps/dir/Hysan+Place/'"+x+","+y+"'/
+              "item_url": "https://www.google.com.hk/maps/dir/Hysan+Place/'"+x+","+y+"'/"
             }
           }
         }
