@@ -321,6 +321,18 @@ var shop_options = [
         }
       ];
 
+
+
+function sendTypingMessage(recipientId) {
+  var messageData = {
+    "recipient":{
+      "id":"USER_ID"
+    },
+    "sender_action":"typing_on"
+  };  
+  callSendAPI(messageData);
+}
+
 function sendShoppingMessage(recipientId) {
   var messageData = {
     recipient: {
@@ -381,6 +393,7 @@ function sendVideoMessage(recipientId) {
 }
 
 function sendByeMessage(recipientId) {
+  sendTypingMessage(recipientId);
   var messageData = {
     recipient: {
       id: recipientId
