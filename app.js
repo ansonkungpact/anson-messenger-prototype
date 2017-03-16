@@ -420,7 +420,7 @@ function sendGreetingMessage(recipientId) {
       id: recipientId
     },
     message: {
-      "text":"Welcome to Hysan Place! :) \u000AHow are you today? \u000AWhat are you looking for today?click <a href='http://www.google.com'>here</a>",
+      "text":"Welcome to Hysan Place! :) \u000AHow are you today? \u000AWhat are you looking for today?",
       "quick_replies":mall_option
     }
   };  
@@ -615,7 +615,7 @@ function getLocationMessage(recipientId) {
       id: recipientId
     },
     message: {
-      "text":"Please share your location",
+      "text":"Please share your location:",
       "quick_replies":[
         {
           "content_type":"location",
@@ -661,10 +661,21 @@ function sendDirectionMessage(recipientId,x,y) {
       id: recipientId
     },
     message: {
-      "text":"Let me show you on google map, click <a href='http://www.google.com'>here</a>",
+      "attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"button",
+        "text":"",
+        "buttons":[
+          {
+            "type":"web_url",
+            "url":"https://petersapparel.parseapp.com",
+            "title":"Show in google map"
+          }
+        ]
+      }
     }
   };
-
 
   // var messageData = {
   //   recipient: {
