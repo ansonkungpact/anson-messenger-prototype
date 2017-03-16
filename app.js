@@ -113,10 +113,14 @@ function receivedMessage(event) {
         sendByeMessage(senderID);
       break
         
+      case 'Cosmetics':
       case 'cosmetics':
       case 'makeup':
       case 'facial cream':
       case 'beauty':
+        sendShoppingMessage(senderID);
+        break;
+
       case 'shopping':
       case 'Shopping':
       case 'shop':
@@ -280,6 +284,40 @@ var shop_options = [
           "image_url":"https://anson-messenger.herokuapp.com/img/icon/cat/entertainment.png"
         }
       ];
+var shopping_options = [
+        {
+          "content_type":"text",
+          "title":"Cosmetics",
+          "payload":"",
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/cat/shopping.png"
+        },
+        {
+          "content_type":"text",
+          "title":"Shoes",
+          "payload":"",
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/cat/shopping.png"
+        },
+        {
+          "content_type":"text",
+          "title":"Clothes",
+          "payload":"",
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/cat/shopping.png"
+        }
+      ];
+
+function sendShoppingMessage(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      "text":"Which kind of shop you are searching?",
+      "quick_replies":shopping_options
+    }
+  };  
+
+  callSendAPI(messageData);
+}
 
 function sendGreetingMessage(recipientId) {
   var messageData = {
