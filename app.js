@@ -480,74 +480,26 @@ function sendRestaurantMessage(recipientId) {
         payload: {
           template_type: "generic",
           elements: [{
-            title: "The Body Shop",
-            subtitle: "The original, ethical and natural beaty bran",
-            item_url: "http://www.thebodyshop.com.hk",               
-            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/bodyshop.jpg",
+            title: "Mcdonald",
+            subtitle: "American hamburger and fast food restaurant chain",
+            item_url: "http://www.mcdonalds.com.hk",               
+            image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/mcdonald.jpg",
             buttons: [{
               type:"phone_number",
               title:"Call the shop",
-              payload:"+85229150962"
+              payload:"+85223382338"
             },{
               "type":"element_share"
             }]
           }, {
-            title: "Fancl",
-            subtitle: "Leading the evolution in PRESERVATIVE-FREE BEAUTY",
-            item_url: "www.fancl-hk.com",               
-            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/fancl.jpg",
+            title: "KFC",
+            subtitle: "Kentucky Fried Chicken",
+            item_url: "https://www.kfchk.com",               
+            image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/shiseido.jpg",
             buttons: [{
               type:"phone_number",
               title:"Call the shop",
-              payload:"+85236220780"
-            },{
-              "type":"element_share"
-            }]
-          }, {
-            title: "Inisfree",
-            subtitle: "Korea No.1 natural brand",
-            item_url: "http://www.innisfree.com",               
-            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/inisfree.jpg",
-            buttons: [{
-              type:"phone_number",
-              title:"Call the shop",
-              payload:"+85234285640"
-            },{
-              "type":"element_share"
-            }]
-          }, {
-            title: "Lush",
-            subtitle: "natural handmade bath and body products",
-            item_url: "https://hk.lush.com",               
-            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/lush.jpg",
-            buttons: [{
-              type:"phone_number",
-              title:"Call the shop",
-              payload:"+85228380060"
-            },{
-              "type":"element_share"
-            }]
-          }, {
-            title: "Shiseido",
-            subtitle: "highest quality products in brightening and anti-aging skincare, makeup and fragrance ",
-            item_url: "https://www.shiseido.com.hk",               
-            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/shiseido.jpg",
-            buttons: [{
-              type:"phone_number",
-              title:"Call the shop",
-              payload:"+85228334563"
-            },{
-              "type":"element_share"
-            }]
-          }, {
-            title: "YSL",
-            subtitle: "French luxury fashion house",
-            item_url: "www.ysl.com",               
-            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/ysl.jpg",
-            buttons: [{
-              type:"phone_number",
-              title:"Call the shop",
-              payload:"+85228318484"
+              payload:"+85227303730"
             },{
               "type":"element_share"
             }]
@@ -620,7 +572,7 @@ function sendShopMessage(recipientId) {
             }]
           }, {
             title: "Shiseido",
-            subtitle: "highest quality products in brightening and anti-aging skincare, makeup and fragrance ",
+            subtitle: "highest quality products in brightening and anti-aging skincare, makeup and fragrance",
             item_url: "https://www.shiseido.com.hk",               
             image_url: "https://anson-messenger.herokuapp.com/img/shop_img/shiseido.jpg",
             buttons: [{
