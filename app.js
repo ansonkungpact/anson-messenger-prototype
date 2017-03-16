@@ -133,6 +133,7 @@ function receivedMessage(event) {
       case 'beauty':
         if (Q1) {
           Q2 = true;
+          sendTextMessage(senderID, "Here is the list of cosmetics shops.");
           sendShopMessage(senderID);
           setTimeout(function(){
             sendTextMessage(senderID, "What product you are searching?");
