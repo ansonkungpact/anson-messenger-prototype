@@ -90,6 +90,8 @@ function receivedMessage(event) {
         sendGenericMessage(senderID);
         break;
 
+
+
       case 'Hello':
       case 'hello':
       case 'Hey':
@@ -137,6 +139,8 @@ function receivedMessage(event) {
       case 'how':
         sendLocationMessage(senderID);
         break;
+
+
 
       default:
         sendTextMessage(senderID, messageText);
