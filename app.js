@@ -7,7 +7,7 @@ const request = require('request');
 const app = express();
 
 var hysan_x = 22.279764;
-var hysan_y = 114.1815696;
+var hysan_x = 114.1815696;
 
 
 var Q1 = false;
@@ -168,6 +168,8 @@ function receivedMessage(event) {
           sendRestaurantMessage(senderID);
         break;
 
+      case 'transport':
+      case 'direction':
       case 'how': //how to get there
         getLocationMessage(senderID);
         break;
