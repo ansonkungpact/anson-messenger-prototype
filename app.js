@@ -669,7 +669,7 @@ function sendDirectionMessage(recipientId,x,y) {
         "buttons":[
           {
             "type":"web_url",
-            "url":"https://petersapparel.parseapp.com",
+            "url":"https://www.google.com.hk/maps/dir/Hysan+Place/'"+x+","+y+"'/",
             "title":"Show in google map"
           }
         ]
