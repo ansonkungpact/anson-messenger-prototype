@@ -615,7 +615,7 @@ function getLocationMessage(recipientId) {
       id: recipientId
     },
     message: {
-      "text":"Please share your location:",
+      "text":"Please share your location",
       "quick_replies":[
         {
           "content_type":"location",
@@ -655,6 +655,16 @@ function sendLocationMessage(recipientId) {
 }
 
 function sendDirectionMessage(recipientId,x,y) {
+
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      "text":"Let me show you on google map, click <a href='http://www.google.com'>here</a>",
+    }
+  };
+
 
   var messageData = {
     recipient: {
