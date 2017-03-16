@@ -157,7 +157,8 @@ function receivedMessage(event) {
     }
   } else if (messageAttachments) {
     console.log('------------------------');
-    console.log(message.mid);
+    console.log(message);
+    console.log(message.delivery);
     console.log('------------------------');
     sendTextMessage(senderID, "Message with attachment received");
     // console.log(message.attachments.delivery);
@@ -323,18 +324,6 @@ var shop_options = [
         }
       ];
 
-
-
-function sendTypingMessage(recipientId) {
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    sender_action:"typing_on"
-  };  
-  callSendAPI(messageData);
-}
-
 function sendShoppingMessage(recipientId) {
   var messageData = {
     recipient: {
@@ -395,7 +384,6 @@ function sendVideoMessage(recipientId) {
 }
 
 function sendByeMessage(recipientId) {
-  sendTypingMessage(recipientId);
   var messageData = {
     recipient: {
       id: recipientId
