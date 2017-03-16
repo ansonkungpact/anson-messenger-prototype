@@ -120,7 +120,7 @@ function receivedMessage(event) {
       case 'makeup':
       case 'facial cream':
       case 'beauty':
-        sendShoppingMessage(senderID);
+        sendShopMessage(senderID);
         break;
 
       case 'shopping':
@@ -130,7 +130,7 @@ function receivedMessage(event) {
       case 'Dining':
       case 'Entertainment':
         Q1 = true;
-        sendShopMessage(senderID);
+        sendShoppingMessage(senderID);
         break;
 
       case 'where':
