@@ -352,7 +352,7 @@ var food_options = [
           "content_type":"text",
           "title":"Dim sum",
           "payload":"",
-          "image_url":"https://anson-messenger.herokuapp.com/img/icon/shop/dimsum.png"
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/food/dimsum.png"
         },
         {
           "content_type":"text",
@@ -364,19 +364,19 @@ var food_options = [
           "content_type":"text",
           "title":"Hotpot",
           "payload":"",
-          "image_url":"https://anson-messenger.herokuapp.com/img/icon/shop/hotpot.png"
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/food/hotpot.png"
         },
         {
           "content_type":"text",
           "title":"Spagetti",
           "payload":"",
-          "image_url":"https://anson-messenger.herokuapp.com/img/icon/shop/spagetti.png"
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/food/spagetti.png"
         },
         {
           "content_type":"text",
           "title":"Sushi",
           "payload":"",
-          "image_url":"https://anson-messenger.herokuapp.com/img/icon/shop/sushi.png"
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/food/sushi.png"
         }
       ];
 
