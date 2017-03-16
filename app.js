@@ -140,7 +140,7 @@ function receivedMessage(event) {
             sendTextMessage(senderID, "What product you are searching?");
           }, 1000);
         } else {
-          sendShoppingMessage(senderID);
+          sendGreetingMessage(senderID);
         }
         break;
 
