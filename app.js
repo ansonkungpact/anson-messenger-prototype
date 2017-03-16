@@ -395,7 +395,6 @@ function sendVideoMessage(recipientId) {
 }
 
 function sendByeMessage(recipientId) {
-  sendTypingMessage(recipientId);
   var messageData = {
     recipient: {
       id: recipientId
@@ -406,6 +405,7 @@ function sendByeMessage(recipientId) {
   };  
 
   callSendAPI(messageData);
+  sendTypingMessage(recipientId);
   sendVideoMessage(recipientId);
 }
 
