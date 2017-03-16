@@ -136,7 +136,7 @@ function receivedMessage(event) {
           sendShopMessage(senderID);
           setTimeout(function(){
             sendTextMessage(senderID, "What product you are searching?");
-          }, 100);
+          }, 1000);
         } else {
           sendShoppingMessage(senderID);
         }
