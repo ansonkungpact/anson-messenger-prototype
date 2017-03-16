@@ -114,6 +114,8 @@ function receivedMessage(event) {
       case 'See you':
       case 'see you':
         sendByeMessage(senderID);
+        Q1 = false;
+        Q2 = false;
       break;
 
       case 'shopping':
