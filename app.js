@@ -120,7 +120,6 @@ function receivedMessage(event) {
       case 'Shopping':
       case 'shop':
       case 'Shop':
-      case 'Dining':
       case 'Entertainment':
         Q1 = true;
         sendShoppingMessage(senderID);
@@ -143,6 +142,25 @@ function receivedMessage(event) {
         }
         break;
 
+
+      case 'Dining':
+      case 'dining':
+          sendFoodMessage(senderID);
+        break;
+
+      case 'Dim sum':
+      case 'dim sum':
+      case 'Fast food':
+      case 'fast food':
+      case 'Hotpot':
+      case 'hotpot':
+      case 'Spagetti':
+      case 'spagetti':
+      case 'Sushi':
+      case 'sushi':
+          sendRestaurantMessage(senderID);
+        break;
+
       case 'where':
         getLocationMessage(senderID);
         break;
@@ -157,8 +175,7 @@ function receivedMessage(event) {
     }
   } else if (messageAttachments) {
     console.log('------------------------');
-    console.log(messageAttachments);
-    console.log(messageAttachments.payload);
+    console.log(message);
     console.log('------------------------');
     sendTextMessage(senderID, "Message with attachment received");
     // console.log(message.attachments.delivery);
@@ -324,6 +341,55 @@ var shop_options = [
         }
       ];
 
+var food_options = [
+        {
+          "content_type":"text",
+          "title":"Dim sum",
+          "payload":"",
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/shop/dimsum.png"
+        },
+        {
+          "content_type":"text",
+          "title":"Fast food",
+          "payload":"",
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/food/fastfood.png"
+        },
+        {
+          "content_type":"text",
+          "title":"Hotpot",
+          "payload":"",
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/shop/hotpot.png"
+        },
+        {
+          "content_type":"text",
+          "title":"Spagetti",
+          "payload":"",
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/shop/spagetti.png"
+        },
+        {
+          "content_type":"text",
+          "title":"Sushi",
+          "payload":"",
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/shop/sushi.png"
+        }
+      ];
+
+
+
+function sendFoodMessage(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      "text":"Which kind of food you want to have?",
+      "quick_replies":food_options
+    }
+  };  
+
+  callSendAPI(messageData);
+}
+
 function sendShoppingMessage(recipientId) {
   var messageData = {
     recipient: {
@@ -395,6 +461,97 @@ function sendByeMessage(recipientId) {
 
   callSendAPI(messageData);
   sendVideoMessage(recipientId);
+}
+
+function sendRestaurantMessage(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "generic",
+          elements: [{
+            title: "The Body Shop",
+            subtitle: "The original, ethical and natural beaty bran",
+            item_url: "http://www.thebodyshop.com.hk",               
+            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/bodyshop.jpg",
+            buttons: [{
+              type:"phone_number",
+              title:"Call the shop",
+              payload:"+85229150962"
+            },{
+              "type":"element_share"
+            }]
+          }, {
+            title: "Fancl",
+            subtitle: "Leading the evolution in PRESERVATIVE-FREE BEAUTY",
+            item_url: "www.fancl-hk.com",               
+            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/fancl.jpg",
+            buttons: [{
+              type:"phone_number",
+              title:"Call the shop",
+              payload:"+85236220780"
+            },{
+              "type":"element_share"
+            }]
+          }, {
+            title: "Inisfree",
+            subtitle: "Korea No.1 natural brand",
+            item_url: "http://www.innisfree.com",               
+            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/inisfree.jpg",
+            buttons: [{
+              type:"phone_number",
+              title:"Call the shop",
+              payload:"+85234285640"
+            },{
+              "type":"element_share"
+            }]
+          }, {
+            title: "Lush",
+            subtitle: "natural handmade bath and body products",
+            item_url: "https://hk.lush.com",               
+            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/lush.jpg",
+            buttons: [{
+              type:"phone_number",
+              title:"Call the shop",
+              payload:"+85228380060"
+            },{
+              "type":"element_share"
+            }]
+          }, {
+            title: "Shiseido",
+            subtitle: "highest quality products in brightening and anti-aging skincare, makeup and fragrance ",
+            item_url: "https://www.shiseido.com.hk",               
+            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/shiseido.jpg",
+            buttons: [{
+              type:"phone_number",
+              title:"Call the shop",
+              payload:"+85228334563"
+            },{
+              "type":"element_share"
+            }]
+          }, {
+            title: "YSL",
+            subtitle: "French luxury fashion house",
+            item_url: "www.ysl.com",               
+            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/ysl.jpg",
+            buttons: [{
+              type:"phone_number",
+              title:"Call the shop",
+              payload:"+85228318484"
+            },{
+              "type":"element_share"
+            }]
+          }]
+        }
+      }
+    }
+  };  
+
+  callSendAPI(messageData);
 }
 
 function sendShopMessage(recipientId) {
