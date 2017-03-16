@@ -646,7 +646,7 @@ function sendLocationMessage(recipientId) {
               "title": "Hysan Place",
               "subtitle": "Causeway Bay",
               "image_url": "https://anson-messenger.herokuapp.com/img/map.jpg",
-              "item_url": "https://www.google.com.hk/maps/place/Hysan+Place/@"+hysan_x+","+hysan_y+",17z/data=!3m1!5s0x34040056c77437e9:0x571df46027613945!4m8!1m2!2m1!1shysan+place!3m4!1s0x34040056c37d08bb:0xe2b51a38d4d91669!8m2!3d22.2797509!4d114.183808"
+              "item_url": "https://www.google.com.hk/maps/place/Hysan+Place/@22.279764,114.1815696,17z/data=!3m1!5s0x34040056c77437e9:0x571df46027613945!4m8!1m2!2m1!1shysan+place!3m4!1s0x34040056c37d08bb:0xe2b51a38d4d91669!8m2!3d22.2797509!4d114.183808"
             }
           }
         }
@@ -672,7 +672,7 @@ function sendDirectionMessage(recipientId) {
               "title": "Hysan Place",
               "subtitle": "Causeway Bay",
               "image_url": "https://anson-messenger.herokuapp.com/img/map.jpg",
-              "item_url": "https://www.google.com.hk/maps/place/Hysan+Place/@"+hysan_x+","+hysan_y+",17z/data=!3m1!5s0x34040056c77437e9:0x571df46027613945!4m8!1m2!2m1!1shysan+place!3m4!1s0x34040056c37d08bb:0xe2b51a38d4d91669!8m2!3d22.2797509!4d114.183808"
+              "item_url": "https://www.google.com.hk/maps/place/Hysan+Place/@22.279764,114.1815696,17z/data=!3m1!5s0x34040056c77437e9:0x571df46027613945!4m8!1m2!2m1!1shysan+place!3m4!1s0x34040056c37d08bb:0xe2b51a38d4d91669!8m2!3d22.2797509!4d114.183808"
             }
           }
         }
