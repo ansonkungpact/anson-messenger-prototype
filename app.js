@@ -495,7 +495,7 @@ function sendRestaurantMessage(recipientId) {
             title: "KFC",
             subtitle: "Kentucky Fried Chicken",
             item_url: "https://www.kfchk.com",               
-            image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/shiseido.jpg",
+            image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/kfc.jpg",
             buttons: [{
               type:"phone_number",
               title:"Call the shop",
