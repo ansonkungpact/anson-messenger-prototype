@@ -664,17 +664,18 @@ function sendDirectionMessage(recipientId,x,y) {
     },
     message: {
       "attachment":{
-      "type":"template",
-      "payload":{
-        "template_type":"button",
-        "text":"",
-        "buttons":[
-          {
-            "type":"web_url",
-            "url":"https://www.google.com.hk/maps/dir/Hysan+Place/'"+x+","+y+"'/",
-            "title":"Show in google map"
-          }
-        ]
+        "type":"template",
+        "payload":{
+          "template_type":"button",
+          "text":"",
+          "buttons":[
+            {
+              "type":"web_url",
+              "url":"https://www.google.com.hk/maps/dir/Hysan+Place/'"+x+","+y+"'/",
+              "title":"Show in google map"
+            }
+          ]
+        }
       }
     }
   };
