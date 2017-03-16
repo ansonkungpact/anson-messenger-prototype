@@ -325,10 +325,10 @@ var shop_options = [
 
 function sendTypingMessage(recipientId) {
   var messageData = {
-    "recipient":{
-      "id":"USER_ID"
+    recipient: {
+      id: recipientId
     },
-    "sender_action":"typing_on"
+    sender_action:"typing_on"
   };  
   callSendAPI(messageData);
 }
