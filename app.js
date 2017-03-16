@@ -661,8 +661,8 @@ function sendDirectionMessage(recipientId, x, y, text) {
       "attachment":{
         "type":"template",
         "payload":{
-          "template_type":"button",
-          "text": text,
+          "template_type":"button", 
+          "image_url": "https://anson-messenger.herokuapp.com/img/direction.png",
           "buttons":[
             {
               "type":"web_url",
