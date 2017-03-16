@@ -7,6 +7,7 @@ const request = require('request');
 const app = express();
 
 var Q1 = false;
+var Q2 = false;
 
 let token = "EAADQZCNZCxtAgBADmnbPXCtFrZAKtUNHnugh9mLRHljfVZAa5BN4x9oie3HZBFsRHlkQeBCS3U63zToqnQ70teqw93lDzg56f5UijZC1SmcZBZCtrHdxMy2swXFPgStAUh8CKxZBT3qtJkNVhLxZAPKBQVDEM9UkWDAGANDHhIPSP4wgZDZD";
 
@@ -113,15 +114,7 @@ function receivedMessage(event) {
       case 'See you':
       case 'see you':
         sendByeMessage(senderID);
-      break
-        
-      case 'Cosmetics':
-      case 'cosmetics':
-      case 'makeup':
-      case 'facial cream':
-      case 'beauty':
-        sendShopMessage(senderID);
-        break;
+      break;
 
       case 'shopping':
       case 'Shopping':
@@ -131,6 +124,19 @@ function receivedMessage(event) {
       case 'Entertainment':
         Q1 = true;
         sendShoppingMessage(senderID);
+        break;
+        
+      case 'Cosmetics':
+      case 'cosmetics':
+      case 'makeup':
+      case 'facial cream':
+      case 'beauty':
+        if (Q1) {
+          Q2 = true;
+          sendShopMessage(senderID);
+        } else {
+          sendShoppingMessage(senderID);
+        }
         break;
 
       case 'where':
@@ -170,6 +176,7 @@ function receivedPostback(event) {
 
 function sendTextMessage(recipientId, messageText) {
   console.log('Q1: ' + Q1);
+  console.log('Q2: ' + Q2);
   var messageData = {
     recipient: {
       id: recipientId
