@@ -280,19 +280,19 @@ var shop_options = [
           "content_type":"text",
           "title":"Dining",
           "payload":"",
-          "image_url":"https://anson-messenger.herokuapp.com/img/icon/cat/dining.png"
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/mall/dining.png"
         },
         {
           "content_type":"text",
           "title":"Shopping",
           "payload":"",
-          "image_url":"https://anson-messenger.herokuapp.com/img/icon/cat/shopping.png"
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/mall/shopping.png"
         },
         {
           "content_type":"text",
           "title":"Entertainment",
           "payload":"",
-          "image_url":"https://anson-messenger.herokuapp.com/img/icon/cat/entertainment.png"
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/mall/entertainment.png"
         }
       ];
 var shopping_options = [
@@ -300,19 +300,19 @@ var shopping_options = [
           "content_type":"text",
           "title":"Cosmetics",
           "payload":"",
-          "image_url":"https://anson-messenger.herokuapp.com/img/icon/cat/shopping.png"
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/shop/cosmetics.png"
         },
         {
           "content_type":"text",
           "title":"Shoes",
           "payload":"",
-          "image_url":"https://anson-messenger.herokuapp.com/img/icon/cat/shopping.png"
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/shop/shoe.png"
         },
         {
           "content_type":"text",
           "title":"Clothes",
           "payload":"",
-          "image_url":"https://anson-messenger.herokuapp.com/img/icon/cat/shopping.png"
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/shop/clothing.png"
         }
       ];
 
