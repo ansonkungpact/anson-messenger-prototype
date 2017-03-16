@@ -182,9 +182,9 @@ function receivedMessage(event) {
     if (messageAttachments[0].payload.coordinates) {
       var lat = messageAttachments[0].payload.coordinates.lat;
       var long = messageAttachments[0].payload.coordinates.long;
-      sendDirectionMessage(senderID,lat,long);
+      sendDirectionMessage(senderID, lat, long, "We are at 500 Hennessy Rd, Causeway Bay");
+      // sendTextMessage(senderID, "We are at 500 Hennessy Rd, Causeway Bay");
     }
-    sendTextMessage(senderID, "We are at 500 Hennessy Rd, Causeway Bay");
     // console.log(message.attachments.delivery);
   }
 }
@@ -651,7 +651,7 @@ function sendLocationMessage(recipientId) {
   callSendAPI(messageData);
 }
 
-function sendDirectionMessage(recipientId,x,y) {
+function sendDirectionMessage(recipientId, x, y, text) {
 
   var messageData = {
     recipient: {
@@ -662,7 +662,7 @@ function sendDirectionMessage(recipientId,x,y) {
         "type":"template",
         "payload":{
           "template_type":"button",
-          "text":"test",
+          "text": text,
           "buttons":[
             {
               "type":"web_url",
