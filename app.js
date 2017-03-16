@@ -114,6 +114,8 @@ function receivedMessage(event) {
       case 'See you':
       case 'see you':
         sendByeMessage(senderID);
+        Q1 = false;
+        Q2 = false;
       break;
 
       case 'shopping':
@@ -138,7 +140,7 @@ function receivedMessage(event) {
             sendTextMessage(senderID, "What product you are searching?");
           }, 1000);
         } else {
-          sendShoppingMessage(senderID);
+          sendGreetingMessage(senderID);
         }
         break;
 
