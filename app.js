@@ -662,7 +662,7 @@ function sendDirectionMessage(recipientId,x,y) {
         "type":"template",
         "payload":{
           "template_type":"button",
-          "text":"",
+          "text":"test",
           "buttons":[
             {
               "type":"web_url",
