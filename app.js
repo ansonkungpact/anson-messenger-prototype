@@ -481,7 +481,7 @@ function sendRestaurantMessage(recipientId) {
           template_type: "generic",
           elements: [{
             title: "Mcdonald",
-            subtitle: "American hamburger and fast food restaurant chain",
+            subtitle: "American hamburger and fast food restaurant chain\u000AShop 15",
             item_url: "http://www.mcdonalds.com.hk",               
             image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/mcdonald.jpg",
             buttons: [{
@@ -493,7 +493,7 @@ function sendRestaurantMessage(recipientId) {
             }]
           }, {
             title: "KFC",
-            subtitle: "Kentucky Fried Chicken",
+            subtitle: "Kentucky Fried Chicken\u000AShop 32",
             item_url: "https://www.kfchk.com",               
             image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/kfc.jpg",
             buttons: [{
@@ -524,7 +524,7 @@ function sendShopMessage(recipientId) {
           template_type: "generic",
           elements: [{
             title: "The Body Shop",
-            subtitle: "The original, ethical and natural beaty bran",
+            subtitle: "The original, ethical and natural beaty bran\u000AShop 53",
             item_url: "http://www.thebodyshop.com.hk",               
             image_url: "https://anson-messenger.herokuapp.com/img/shop_img/bodyshop.jpg",
             buttons: [{
@@ -536,7 +536,7 @@ function sendShopMessage(recipientId) {
             }]
           }, {
             title: "Fancl",
-            subtitle: "Leading the evolution in PRESERVATIVE-FREE BEAUTY",
+            subtitle: "Leading the evolution in PRESERVATIVE-FREE BEAUTY\u000AShop 41",
             item_url: "www.fancl-hk.com",               
             image_url: "https://anson-messenger.herokuapp.com/img/shop_img/fancl.jpg",
             buttons: [{
@@ -548,7 +548,7 @@ function sendShopMessage(recipientId) {
             }]
           }, {
             title: "Inisfree",
-            subtitle: "Korea No.1 natural brand",
+            subtitle: "Korea No.1 natural brand\u000AShop 36",
             item_url: "http://www.innisfree.com",               
             image_url: "https://anson-messenger.herokuapp.com/img/shop_img/inisfree.jpg",
             buttons: [{
@@ -560,7 +560,7 @@ function sendShopMessage(recipientId) {
             }]
           }, {
             title: "Lush",
-            subtitle: "natural handmade bath and body products",
+            subtitle: "natural handmade bath and body products\u000AShop 05",
             item_url: "https://hk.lush.com",               
             image_url: "https://anson-messenger.herokuapp.com/img/shop_img/lush.jpg",
             buttons: [{
@@ -572,7 +572,7 @@ function sendShopMessage(recipientId) {
             }]
           }, {
             title: "Shiseido",
-            subtitle: "highest quality products in brightening and anti-aging skincare, makeup and fragrance",
+            subtitle: "highest quality products in brightening and anti-aging skincare, makeup and fragrance\u000AShop 23",
             item_url: "https://www.shiseido.com.hk",               
             image_url: "https://anson-messenger.herokuapp.com/img/shop_img/shiseido.jpg",
             buttons: [{
@@ -584,7 +584,7 @@ function sendShopMessage(recipientId) {
             }]
           }, {
             title: "YSL",
-            subtitle: "French luxury fashion house",
+            subtitle: "French luxury fashion house\u000AShop 45",
             item_url: "www.ysl.com",               
             image_url: "https://anson-messenger.herokuapp.com/img/shop_img/ysl.jpg",
             buttons: [{
