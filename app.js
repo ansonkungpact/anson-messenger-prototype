@@ -186,7 +186,8 @@ function receivedMessage(event) {
     console.log(long);
     }
     console.log('------------------------');
-    sendTextMessage(senderID, "Message with attachment received"+lat+long+"~");
+    sendTextMessage(senderID, "We are at 500 Hennessy Rd, Causeway Bay");
+    sendLocationMessage(senderID);
     // console.log(message.attachments.delivery);
   }
 }
