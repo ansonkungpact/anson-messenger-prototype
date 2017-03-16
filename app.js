@@ -90,6 +90,8 @@ function receivedMessage(event) {
         sendGenericMessage(senderID);
         break;
 
+
+
       case 'Hello':
       case 'hello':
       case 'Hey':
@@ -113,6 +115,8 @@ function receivedMessage(event) {
         sendByeMessage(senderID);
       break
         
+
+
       case 'cosmetics':
       case 'makeup':
       case 'facial cream':
@@ -133,6 +137,8 @@ function receivedMessage(event) {
       case 'how':
         sendLocationMessage(senderID);
         break;
+
+
 
       default:
         sendTextMessage(senderID, messageText);
