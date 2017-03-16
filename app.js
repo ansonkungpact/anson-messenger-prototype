@@ -157,7 +157,13 @@ function receivedMessage(event) {
     }
   } else if (messageAttachments) {
     console.log('------------------------');
-    console.log(messageAttachments[0].payload);
+    if (messageAttachments[0].payload.coordinates) {
+      var lat = messageAttachments[0].payload.coordinates.lat;
+      var long = messageAttachments[0].payload.coordinates.long;
+    console.log(messageAttachments[0].payload.coordinates);
+    console.log(lat);
+    console.log(long);
+    }
     console.log('------------------------');
     sendTextMessage(senderID, "Message with attachment received");
     // console.log(message.attachments.delivery);
