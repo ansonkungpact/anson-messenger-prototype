@@ -654,32 +654,32 @@ function sendLocationMessage(recipientId) {
   callSendAPI(messageData);
 }
 
-// function sendDirectionMessage(recipientId,x,y) {
+function sendDirectionMessage(recipientId,x,y) {
 
-//   var messageData = {
-//     recipient: {
-//       id: recipientId
-//     },
-//     message: {
-//       "attachment": {
-//         "type": "template",
-//         "payload": {
-//           "template_type": "generic",
-//           "elements": {
-//             "element": {
-//               "title": "Hysan Place",
-//               "subtitle": "Causeway Bay",
-//               "image_url": "https://anson-messenger.herokuapp.com/img/map.jpg",
-//               "item_url": "https://www.google.com.hk/maps/dir/Hysan+Place/'"+x+","+y+"'/
-//             }
-//           }
-//         }
-//       }
-//     }
-//   };
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      "attachment": {
+        "type": "template",
+        "payload": {
+          "template_type": "generic",
+          "elements": {
+            "element": {
+              "title": "Hysan Place",
+              "subtitle": "Causeway Bay",
+              "image_url": "https://anson-messenger.herokuapp.com/img/map.jpg",
+              "item_url": "https://www.google.com.hk/maps/dir/Hysan+Place/'"+x+","+y+"'/
+            }
+          }
+        }
+      }
+    }
+  };
 
-//   callSendAPI(messageData);
-// }
+  callSendAPI(messageData);
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////
