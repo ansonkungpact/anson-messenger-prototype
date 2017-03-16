@@ -651,7 +651,7 @@ function sendLocationMessage(recipientId) {
   callSendAPI(messageData);
 }
 
-function sendDirectionMessage(recipientId, x, y, text) {
+function sendDirectionMessage(recipientId, x, y) {
 
   var messageData = {
     recipient: {
@@ -661,8 +661,8 @@ function sendDirectionMessage(recipientId, x, y, text) {
       "attachment":{
         "type":"template",
         "payload":{
-          "template_type":"button", 
-          "image_url": "https://anson-messenger.herokuapp.com/img/direction.png",
+          "template_type":"button",
+          "text":"We are at 500 Hennessy Rd, Causeway Bay",
           "buttons":[
             {
               "type":"web_url",
