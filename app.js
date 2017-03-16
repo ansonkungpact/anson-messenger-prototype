@@ -275,7 +275,7 @@ function sendGenericMessage(recipientId) {
 ////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////
-var shop_options = [
+var mall_option = [
         {
           "content_type":"text",
           "title":"Dining",
@@ -295,7 +295,7 @@ var shop_options = [
           "image_url":"https://anson-messenger.herokuapp.com/img/icon/mall/entertainment.png"
         }
       ];
-var shopping_options = [
+var shop_options = [
         {
           "content_type":"text",
           "title":"Cosmetics",
@@ -323,7 +323,7 @@ function sendShoppingMessage(recipientId) {
     },
     message: {
       "text":"Which kind of shop you are searching?",
-      "quick_replies":shopping_options
+      "quick_replies":shop_options
     }
   };  
 
@@ -337,7 +337,7 @@ function sendGreetingMessage(recipientId) {
     },
     message: {
       "text":"Welcome to Hysan Place! :) \u000AWhat are you looking for today?",
-      "quick_replies":shop_options
+      "quick_replies":mall_option
     }
   };  
 
