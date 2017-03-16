@@ -145,13 +145,16 @@ function receivedMessage(event) {
 
       case 'Dining':
       case 'dining':
+      case 'dinning':
           sendFoodMessage(senderID);
         break;
 
       case 'Dim sum':
       case 'dim sum':
+      case 'dimsum':
       case 'Fast food':
       case 'fast food':
+      case 'fastfood':
       case 'Hotpot':
       case 'hotpot':
       case 'Spagetti':
@@ -183,7 +186,7 @@ function receivedMessage(event) {
     console.log(long);
     }
     console.log('------------------------');
-    sendTextMessage(senderID, "Message with attachment received");
+    sendTextMessage(senderID, "Message with attachment received"+lat+long);
     // console.log(message.attachments.delivery);
   }
 }
@@ -416,7 +419,7 @@ function sendGreetingMessage(recipientId) {
       id: recipientId
     },
     message: {
-      "text":"Welcome to Hysan Place! :) \u000AWhat are you looking for today?",
+      "text":"Welcome to Hysan Place! :) \u000AHow are you today? \u000AWhat are you looking for today?",
       "quick_replies":mall_option
     }
   };  
