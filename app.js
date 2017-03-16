@@ -179,17 +179,12 @@ function receivedMessage(event) {
         sendTextMessage(senderID, messageText);
     }
   } else if (messageAttachments) {
-    console.log('------------------------');
     if (messageAttachments[0].payload.coordinates) {
       var lat = messageAttachments[0].payload.coordinates.lat;
       var long = messageAttachments[0].payload.coordinates.long;
-    console.log(messageAttachments[0].payload.coordinates);
-    console.log(lat);
-    console.log(long);
+      sendDirectionMessage(senderID,lat,long);
     }
-    console.log('------------------------');
     sendTextMessage(senderID, "We are at 500 Hennessy Rd, Causeway Bay");
-    sendDirectionMessage(senderID,lat,long);
     // console.log(message.attachments.delivery);
   }
 }
