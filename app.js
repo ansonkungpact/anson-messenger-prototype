@@ -278,44 +278,44 @@ function sendGenericMessage(recipientId) {
 ////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////
-var shop_options = [
+var mall_option = [
         {
           "content_type":"text",
           "title":"Dining",
           "payload":"",
-          "image_url":"https://anson-messenger.herokuapp.com/img/icon/cat/dining.png"
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/mall/dining.png"
         },
         {
           "content_type":"text",
           "title":"Shopping",
           "payload":"",
-          "image_url":"https://anson-messenger.herokuapp.com/img/icon/cat/shopping.png"
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/mall/shopping.png"
         },
         {
           "content_type":"text",
           "title":"Entertainment",
           "payload":"",
-          "image_url":"https://anson-messenger.herokuapp.com/img/icon/cat/entertainment.png"
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/mall/entertainment.png"
         }
       ];
-var shopping_options = [
+var shop_options = [
         {
           "content_type":"text",
           "title":"Cosmetics",
           "payload":"",
-          "image_url":"https://anson-messenger.herokuapp.com/img/icon/cat/shopping.png"
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/shop/cosmetics.png"
         },
         {
           "content_type":"text",
           "title":"Shoes",
           "payload":"",
-          "image_url":"https://anson-messenger.herokuapp.com/img/icon/cat/shopping.png"
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/shop/shoe.png"
         },
         {
           "content_type":"text",
           "title":"Clothes",
           "payload":"",
-          "image_url":"https://anson-messenger.herokuapp.com/img/icon/cat/shopping.png"
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/shop/clothing.png"
         }
       ];
 
@@ -326,7 +326,7 @@ function sendShoppingMessage(recipientId) {
     },
     message: {
       "text":"Which kind of shop you are searching?",
-      "quick_replies":shopping_options
+      "quick_replies":shop_options
     }
   };  
 
@@ -340,7 +340,7 @@ function sendGreetingMessage(recipientId) {
     },
     message: {
       "text":"Welcome to Hysan Place! :) \u000AWhat are you looking for today?",
-      "quick_replies":shop_options
+      "quick_replies":mall_option
     }
   };  
 
