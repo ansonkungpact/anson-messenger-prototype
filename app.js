@@ -197,8 +197,7 @@ function receivedMessage(event) {
           sendAnythingElseMessage(senderID);
         }, 1000);
 
-      }
-      if (shop) {
+      } else if (shop) {
         if (messageText == 'yes' && shop) {
           sendCHANELMessage(senderID);
           
