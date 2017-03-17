@@ -639,6 +639,18 @@ function sendShopMessage(recipientId) {
             },{
               "type":"element_share"
             }]
+          }, {
+            title: "CHANEL BEAUTÉ",
+            subtitle: "The original, ethical and natural beaty bran\u000AShop 53",
+            item_url: "http://www.sk-ii.com.hk/tc/index.aspx",               
+            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/chanel.png",
+            buttons: [{
+              type:"phone_number",
+              title:"Call the shop",
+              payload:"+85225032206"
+            },{
+              "type":"element_share"
+            }]
           }]
         }
       }
