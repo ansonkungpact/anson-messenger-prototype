@@ -576,7 +576,6 @@ function sendCHANELMessage(recipientId) {
   };  
 
   callSendAPI(messageData);
-  sendAnythingElseMessage(recipientId);
 }
 
 function sendShopMessage(recipientId) {
