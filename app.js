@@ -107,6 +107,7 @@ function receivedMessage(event) {
 
       case 'Thank you':
       case 'thank you':
+      case 'thankyou':
       case 'Thanks':
       case 'thanks':
         sendWelcomeMessage(senderID);
