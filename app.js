@@ -436,7 +436,7 @@ function sendGreetingMessage(recipientId) {
       id: recipientId
     },
     message: {
-      "text":"Welcome to Hysan Place! :) \u000AHow are you today? \u000AWhat are you looking for today?",
+      "text":"{{user_first_name}}, welcome to Hysan Place! :) \u000AHow are you today? \u000AWhat are you looking for today?",
       "quick_replies":mall_option
     }
   };  
