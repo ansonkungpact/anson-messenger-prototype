@@ -192,12 +192,19 @@ function receivedMessage(event) {
       default:
       if (messageText == 'chanel') {
         sendCHANELMessage(senderID);
-        sendAnythingElseMessage(senderID);
+
+        setTimeout(function(){
+          sendAnythingElseMessage(senderID);
+        }, 1000);
+        
       }
       if (shop) {
         if (messageText == 'yes' && shop) {
           sendCHANELMessage(senderID);
-          sendAnythingElseMessage(senderID);
+          
+          setTimeout(function(){
+            sendAnythingElseMessage(senderID);
+          }, 1000);
         }
       } else {
         sendTextMessage(senderID, messageText);
