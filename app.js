@@ -192,19 +192,25 @@ function receivedMessage(event) {
       default:
       if (messageText == 'chanel') {
         sendCHANELMessage(senderID);
+<<<<<<< HEAD
 
         setTimeout(function(){
           sendAnythingElseMessage(senderID);
         }, 1000);
         
+=======
+>>>>>>> 4a01e0d12fa18926e5d8d6c9fdc912915489abd6
       }
       if (shop) {
         if (messageText == 'yes' && shop) {
           sendCHANELMessage(senderID);
+<<<<<<< HEAD
           
           setTimeout(function(){
             sendAnythingElseMessage(senderID);
           }, 1000);
+=======
+>>>>>>> 4a01e0d12fa18926e5d8d6c9fdc912915489abd6
         }
       } else {
         sendTextMessage(senderID, messageText);
@@ -467,7 +473,7 @@ function sendAnythingElseMessage(recipientId) {
     },
     message: {
       "text":"Anything else are you looking for?",
-      "quick_replies":mall_options
+      "quick_replies":mall_option
     }
   };  
 
@@ -577,6 +583,7 @@ function sendCHANELMessage(recipientId) {
   };  
 
   callSendAPI(messageData);
+  sendAnythingElseMessage(recipientId);
 }
 
 function sendShopMessage(recipientId) {
