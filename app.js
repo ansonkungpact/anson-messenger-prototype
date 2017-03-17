@@ -8,6 +8,7 @@ const app = express();
 
 var Q1 = false;
 var Q2 = false;
+var shop = false;
 
 let token = "EAADQZCNZCxtAgBADmnbPXCtFrZAKtUNHnugh9mLRHljfVZAa5BN4x9oie3HZBFsRHlkQeBCS3U63zToqnQ70teqw93lDzg56f5UijZC1SmcZBZCtrHdxMy2swXFPgStAUh8CKxZBT3qtJkNVhLxZAPKBQVDEM9UkWDAGANDHhIPSP4wgZDZD";
 
@@ -176,7 +177,13 @@ function receivedMessage(event) {
 
 
       default:
+      if (shop) {
+        if (messageText == 'yes' && shop) {
+          sendShopMessage(senderID);
+        }
+      } else {
         sendTextMessage(senderID, messageText);
+      }
     }
   } else if (messageAttachments) {
     if (messageAttachments[0].payload.coordinates) {
@@ -184,6 +191,9 @@ function receivedMessage(event) {
       var long = messageAttachments[0].payload.coordinates.long;
       sendDirectionMessage(senderID, lat, long, "We are at 500 Hennessy Rd, Causeway Bay");
       // sendTextMessage(senderID, "We are at 500 Hennessy Rd, Causeway Bay");
+    } else {   
+      sendTextMessage(senderID, "Are you searching SKII?");
+      shop = true;
     }
     // console.log(message.attachments.delivery);
   }
