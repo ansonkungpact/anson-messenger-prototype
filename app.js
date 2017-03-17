@@ -195,10 +195,14 @@ function receivedMessage(event) {
         setTimeout(function(){
           sendAnythingElseMessage(senderID);
         }, 1000);
-      }
-      if (shop) {
+
+      } else if (shop) {
         if (messageText == 'yes' && shop) {
           sendCHANELMessage(senderID);
+          
+          setTimeout(function(){
+            sendAnythingElseMessage(senderID);
+          }, 1000);
         }
       } else {
         sendTextMessage(senderID, messageText);
