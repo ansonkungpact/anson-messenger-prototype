@@ -205,7 +205,7 @@ function receivedMessage(event) {
           }, 1000);
         }
       } else {
-        sendTextMessage(senderID, messageText);
+        // sendTextMessage(senderID, messageText);
       }
     }
   } else if (messageAttachments) {
