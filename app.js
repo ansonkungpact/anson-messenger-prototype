@@ -169,10 +169,16 @@ function receivedMessage(event) {
           sendRestaurantMessage(senderID);
         break;
 
-      case 'how': //how to get there
+      case 'how': 
+      case 'how to get there?': 
+      case 'how to go Hysan Place?': 
+      case 'how to go hysan place?': 
         getLocationMessage(senderID);
         break;
-      case 'where': //where is it
+      case 'where':
+      case 'where is it?':
+      case 'where is hysan place?':
+      case 'where is Hysan Place?':
         sendLocationMessage(senderID);
         break;
 
@@ -432,7 +438,7 @@ function sendGreetingMessage(recipientId) {
       id: recipientId
     },
     message: {
-      "text":"Welcome to Hysan Place! :) \u000AHow are you today? \u000AWhat are you looking for today?",
+      "text":userName+", Welcome to Hysan Place! :) \u000AHow are you today? \u000AWhat are you looking for today?",
       "quick_replies":mall_option
     }
   };  
@@ -720,12 +726,12 @@ function sendDirectionMessage(recipientId, x, y) {
         "type":"template",
         "payload":{
           "template_type":"button",
-          "text":"We are at 500 Hennessy Rd, Causeway Bay",
+          "text":"We are at 500 Hennessy Rd, Causeway Bay, Let me show you: ",
           "buttons":[
             {
               "type":"web_url",
-              "url":"https://www.google.com.hk/maps/dir/Hysan+Place/'"+x+","+y+"'/",
-              "title":"Show in google map"
+              "url":"https://www.google.com.hk/maps/dir/'"+x+","+y+"'/Hysan+Place/",
+              "title":"Google Map"
             }
           ]
         }
