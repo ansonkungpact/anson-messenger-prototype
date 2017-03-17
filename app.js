@@ -8,7 +8,7 @@ const app = express();
 
 var Q1 = false;
 var Q2 = false;
-var shop = false;
+var watch = false;
 
 let token = "EAADQZCNZCxtAgBADmnbPXCtFrZAKtUNHnugh9mLRHljfVZAa5BN4x9oie3HZBFsRHlkQeBCS3U63zToqnQ70teqw93lDzg56f5UijZC1SmcZBZCtrHdxMy2swXFPgStAUh8CKxZBT3qtJkNVhLxZAPKBQVDEM9UkWDAGANDHhIPSP4wgZDZD";
 
@@ -190,15 +190,15 @@ function receivedMessage(event) {
 
 
       default:
-      if (messageText == 'chanel') {
-        sendCHANELMessage(senderID);
+      if (messageText == 'tag watch') {
+        sendShopMessage(senderID);
         setTimeout(function(){
           sendAnythingElseMessage(senderID);
         }, 1000);
 
       } else if (shop) {
-        if (messageText == 'yes' && shop) {
-          sendCHANELMessage(senderID);
+        if (messageText == 'yes' && watch) {
+          sendShopMessage(senderID);
           
           setTimeout(function(){
             sendAnythingElseMessage(senderID);
@@ -216,7 +216,7 @@ function receivedMessage(event) {
       // sendTextMessage(senderID, "We are at 500 Hennessy Rd, Causeway Bay");
     } else {   
       sendTextMessage(senderID, "Are you searching Tag Heuer watch?");
-      shop = true;
+      watch = true;
     }
     // console.log(message.attachments.delivery);
   }
@@ -546,37 +546,6 @@ function sendRestaurantMessage(recipientId) {
   callSendAPI(messageData);
 }
 
-function sendCHANELMessage(recipientId) {
-  var messageData = {
-    recipient: {
-      id: recipientId
-    },
-    message: {
-      attachment: {
-        type: "template",
-        payload: {
-          template_type: "generic",
-          elements: [{
-            title: "CHANEL BEAUTÉ",
-            subtitle: "The original, ethical and natural beaty bran\u000AShop 53",
-            item_url: "http://www.chanel.com/",               
-            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/chanel.png",
-            buttons: [{
-              type:"phone_number",
-              title:"Call the shop",
-              payload:"+85225032206"
-            },{
-              "type":"element_share"
-            }]
-          }]
-        }
-      }
-    }
-  };  
-
-  callSendAPI(messageData);
-}
-
 function sendShopMessage(recipientId) {
   var messageData = {
     recipient: {
@@ -588,86 +557,38 @@ function sendShopMessage(recipientId) {
         payload: {
           template_type: "generic",
           elements: [{
-            title: "The Body Shop",
-            subtitle: "The original, ethical and natural beaty bran\u000AShop 53",
-            item_url: "http://www.thebodyshop.com.hk",               
-            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/bodyshop.jpg",
+            title: "TAG Heuer Boutique",
+            subtitle: "All about watch.\u000AShop 22\u000Amon-sun 10a.m. - 10p.m.",
+            item_url: "http://www.citychain.com",               
+            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/tag.jpg",
             buttons: [{
               type:"phone_number",
               title:"Call the shop",
-              payload:"+85229150962"
+              payload:"+85227509262"
             },{
               "type":"element_share"
             }]
           }, {
-            title: "Fancl",
-            subtitle: "Leading the evolution in PRESERVATIVE-FREE BEAUTY\u000AShop 41",
-            item_url: "www.fancl-hk.com",               
-            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/fancl.jpg",
+            title: "City Chain Glam Timepieces",
+            subtitle: "All about watch.\u000AShop 22\u000Amon-sun 11a.m. - 11p.m.",
+            item_url: "http://www.citychain.com",               
+            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/citychain.jpg",
             buttons: [{
               type:"phone_number",
               title:"Call the shop",
-              payload:"+85236220780"
+              payload:"+85223750876"
             },{
               "type":"element_share"
             }]
           }, {
-            title: "Inisfree",
-            subtitle: "Korea No.1 natural brand\u000AShop 36",
-            item_url: "http://www.innisfree.com",               
-            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/inisfree.jpg",
+            title: "Prince Jewellery & Watch",
+            subtitle: "Luxury watch and jewellery collections. \u000AShop 53\u000Amon-sun 9a.m. - 9p.m.",
+            item_url: "www.princejewellerywatch.com",               
+            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/prince.png",
             buttons: [{
               type:"phone_number",
               title:"Call the shop",
-              payload:"+85234285640"
-            },{
-              "type":"element_share"
-            }]
-          }, {
-            title: "Lush",
-            subtitle: "natural handmade bath and body products\u000AShop 05",
-            item_url: "https://hk.lush.com",               
-            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/lush.jpg",
-            buttons: [{
-              type:"phone_number",
-              title:"Call the shop",
-              payload:"+85228380060"
-            },{
-              "type":"element_share"
-            }]
-          }, {
-            title: "Shiseido",
-            subtitle: "highest quality products in brightening and anti-aging skincare, makeup and fragrance\u000AShop 23",
-            item_url: "https://www.shiseido.com.hk",               
-            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/shiseido.jpg",
-            buttons: [{
-              type:"phone_number",
-              title:"Call the shop",
-              payload:"+85228334563"
-            },{
-              "type":"element_share"
-            }]
-          }, {
-            title: "YSL",
-            subtitle: "French luxury fashion house\u000AShop 45",
-            item_url: "www.ysl.com",               
-            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/ysl.jpg",
-            buttons: [{
-              type:"phone_number",
-              title:"Call the shop",
-              payload:"+85228318484"
-            },{
-              "type":"element_share"
-            }]
-          }, {
-            title: "CHANEL BEAUTÉ",
-            subtitle: "The original, ethical and natural beaty bran\u000AShop 53",
-            item_url: "http://www.chanel.com/",               
-            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/chanel.png",
-            buttons: [{
-              type:"phone_number",
-              title:"Call the shop",
-              payload:"+85225032206"
+              payload:"+85227392333"
             },{
               "type":"element_share"
             }]
