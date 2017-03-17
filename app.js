@@ -537,7 +537,7 @@ function sendCHANELMessage(recipientId) {
             title: "CHANEL BEAUTÉ",
             subtitle: "The original, ethical and natural beaty bran\u000AShop 53",
             item_url: "http://www.sk-ii.com.hk/tc/index.aspx",               
-            image_url: "https://hp.leegardens.com.hk/DCCustomization/Pages/GetAzureResizedFile.aspx?path=~\lga\media\lga\_resizedImages\hysanplace\shops\items\chanel-beaute\330x260_chanel-sf.jpg",
+            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/channel.jpg",
             buttons: [{
               type:"phone_number",
               title:"Call the shop",
