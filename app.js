@@ -718,12 +718,12 @@ function sendDirectionMessage(recipientId, x, y) {
         "type":"template",
         "payload":{
           "template_type":"button",
-          "text":"We are at 500 Hennessy Rd, Causeway Bay",
+          "text":"We are at 500 Hennessy Rd, Causeway Bay, Let me show you: ",
           "buttons":[
             {
               "type":"web_url",
-              "url":"https://www.google.com.hk/maps/dir/Hysan+Place/'"+x+","+y+"'/",
-              "title":"Show in google map"
+              "url":"https://www.google.com.hk/maps/dir/'"+x+","+y+"'/Hysan+Place/",
+              "title":"Google Map"
             }
           ]
         }
