@@ -110,9 +110,13 @@ function receivedMessage(event) {
       case 'thankyou':
       case 'Thanks':
       case 'thanks':
-        sendWelcomeMessage(senderID);
+        sendAnythingElseMessage(senderID);
       break;
 
+      case 'no':
+      case 'No':
+      case 'nah':
+      case 'Nah':
       case 'Bye':
       case 'bye':
       case 'See you':
@@ -188,10 +192,12 @@ function receivedMessage(event) {
       default:
       if (messageText == 'chanel') {
         sendCHANELMessage(senderID);
+        sendAnythingElseMessage(senderID);
       }
       if (shop) {
         if (messageText == 'yes' && shop) {
           sendCHANELMessage(senderID);
+          sendAnythingElseMessage(senderID);
         }
       } else {
         sendTextMessage(senderID, messageText);
@@ -447,14 +453,14 @@ function sendGreetingMessage(recipientId) {
   callSendAPI(messageData);
 }
 
-function sendWelcomeMessage(recipientId) {
+function sendAnythingElseMessage(recipientId) {
   var messageData = {
     recipient: {
       id: recipientId
     },
     message: {
-      "text":"You're welcome! :) \u000AAnything else are you looking for?",
-      "quick_replies":shop_options
+      "text":"Anything else are you looking for?",
+      "quick_replies":mall_options
     }
   };  
 
@@ -484,7 +490,7 @@ function sendByeMessage(recipientId) {
       id: recipientId
     },
     message: {
-      "text":"We hope to see you soon! :) To know more about us, watch this clip!"
+      "text":"You're welcome! :) \u000AWe hope to see you soon! :)  \u000ATo know more about us, watch this clip!"
     }
   };  
 
