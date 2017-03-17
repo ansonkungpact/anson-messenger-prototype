@@ -542,7 +542,7 @@ function sendCHANELMessage(recipientId) {
           template_type: "generic",
           elements: [{
             title: "CHANEL BEAUTÉ",
-            subtitle: recipientId+"The original, ethical and natural beaty bran\u000AShop 53",
+            subtitle: recipientId+"The original, ethical and natural beaty bran\u000AShop 52",
             item_url: "http://www.chanel.com/",               
             image_url: "https://anson-messenger.herokuapp.com/img/shop_img/chanel.png",
             buttons: [{
