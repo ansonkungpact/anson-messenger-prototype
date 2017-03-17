@@ -192,17 +192,13 @@ function receivedMessage(event) {
       default:
       if (messageText == 'tag watch') {
         sendShopMessage(senderID);
-        setTimeout(function(){
-          sendAnythingElseMessage(senderID);
-        }, 1000);
+        // setTimeout(function(){
+        //   sendAnythingElseMessage(senderID);
+        // }, 1000);
 
       } else if (watch) {
         if (messageText == 'yes' && watch) {
           sendShopMessage(senderID);
-          
-          setTimeout(function(){
-            sendAnythingElseMessage(senderID);
-          }, 1000);
         }
       } else {
         // sendTextMessage(senderID, messageText);
