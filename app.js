@@ -192,10 +192,12 @@ function receivedMessage(event) {
       default:
       if (messageText == 'chanel') {
         sendCHANELMessage(senderID);
+        sendAnythingElseMessage(senderID);
       }
       if (shop) {
         if (messageText == 'yes' && shop) {
           sendCHANELMessage(senderID);
+          sendAnythingElseMessage(senderID);
         }
       } else {
         sendTextMessage(senderID, messageText);
@@ -568,7 +570,6 @@ function sendCHANELMessage(recipientId) {
   };  
 
   callSendAPI(messageData);
-  sendAnythingElseMessage(recipientId);
 }
 
 function sendShopMessage(recipientId) {
