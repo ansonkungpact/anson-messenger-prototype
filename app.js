@@ -539,7 +539,7 @@ function sendCHANELMessage(recipientId) {
           elements: [{
             title: "CHANEL BEAUTÉ",
             subtitle: "The original, ethical and natural beaty bran\u000AShop 53",
-            item_url: "http://www.sk-ii.com.hk/tc/index.aspx",               
+            item_url: "http://www.chanel.com/",               
             image_url: "https://anson-messenger.herokuapp.com/img/shop_img/chanel.png",
             buttons: [{
               type:"phone_number",
@@ -642,7 +642,7 @@ function sendShopMessage(recipientId) {
           }, {
             title: "CHANEL BEAUTÉ",
             subtitle: "The original, ethical and natural beaty bran\u000AShop 53",
-            item_url: "http://www.sk-ii.com.hk/tc/index.aspx",               
+            item_url: "http://www.chanel.com/",               
             image_url: "https://anson-messenger.herokuapp.com/img/shop_img/chanel.png",
             buttons: [{
               type:"phone_number",
