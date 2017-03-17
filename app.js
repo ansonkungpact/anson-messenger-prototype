@@ -177,6 +177,9 @@ function receivedMessage(event) {
 
 
       default:
+      if (messageText == 'chanel') {
+        sendCHANELMessage(senderID);
+      }
       if (shop) {
         if (messageText == 'yes' && shop) {
           sendCHANELMessage(senderID);
