@@ -555,7 +555,7 @@ function sendShopMessage(recipientId) {
           elements: [{
             title: "TAG Heuer Boutique",
             subtitle: "All about watch.\u000AShop 22\u000Amon-sun 10a.m. - 10p.m.",
-            item_url: "http://www.citychain.com",               
+            item_url: "http://tagheuer.com",               
             image_url: "https://anson-messenger.herokuapp.com/img/shop_img/tag.jpg",
             buttons: [{
               type:"phone_number",
