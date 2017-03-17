@@ -179,7 +179,7 @@ function receivedMessage(event) {
       default:
       if (shop) {
         if (messageText == 'yes' && shop) {
-          sendShopMessage(senderID);
+          sendSKIIMessage(senderID);
         }
       } else {
         sendTextMessage(senderID, messageText);
@@ -511,6 +511,37 @@ function sendRestaurantMessage(recipientId) {
               type:"phone_number",
               title:"Call the shop",
               payload:"+85227303730"
+            },{
+              "type":"element_share"
+            }]
+          }]
+        }
+      }
+    }
+  };  
+
+  callSendAPI(messageData);
+}
+
+function sendSKIIMessage(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "generic",
+          elements: [{
+            title: "CHANEL BEAUTÉ",
+            subtitle: "The original, ethical and natural beaty bran\u000AShop 53",
+            item_url: "http://www.sk-ii.com.hk/tc/index.aspx",               
+            image_url: "https://hp.leegardens.com.hk/DCCustomization/Pages/GetAzureResizedFile.aspx?path=~\lga\media\lga\_resizedImages\hysanplace\shops\items\chanel-beaute\330x260_chanel-sf.jpg",
+            buttons: [{
+              type:"phone_number",
+              title:"Call the shop",
+              payload:"+85225032206"
             },{
               "type":"element_share"
             }]
