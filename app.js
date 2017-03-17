@@ -460,7 +460,7 @@ function sendAnythingElseMessage(recipientId) {
     },
     message: {
       "text":"Anything else are you looking for?",
-      "quick_replies":mall_options
+      "quick_replies":mall_option
     }
   };  
 
