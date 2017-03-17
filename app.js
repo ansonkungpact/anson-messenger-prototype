@@ -369,15 +369,15 @@ var shop_options = [
         },
         {
           "content_type":"text",
-          "title":"Electronic",
+          "title":"Jewelry",
           "payload":"",
-          "image_url":"https://anson-messenger.herokuapp.com/img/icon/shop/electronic.png"
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/shop/jewelry.png"
         },
         {
           "content_type":"text",
-          "title":"Sports",
+          "title":"Lifestyle",
           "payload":"",
-          "image_url":"https://anson-messenger.herokuapp.com/img/icon/shop/sports.png"
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/shop/lifestyle.png"
         }
       ];
 
@@ -450,7 +450,7 @@ function sendGreetingMessage(recipientId) {
       id: recipientId
     },
     message: {
-      "text":"Welcome to Hysan Place! :) \u000AHow are you today? \u000AWhat are you looking for today?",
+      "text":"Hello! How can I help you today? :)",
       "quick_replies":mall_option
     }
   };  
