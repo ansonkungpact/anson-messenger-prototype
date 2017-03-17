@@ -215,7 +215,7 @@ function receivedMessage(event) {
       sendDirectionMessage(senderID, lat, long, "We are at 500 Hennessy Rd, Causeway Bay");
       // sendTextMessage(senderID, "We are at 500 Hennessy Rd, Causeway Bay");
     } else {   
-      sendTextMessage(senderID, "Are you searching Tag Heuer watch?");
+      sendTextMessage(senderID, "Thank you fot the picture! I see that it's the Tag Heuer Carrera watch, right?");
       watch = true;
     }
     // console.log(message.attachments.delivery);
@@ -436,7 +436,7 @@ function sendShoppingMessage(recipientId) {
       id: recipientId
     },
     message: {
-      "text":"Which kind of shop you are searching?",
+      "text":"Sure! What type of store are you looking for?",
       "quick_replies":shop_options
     }
   };  
