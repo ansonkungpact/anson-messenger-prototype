@@ -436,7 +436,7 @@ function sendGreetingMessage(recipientId) {
       id: recipientId
     },
     message: {
-      "text":{facebook.first_name}+"Welcome to Hysan Place! :) \u000AHow are you today? \u000AWhat are you looking for today?",
+      "text":"Welcome to Hysan Place! :) \u000AHow are you today? \u000AWhat are you looking for today?",
       "quick_replies":mall_option
     }
   };  
