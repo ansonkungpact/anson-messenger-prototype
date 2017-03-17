@@ -167,11 +167,13 @@ function receivedMessage(event) {
           sendRestaurantMessage(senderID);
         break;
 
+      case 'how': 
       case 'how to get there?': 
       case 'how to go Hysan Place?': 
       case 'how to go hysan place?': 
         getLocationMessage(senderID);
         break;
+      case 'where':
       case 'where is it?':
       case 'where is hysan place?':
       case 'where is Hysan Place?':
@@ -542,7 +544,7 @@ function sendCHANELMessage(recipientId) {
           template_type: "generic",
           elements: [{
             title: "CHANEL BEAUTÉ",
-            subtitle: recipientId+"The original, ethical and natural beaty bran\u000AShop 52",
+            subtitle: "The original, ethical and natural beaty bran\u000AShop 53",
             item_url: "http://www.chanel.com/",               
             image_url: "https://anson-messenger.herokuapp.com/img/shop_img/chanel.png",
             buttons: [{
