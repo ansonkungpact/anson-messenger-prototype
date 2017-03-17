@@ -179,7 +179,7 @@ function receivedMessage(event) {
       default:
       if (shop) {
         if (messageText == 'yes' && shop) {
-          sendSKIIMessage(senderID);
+          sendCHANELMessage(senderID);
         }
       } else {
         sendTextMessage(senderID, messageText);
@@ -192,7 +192,7 @@ function receivedMessage(event) {
       sendDirectionMessage(senderID, lat, long, "We are at 500 Hennessy Rd, Causeway Bay");
       // sendTextMessage(senderID, "We are at 500 Hennessy Rd, Causeway Bay");
     } else {   
-      sendTextMessage(senderID, "Are you searching SKII?");
+      sendTextMessage(senderID, "Are you searching CHANEL?");
       shop = true;
     }
     // console.log(message.attachments.delivery);
@@ -523,7 +523,7 @@ function sendRestaurantMessage(recipientId) {
   callSendAPI(messageData);
 }
 
-function sendSKIIMessage(recipientId) {
+function sendCHANELMessage(recipientId) {
   var messageData = {
     recipient: {
       id: recipientId
