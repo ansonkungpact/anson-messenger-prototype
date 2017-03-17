@@ -135,22 +135,22 @@ function receivedMessage(event) {
         sendShoppingMessage(senderID);
         break;
         
-      case 'Cosmetics':
-      case 'cosmetics':
-      case 'makeup':
-      case 'facial cream':
-      case 'beauty':
-        if (Q1) {
-          Q2 = true;
-          sendTextMessage(senderID, "Here is the list of cosmetics shops.");
-          sendShopMessage(senderID);
-          setTimeout(function(){
-            sendTextMessage(senderID, "What product you are searching?");
-          }, 1000);
-        } else {
-          sendGreetingMessage(senderID);
-        }
-        break;
+      // case 'Cosmetics':
+      // case 'cosmetics':
+      // case 'makeup':
+      // case 'facial cream':
+      // case 'beauty':
+      //   if (Q1) {
+      //     Q2 = true;
+      //     sendTextMessage(senderID, "Here is the list of cosmetics shops.");
+      //     sendShopMessage(senderID);
+      //     setTimeout(function(){
+      //       sendTextMessage(senderID, "What product you are searching?");
+      //     }, 1000);
+      //   } else {
+      //     sendGreetingMessage(senderID);
+      //   }
+      //   break;
 
 
       case 'Dining':
@@ -215,7 +215,7 @@ function receivedMessage(event) {
       sendDirectionMessage(senderID, lat, long, "We are at 500 Hennessy Rd, Causeway Bay");
       // sendTextMessage(senderID, "We are at 500 Hennessy Rd, Causeway Bay");
     } else {   
-      sendTextMessage(senderID, "Are you searching CHANEL?");
+      sendTextMessage(senderID, "Are you searching tagwatch?");
       shop = true;
     }
     // console.log(message.attachments.delivery);
@@ -363,21 +363,21 @@ var mall_option = [
 var shop_options = [
         {
           "content_type":"text",
-          "title":"Cosmetics",
+          "title":"Fashion",
           "payload":"",
-          "image_url":"https://anson-messenger.herokuapp.com/img/icon/shop/cosmetics.png"
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/shop/fashion.png"
         },
         {
           "content_type":"text",
-          "title":"Shoes",
+          "title":"Electronic",
           "payload":"",
-          "image_url":"https://anson-messenger.herokuapp.com/img/icon/shop/shoe.png"
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/shop/electronic.png"
         },
         {
           "content_type":"text",
-          "title":"Clothes",
+          "title":"Sports",
           "payload":"",
-          "image_url":"https://anson-messenger.herokuapp.com/img/icon/shop/clothing.png"
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/shop/sports.png"
         }
       ];
 
