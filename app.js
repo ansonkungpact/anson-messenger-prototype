@@ -580,7 +580,7 @@ function sendShopMessage(recipientId) {
             title: "Prince Jewellery & Watch",
             subtitle: "Luxury watch and jewellery collections. \u000AShop 53\u000Amon-sun 9a.m. - 9p.m.",
             item_url: "www.princejewellerywatch.com",               
-            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/prince.png",
+            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/prince.jpg",
             buttons: [{
               type:"phone_number",
               title:"Call the shop",
