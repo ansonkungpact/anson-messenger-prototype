@@ -196,7 +196,7 @@ function receivedMessage(event) {
           sendAnythingElseMessage(senderID);
         }, 1000);
 
-      } else if (shop) {
+      } else if (watch) {
         if (messageText == 'yes' && watch) {
           sendShopMessage(senderID);
           
