@@ -199,6 +199,7 @@ function receivedMessage(event) {
       } else if (watch) {
         if ((messageText == 'yes' || messageText == 'Yes') && watch) {
           sendShopMessage(senderID);
+          sendTextMessage(senderID, "Thank you. Here are the stores featuring the Tag Heuer Carrera watches.");
         }
       } else {
         // sendTextMessage(senderID, messageText);
@@ -211,7 +212,7 @@ function receivedMessage(event) {
       sendDirectionMessage(senderID, lat, long, "We are at 500 Hennessy Rd, Causeway Bay");
       // sendTextMessage(senderID, "We are at 500 Hennessy Rd, Causeway Bay");
     } else {   
-      sendTextMessage(senderID, "Thank you fot the picture! I see that it's the Tag Heuer Carrera watch, right? ;)");
+      sendTextMessage(senderID, "Thank you for the picture! I see that it's the Tag Heuer Carrera watch, right? ;)");
       watch = true;
     }
     // console.log(message.attachments.delivery);
