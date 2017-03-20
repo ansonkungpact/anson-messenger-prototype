@@ -200,7 +200,7 @@ function receivedMessage(event) {
           setTimeout(function(){
             sendAnythingElseMessage(senderID);
           }, 1000);
-          watch = false;
+          reserve_watch = false;
         }
 
       } else if (watch) {
@@ -245,7 +245,7 @@ function receivedPostback(event) {
   // let them know it was successful
   sendTextMessage(senderID, "There is currently a promotion for 15% off for spendings over HKD 500 from 1-Mar to 31-Mar!");
   sendTextMessage(senderID, "Would you like to reserve this Tag Heuer model for you?");
-  reserve_watch = true
+  reserve_watch = true;
 }
 
 function sendTextMessage(recipientId, messageText) {
