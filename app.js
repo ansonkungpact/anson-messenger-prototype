@@ -275,7 +275,8 @@ function sendTestingMessage(recipientId) {
           ]
         }
       }
-    }
+    },
+    "sender_action":"typing_on"
   };  
 
   callSendAPI(messageData);
