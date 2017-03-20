@@ -46,8 +46,8 @@ app.post('/webhook', function (req, res) {
       // Iterate over each messaging event
       entry.messaging.forEach(function(event) {
         if (event.message) {
-          receivedMessage(event);
           event.sender_action = "typing_on";
+          receivedMessage(event);
           console.log('-------------------- message ---------------------');
           console.log(event);
           console.log('--------------------------------------------------');
