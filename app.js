@@ -46,16 +46,9 @@ app.post('/webhook', function (req, res) {
       // Iterate over each messaging event
       entry.messaging.forEach(function(event) {
         if (event.message) {
-          event.sender_action = "typing_on";
           receivedMessage(event);
-          console.log('-------------------- message ---------------------');
-          console.log(event);
-          console.log('--------------------------------------------------');
         } else if (event.postback) {
           receivedPostback(event);
-          console.log('-------------------- postback ---------------------');
-          console.log(event);
-          console.log('--------------------------------------------------');
         } else {
           console.log("Webhook received unknown event: ", event);
         }
