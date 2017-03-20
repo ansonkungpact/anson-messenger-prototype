@@ -198,9 +198,8 @@ function receivedMessage(event) {
         if (messageText == 'yes' || messageText == 'Yes') {
           sendShopMessage(senderID);
           setTimeout(function(){
-            sendTextMessage(senderID, "Thanks! Here are the stores featuring the Tag Heuer Carrera watches.");
+            sendTextMessage(senderID, "Thank you. Here are the stores featuring the Tag Heuer Carrera watches.");
           }, 1000);
-          watch = false;
         }
 
       } else if (reserve_watch) {
@@ -568,7 +567,7 @@ function sendShopMessage(recipientId) {
           template_type: "generic",
           elements: [{
             title: "TAG Heuer Boutique",
-            subtitle: "All about watch.\u000AShop 22\u000AMon-Sun 10a.m. - 10p.m.",
+            subtitle: "All about watch.\u000AShop 22\u000Amon-sun 10a.m. - 10p.m.",
             item_url: "http://tagheuer.com",               
             image_url: "https://anson-messenger.herokuapp.com/img/shop_img/tag.jpg",
             buttons: [
@@ -585,7 +584,7 @@ function sendShopMessage(recipientId) {
             }]
           }, {
             title: "City Chain Glam Timepieces",
-            subtitle: "All about watch.\u000AShop 22\u000AMon-Sun 11a.m. - 11p.m.",
+            subtitle: "All about watch.\u000AShop 22\u000Amon-sun 11a.m. - 11p.m.",
             item_url: "http://www.citychain.com",               
             image_url: "https://anson-messenger.herokuapp.com/img/shop_img/citychain.jpg",
             buttons: [{
@@ -597,7 +596,7 @@ function sendShopMessage(recipientId) {
             }]
           }, {
             title: "Prince Jewellery & Watch",
-            subtitle: "Luxury watch and jewellery collections. \u000AShop 53\u000AMon-Sun 9a.m. - 9p.m.",
+            subtitle: "Luxury watch and jewellery collections. \u000AShop 53\u000Amon-sun 9a.m. - 9p.m.",
             item_url: "www.princejewellerywatch.com",               
             image_url: "https://anson-messenger.herokuapp.com/img/shop_img/prince.jpg",
             buttons: [{
