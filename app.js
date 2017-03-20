@@ -197,9 +197,8 @@ function receivedMessage(event) {
         if ((messageText == 'yes' || messageText == 'Yes') && watch) {
           sendShopMessage(senderID);
           setTimeout(function(){
-            sendTextMessage(senderID, "Thanks! Here are the stores featuring the Tag Heuer Carrera watches.");
+            sendTextMessage(senderID, "Thank you. Here are the stores featuring the Tag Heuer Carrera watches.");
           }, 1000);
-          watch = false;
         }
       } else {
         // sendTextMessage(senderID, messageText);
@@ -220,19 +219,19 @@ function receivedMessage(event) {
 }
 
 function receivedPostback(event) {
-  var senderID = event.sender.id;
-  var recipientID = event.recipient.id;
-  var timeOfPostback = event.timestamp;
+  // var senderID = event.sender.id;
+  // var recipientID = event.recipient.id;
+  // var timeOfPostback = event.timestamp;
 
-  // The 'payload' param is a developer-defined field which is set in a postback 
-  // button for Structured Messages. 
-  var payload = event.postback.payload;
+  // // The 'payload' param is a developer-defined field which is set in a postback 
+  // // button for Structured Messages. 
+  // var payload = event.postback.payload;
 
-  console.log("Received postback for user %d and page %d with payload '%s' " + 
-    "at %d", senderID, recipientID, payload, timeOfPostback);
+  // console.log("Received postback for user %d and page %d with payload '%s' " + 
+  //   "at %d", senderID, recipientID, payload, timeOfPostback);
 
-  // When a postback is called, we'll send a message back to the sender to 
-  // let them know it was successful
+  // // When a postback is called, we'll send a message back to the sender to 
+  // // let them know it was successful
   // sendTextMessage(senderID, "Postback called");
 }
 
@@ -555,15 +554,10 @@ function sendShopMessage(recipientId) {
           template_type: "generic",
           elements: [{
             title: "TAG Heuer Boutique",
-            subtitle: "All about watch.\u000AShop 22\u000AMon-Sun 10a.m. - 10p.m.",
+            subtitle: "All about watch.\u000AShop 22\u000Amon-sun 10a.m. - 10p.m.",
             item_url: "http://tagheuer.com",               
             image_url: "https://anson-messenger.herokuapp.com/img/shop_img/tag.jpg",
-            buttons: [
-            {
-              "type":"postback",
-              "title":"Bookmark Item",
-              "payload":"DEVELOPER_DEFINED_PAYLOAD"
-            },{
+            buttons: [{
               type:"phone_number",
               title:"Call the shop",
               payload:"+85227509262"
@@ -572,7 +566,7 @@ function sendShopMessage(recipientId) {
             }]
           }, {
             title: "City Chain Glam Timepieces",
-            subtitle: "All about watch.\u000AShop 22\u000AMon-Sun 11a.m. - 11p.m.",
+            subtitle: "All about watch.\u000AShop 22\u000Amon-sun 11a.m. - 11p.m.",
             item_url: "http://www.citychain.com",               
             image_url: "https://anson-messenger.herokuapp.com/img/shop_img/citychain.jpg",
             buttons: [{
@@ -584,7 +578,7 @@ function sendShopMessage(recipientId) {
             }]
           }, {
             title: "Prince Jewellery & Watch",
-            subtitle: "Luxury watch and jewellery collections. \u000AShop 53\u000AMon-Sun 9a.m. - 9p.m.",
+            subtitle: "Luxury watch and jewellery collections. \u000AShop 53\u000Amon-sun 9a.m. - 9p.m.",
             item_url: "www.princejewellerywatch.com",               
             image_url: "https://anson-messenger.herokuapp.com/img/shop_img/prince.jpg",
             buttons: [{
