@@ -21,7 +21,7 @@ var other_restaurant = false;
 
 var token = "EAADQZCNZCxtAgBADmnbPXCtFrZAKtUNHnugh9mLRHljfVZAa5BN4x9oie3HZBFsRHlkQeBCS3U63zToqnQ70teqw93lDzg56f5UijZC1SmcZBZCtrHdxMy2swXFPgStAUh8CKxZBT3qtJkNVhLxZAPKBQVDEM9UkWDAGANDHhIPSP4wgZDZD";
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 const INDEX = path.join(__dirname, '/public/clientchat/index-clientchat.html');
 const INDEXB = path.join(__dirname, '/public/app/login.html');
 
@@ -52,6 +52,7 @@ const server = express()
     }
     res.send("Wrong token")
   })
+  .set('port', (process.env.PORT || 5000))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
 const io = socketIO(server);
