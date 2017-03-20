@@ -10,6 +10,7 @@ var Q1 = false;
 var Q2 = false;
 var watch = false;
 var reserve_watch = false;
+var other_restaurant = false;
 
 let token = "EAADQZCNZCxtAgBADmnbPXCtFrZAKtUNHnugh9mLRHljfVZAa5BN4x9oie3HZBFsRHlkQeBCS3U63zToqnQ70teqw93lDzg56f5UijZC1SmcZBZCtrHdxMy2swXFPgStAUh8CKxZBT3qtJkNVhLxZAPKBQVDEM9UkWDAGANDHhIPSP4wgZDZD";
 
@@ -173,10 +174,13 @@ function receivedMessage(event) {
       case 'Sushi':
       case 'sushi':
       case 'pasta':
+      case 'pasta in hysan place':
           sendRestaurantMessage(senderID);
           setTimeout(function(){
             sendTextMessage(senderID, "Sure, here is the list of western restaurants in Hysan Place.");
+            sendTextMessage(senderID, "There are additional western restaurants in the nearby Lee Gardens. Would you like to see them?");
           }, 1000);
+          other_restaurant = true;
         break;
 
       case 'how': 
@@ -197,6 +201,15 @@ function receivedMessage(event) {
       default:
       if (messageText == 'tag watch') {
         sendShopMessage(senderID);
+
+      } else if (other_restaurant) {
+        if (messageText == 'yes' || messageText == 'Yes') {
+          sendRestaurantMessage(senderID);
+          setTimeout(function(){
+            sendAnythingElseMessage(senderID);
+          }, 1000);
+          other_restaurant = false;
+        }
 
       } else if (reserve_watch) {
         if (messageText == 'yes' || messageText == 'Yes') {
