@@ -187,6 +187,9 @@ function receivedMessage(event) {
       case 'how to get there?': 
       case 'how to go Hysan Place?': 
       case 'how to go hysan place?': 
+      case 'how to get to hysan place':
+      case 'how to get to hysan place?':
+      case 'How to get to Hysan Place?':
         getLocationMessage(senderID);
         break;
       case 'where':
@@ -204,7 +207,7 @@ function receivedMessage(event) {
 
       } else if (other_restaurant) {
         if (messageText == 'yes' || messageText == 'Yes') {
-          sendRestaurantMessage(senderID);
+          sendRestaurantMessage2(senderID);
           setTimeout(function(){
             sendAnythingElseMessage(senderID);
           }, 1000);
@@ -541,7 +544,7 @@ function sendRestaurantMessage(recipientId) {
           template_type: "generic",
           elements: [{
             title: "EIGHT GRAND Bar & Restaurant",
-            subtitle: "EIGHT GRAND brings exciting touches in food and beverages as well as ambience.\u000AMon-Sun 1130-2230\u000AShop 1203",
+            subtitle: "EIGHT GRAND brings exciting touches in food and beverages as well as ambience.\u000AMon-Sun 1130-2230\u000AHysan Place, Shop 1203",
             item_url: "https://hp.leegardens.com.hk/?lang=en-US#!/dining-details/hysanplace/dining/Items/Eight-Grand-Bar-Restaurant",               
             image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/eightgrand.jpg",
             buttons: [{
@@ -553,7 +556,7 @@ function sendRestaurantMessage(recipientId) {
             }]
           }, {
             title: "Shelter Italian Bar & Restaurant",
-            subtitle: "The gastronomic sanctuary specializes in Italian food\u000AMon-Sun 1130-0030\u000AShop 718",
+            subtitle: "The gastronomic sanctuary specializes in Italian food\u000AMon-Sun 1130-0030\u000AHysan Place, Shop 718",
             item_url: "http://www.shelterhk.com",               
             image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/shelteritalian.jpg",
             buttons: [{
@@ -565,7 +568,7 @@ function sendRestaurantMessage(recipientId) {
             }]
           }, {
             title: "caffè HABITŪ the table",
-            subtitle: "The unveiling of caffè HABITŪ the table brings exciting touches in food and beverages as well as ambience.\u000AMon-Sun 1130-2230\u000AShop 803",
+            subtitle: "The unveiling of caffè HABITŪ the table brings exciting touches in food and beverages as well as ambience.\u000AMon-Sun 1130-2230\u000AHysan Place, Shop 803",
             item_url: "www.caffehabitu.com",               
             image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/habitu.jpg",
             buttons: [{
@@ -577,7 +580,7 @@ function sendRestaurantMessage(recipientId) {
             }]
           }, {
             title: "Green Waffle Diner",
-            subtitle: "everyday food for everyday people\u000AMon-Sun 1130-0030\u000AShop 1303",
+            subtitle: "everyday food for everyday people\u000AMon-Sun 1130-0030\u000AHysan Place, Shop 1303",
             item_url: "https://www.facebook.com/Green-Waffle-Diner-127660523917542/",               
             image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/greenwaffle.jpg",
             buttons: [{
@@ -596,6 +599,65 @@ function sendRestaurantMessage(recipientId) {
   callSendAPI(messageData);
 }
 
+
+
+function sendRestaurantMessage2(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "generic",
+          elements: [{
+            title: "Passion by Gérard Dubois",
+            subtitle: "traditional French café experience\u000AMon-Sun 1130-2230\u000ALeee Gardens One, Shop G12",
+            item_url: "www.PassionbyGD.com",               
+            image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/passion.jpg",
+            buttons: [{
+              type:"phone_number",
+              title:"Call the shop",
+              payload:"+85225291311"
+            },{
+              "type":"element_share"
+            }]
+          }, {
+            title: "Panino Giusto",
+            subtitle: "The gastronomic sanctuary specializes in Italian food\u000AMon-Sun 1030-2230\u000ALeee Gardens One, Shop 204",
+            item_url: "www.paninogiusto.com.hk",               
+            image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/paninogiusto.jpg",
+            buttons: [{
+              type:"phone_number",
+              title:"Call the shop",
+              payload:"+85225270222"
+            },{
+              "type":"element_share"
+            }]
+          }, {
+            title: "Seasons by Olivier E.",
+            subtitle: "French contemporary dining\u000AMon-Sun 1230-2230\u000ALeee Gardens Two Shop 1311",
+            item_url: "www.seasonsbyolivier.com",               
+            image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/seasons.jpg",
+            buttons: [{
+              type:"phone_number",
+              title:"Call the shop",
+              payload:"+85225056228"
+            },{
+              "type":"element_share"
+            }]
+          }]
+        }
+      }
+    }
+  };  
+
+  callSendAPI(messageData);
+}
+
+
+
 function sendShopMessage(recipientId) {
   var messageData = {
     recipient: {
@@ -608,7 +670,7 @@ function sendShopMessage(recipientId) {
           template_type: "generic",
           elements: [{
             title: "TAG Heuer Boutique",
-            subtitle: "All about watch.\u000AShop 1202\u000AMon-Sun 1000-2200",
+            subtitle: "All about watch.\u000AHysan Place, Shop 1202\u000AMon-Sun 1000-2200",
             item_url: "http://tagheuer.com",               
             image_url: "https://anson-messenger.herokuapp.com/img/shop_img/tag.jpg",
             buttons: [
@@ -625,7 +687,7 @@ function sendShopMessage(recipientId) {
             }]
           }, {
             title: "City Chain Glam Timepieces",
-            subtitle: "All about watch.\u000AShop 0221\u000AMon-Sun 1100-2300",
+            subtitle: "All about watch.\u000AHysan Place, Shop 0221\u000AMon-Sun 1100-2300",
             item_url: "http://www.citychain.com",               
             image_url: "https://anson-messenger.herokuapp.com/img/shop_img/citychain.jpg",
             buttons: [{
@@ -637,7 +699,7 @@ function sendShopMessage(recipientId) {
             }]
           }, {
             title: "Prince Jewellery & Watch",
-            subtitle: "Luxury watch and jewellery collections. \u000AShop 0503\u000AMon-Sun 0930 - 2130",
+            subtitle: "Luxury watch and jewellery collections. \u000AHysan Place, Shop 0503\u000AMon-Sun 0930 - 2130",
             item_url: "www.princejewellerywatch.com",               
             image_url: "https://anson-messenger.herokuapp.com/img/shop_img/prince.jpg",
             buttons: [{
