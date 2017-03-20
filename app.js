@@ -194,14 +194,6 @@ function receivedMessage(event) {
       if (messageText == 'tag watch') {
         sendShopMessage(senderID);
 
-      } else if (watch) {
-        if (messageText == 'yes' || messageText == 'Yes') {
-          sendShopMessage(senderID);
-          setTimeout(function(){
-            sendTextMessage(senderID, "Thank you. Here are the stores featuring the Tag Heuer Carrera watches.");
-          }, 1000);
-        }
-
       } else if (reserve_watch) {
         if (messageText == 'yes' || messageText == 'Yes') {
           sendTextMessage(senderID, "Great! The watch will be held for 48 hours.");
@@ -209,6 +201,14 @@ function receivedMessage(event) {
             sendAnythingElseMessage(senderID);
           }, 1000);
           watch = false;
+        }
+
+      } else if (watch) {
+        if (messageText == 'yes' || messageText == 'Yes') {
+          sendShopMessage(senderID);
+          setTimeout(function(){
+            sendTextMessage(senderID, "Thank you. Here are the stores featuring the Tag Heuer Carrera watches.");
+          }, 1000);
         }
 
       } else {
@@ -243,7 +243,7 @@ function receivedPostback(event) {
 
   // When a postback is called, we'll send a message back to the sender to 
   // let them know it was successful
-  sendTextMessage(senderID, "You may be interested to know that there is currently a promotion for 15% off for spendings over HKD 500!! The promotion runs from 1-Mar to 31-Mar");
+  sendTextMessage(senderID, "There is currently a promotion for 15% off for spendings over HKD 500 from 1-Mar to 31-Mar!");
   sendTextMessage(senderID, "Would you like to reserve this Tag Heuer model for you?");
   reserve_watch = true
 }
