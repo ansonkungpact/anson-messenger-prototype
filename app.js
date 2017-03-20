@@ -197,7 +197,7 @@ function receivedMessage(event) {
         // }, 1000);
 
       } else if (watch) {
-        if (messageText == 'yes' && watch) {
+        if ((messageText == 'yes' || messageText == 'Yes') && watch) {
           sendShopMessage(senderID);
         }
       } else {
