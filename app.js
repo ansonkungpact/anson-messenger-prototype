@@ -1,68 +1,314 @@
-'use strict'
+var express = require('express');
+var app = express();
+var http = require('http').Server(app);
+// var io = require('socket.io')(http);
+var fs = require('fs');
+var moment = require('moment');
 
-const express = require('express');
-const bodyParser = require('body-parser');
-const request = require('request');
+var preAuth = require('http-auth');
+var basic = preAuth.basic({
+  realm: "Restricted Access! Please login to proceed"
+  }, function (username, password, callback) { 
+    callback( (username === "pactera" && password === "PACTERADEMO"));
+  }
+);
 
-const app = express();
+var ExpressWaf = require('express-waf');
+var bodyParser = require('body-parser');
+
+'use strict';
+
+const socketIO = require('socket.io');
+const path = require('path');
 
 var Q1 = false;
 var Q2 = false;
 var watch = false;
 
-let token = "EAADQZCNZCxtAgBADmnbPXCtFrZAKtUNHnugh9mLRHljfVZAa5BN4x9oie3HZBFsRHlkQeBCS3U63zToqnQ70teqw93lDzg56f5UijZC1SmcZBZCtrHdxMy2swXFPgStAUh8CKxZBT3qtJkNVhLxZAPKBQVDEM9UkWDAGANDHhIPSP4wgZDZD";
+var token = "EAADQZCNZCxtAgBADmnbPXCtFrZAKtUNHnugh9mLRHljfVZAa5BN4x9oie3HZBFsRHlkQeBCS3U63zToqnQ70teqw93lDzg56f5UijZC1SmcZBZCtrHdxMy2swXFPgStAUh8CKxZBT3qtJkNVhLxZAPKBQVDEM9UkWDAGANDHhIPSP4wgZDZD";
 
-app.set('port', (process.env.PORT || 5000));
+const PORT = process.env.PORT || 3000;
+const INDEX = path.join(__dirname, '/public/clientchat/index-clientchat.html');
 
-// Allows us to process the data
-app.use(bodyParser.urlencoded({extended: false}))
-app.use(bodyParser.json());
 
-// Route
-app.use(express.static('public'))
-app.get('/', function(req, res) {
+const server = express()
+  .use(express.static('public/app/'))
+  .get('/', function(req, res){
+     res.sendFile(INDEXB);
+  })
+  .use(express.static('public'))
+  .get('/chatbot', function(req, res){
+     res.sendFile(INDEX);
+  })
+
+  // Allows us to process the data
+  .use(bodyParser.urlencoded({extended: false}))
+  .use(bodyParser.json())
+
+  // Route
+  .use(express.static('public'))
+  .get('/', function(req, res) {
     res.send(path.join(__dirname, '/public'));
-})
+  })
 
-// Facebook
-app.get('/webhook/', function(req, res) {
+  // Facebook
+  .get('/webhook/', function(req, res) {
     if (req.query['hub.verify_token'] === "ansontesting") {
         res.send(req.query['hub.challenge'])
     }
     res.send("Wrong token")
+  })
+  .listen(PORT, () => console.log(`Listening on ${ PORT }`));
+
+const io = socketIO(server);
+
+io.on('connection', (socket) => {
+  console.log('Client connected');
+  socket.on('disconnect', () => console.log('Client disconnected'));
 });
 
-app.post('/webhook', function (req, res) {
-  var data = req.body;
+setInterval(() => io.emit('time', new Date().toTimeString()), 1000);
 
-  // Make sure this is a page subscription
-  if (data.object === 'page') {
+var moduleName = 'INDEX';
+var isLog = false;
+var logHistory = {};
+var platformValue = {};
+var lastSocketEventTimestamps = {};
+var userComments = {};
+var userScore = {};
 
-    // Iterate over each entry - there may be multiple if batched
-    data.entry.forEach(function(entry) {
-      var pageID = entry.id;
-      var timeOfEvent = entry.time;
+var isDevelopmentMode = false;
 
-      // Iterate over each messaging event
-      entry.messaging.forEach(function(event) {
-        if (event.message) {
-          receivedMessage(event);
-        } else if (event.postback) {
-          receivedPostback(event);
-        } else {
-          console.log("Webhook received unknown event: ", event);
-        }
+var calculatorModules = {};
+
+
+const QUESTIONS = {
+  "START_GREETING": [
+    "Greetings!"
+  ],
+  "START_QUESTION": [
+    "Hello, How can I help you today?"
+  ]
+}
+
+const MOST_SIGNIFICANT_CARRIER_RULES = "most significant carrier rules";
+
+const NO_OF_EVENTS_PER_SEOCOND_TO_DISCONNECT = 5; // treat as bot attack and disconnect
+
+var getQuestion = function(questionKey,socket,channel) {
+        
+    currentQuestion = questionKey;
+
+  var question = getRandomQuest(questionKey);
+  socket.emit(channel, 'SERVER', question,false);
+  
+}
+
+var getRandomQuest = function(questionKey) {
+  var question = questionKey;
+
+  var questions = QUESTIONS[questionKey];
+
+  if (questions) {
+    question = questions[Math.floor(Math.random() * questions.length)];
+  }
+  return question;
+}
+
+var setWaf = function() {
+  var emudb = new ExpressWaf.EmulatedDB();
+  var waf = new ExpressWaf.ExpressWaf({
+      blocker:{
+          db: emudb,
+          blockTime: 1000
+      },
+      log: true
+  });
+
+  //add modules to the firewall
+  //name and configuration for the specific module have to be set
+  waf.addModule('xss-module', {}, function(error) {
+      console.log(error);
+  });
+
+  waf.addModule('lfi-module', {appInstance: app, publicPath: "./public"}, function(error) {
+      console.log(error);
+  });
+
+  waf.addModule('sql-module', {}, function(error) {
+      console.log(error);
+  });
+
+  waf.addModule('csrf-module', {
+      allowedMethods:['GET', 'POST'],
+      refererIndependentUrls: ['/']
+  }, function (error) {
+      console.log(error);
+  });
+
+  //body parser is necessary for some modules
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({
+      extended: true
+  }));
+
+  //add the configured firewall to your express environment
+  app.use(waf.check);
+}
+
+var setFBChatBotApp = function() {
+  app.post('/webhook', function (req, res) {
+    var data = req.body;
+
+    // Make sure this is a page subscription
+    if (data.object === 'page') {
+
+      // Iterate over each entry - there may be multiple if batched
+      data.entry.forEach(function(entry) {
+        var pageID = entry.id;
+        var timeOfEvent = entry.time;
+
+        // Iterate over each messaging event
+        entry.messaging.forEach(function(event) {
+          if (event.message) {
+            receivedMessage(event);
+          } else if (event.postback) {
+            receivedPostback(event);
+          } else {
+            console.log("Webhook received unknown event: ", event);
+          }
+        });
       });
+
+      // Assume all went well.
+      //
+      // You must send back a 200, within 20 seconds, to let us know
+      // you've successfully received the callback. Otherwise, the request
+      // will time out and we will keep trying to resend.
+      res.sendStatus(200);
+    }
+  });
+}
+
+var setFWDApp = function() {
+  app.use(express.static('public/app/'));
+
+  app.get('/', function(req, res){
+     res.sendFile(__dirname + '/public/app/login.html');
+  });
+
+}
+
+var setSocketIo = function() {
+  var isBotAttackDetected = function(socket) {
+    var now = moment().format('x');
+
+    var timestamps = lastSocketEventTimestamps[socket.id];
+
+    timestamps.push(now);
+
+    if (timestamps.length < NO_OF_EVENTS_PER_SEOCOND_TO_DISCONNECT) {
+      return false;
+    }
+
+    if (timestamps[timestamps.length-1] - timestamps[0] < 1000) {
+      console.log('bot attack detected! Disconnecting ' + socket.id);
+      socket.disconnect();
+      return true;
+    }
+
+    timestamps.shift();
+    return false;
+  };
+
+  io.sockets.on('connection', function(socket){
+    var platform;
+    var url = socket.handshake.headers.referer;
+    if (url && url.indexOf("platform=")>=0) {
+            var platformAry = url.split("platform=");
+            platform = platformAry[1];
+    }
+
+    if(platform == 'android' || platform == 'ios'){
+      platformValue[socket.id] = "MOBILE("+platform+")";
+    }else{
+      platformValue[socket.id] = "WEB";
+    }
+
+    calculatorModules[socket.id] = require('./modules/calculatorModule.js')();
+    calculatorModules[socket.id].setDevelopmentMode(isDevelopmentMode);
+    logHistory[socket.id] = [];
+    lastSocketEventTimestamps[socket.id] = [];
+    userComments[socket.id] = '';
+    userScore[socket.id] = '';
+    
+    console.log('Active connections: ' + Object.keys(calculatorModules).length);
+
+    socket.on('test', function() {
+      if (isBotAttackDetected(socket))
+        return;
+
+      //console.log('test');
     });
 
-    // Assume all went well.
-    //
-    // You must send back a 200, within 20 seconds, to let us know
-    // you've successfully received the callback. Otherwise, the request
-    // will time out and we will keep trying to resend.
-    res.sendStatus(200);
-  }
-});
+    socket.on('disconnect', function() {
+      console.log('Disconnection: ' + socket.id);
+
+      delete calculatorModules[socket.id];
+
+      console.log('Active connections: ' + Object.keys(calculatorModules).length);
+    })
+
+    socket.on('adduser', function(){
+      if (isBotAttackDetected(socket))
+        return;
+
+      if (isDevelopmentMode) {
+        socket.emit('updatechat', 'SERVER', 'DEVELOPMENT MODE',false);
+      }
+
+      var mscLinkContent = '';
+        
+      //getQuestion("START_GREETING",socket,'updatechat');
+      getQuestion("START_QUESTION",socket,'updatechat');
+
+
+    });
+
+    socket.on('sendchat', function (data,widgetType,widgetData) {
+      if (isBotAttackDetected(socket))
+        return;
+
+      global_socket = socket;
+      
+      if(widgetType == null){
+        data = data.replace(/<[^>]+>/g, "");
+      }     
+        socket.emit('updatechat_user', "user", data);
+      
+
+      if (calculatorModules[socket.id]) {
+        calculatorModules[socket.id].askChatBot(data,platformValue[socket.id],widgetType,widgetData, function(answer, delay) { 
+          var data = answer;
+          socket.emit('updatechat', "vera", data,false,delay);
+
+        });
+      }
+      
+    });
+
+  });
+
+}
+
+if (process.argv[2] == "-d") {
+  isDevelopmentMode = true;
+}
+setWaf();
+setSocketIo();
+setFBChatBotApp();
+
+// app.set('port', (process.env.PORT || 5000));
 
 function receivedMessage(event) {
   console.log(event.sender);
@@ -729,6 +975,6 @@ function callSendAPI(messageData) {
   });  
 }
 
-app.listen(app.get('port'), function() {
-    console.log("running: port")
-})
+// app.listen(app.get('port'), function() {
+//     console.log("running: port")
+// })
