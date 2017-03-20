@@ -52,11 +52,11 @@ app.post('/webhook', function (req, res) {
           console.log('--------------------------------------------------');
         } else if (event.postback) {
           receivedPostback(event);
-          console.log(event);
-        } else {
           console.log('-------------------- postback ---------------------');
-          console.log("Webhook received unknown event: ", event);
+          console.log(event);
           console.log('--------------------------------------------------');
+        } else {
+          console.log("Webhook received unknown event: ", event);
         }
       });
     });
