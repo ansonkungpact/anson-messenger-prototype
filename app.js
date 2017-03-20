@@ -47,6 +47,7 @@ app.post('/webhook', function (req, res) {
       entry.messaging.forEach(function(event) {
         if (event.message) {
           receivedMessage(event);
+          event.sender_action = "typing_on";
           console.log('-------------------- message ---------------------');
           console.log(event);
           console.log('--------------------------------------------------');
