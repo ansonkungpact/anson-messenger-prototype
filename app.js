@@ -192,14 +192,13 @@ function receivedMessage(event) {
       default:
       if (messageText == 'tag watch') {
         sendShopMessage(senderID);
-        // setTimeout(function(){
-        //   sendAnythingElseMessage(senderID);
-        // }, 1000);
 
       } else if (watch) {
         if ((messageText == 'yes' || messageText == 'Yes') && watch) {
           sendShopMessage(senderID);
-          sendTextMessage(senderID, "Thank you. Here are the stores featuring the Tag Heuer Carrera watches.");
+          setTimeout(function(){
+            sendTextMessage(senderID, "Thank you. Here are the stores featuring the Tag Heuer Carrera watches.");
+          }, 1000);
         }
       } else {
         // sendTextMessage(senderID, messageText);
