@@ -5,14 +5,6 @@ var http = require('http').Server(app);
 var fs = require('fs');
 var moment = require('moment');
 
-var preAuth = require('http-auth');
-var basic = preAuth.basic({
-  realm: "Restricted Access! Please login to proceed"
-  }, function (username, password, callback) { 
-    callback( (username === "pactera" && password === "PACTERADEMO"));
-  }
-);
-
 var ExpressWaf = require('express-waf');
 var bodyParser = require('body-parser');
 
