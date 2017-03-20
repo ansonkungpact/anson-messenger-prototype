@@ -276,7 +276,7 @@ function sendTestingMessage(recipientId) {
           ]
         }
       }
-    },
+    }
   };  
 
   callSendAPI(messageData);
