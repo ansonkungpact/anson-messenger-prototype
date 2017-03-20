@@ -47,12 +47,16 @@ app.post('/webhook', function (req, res) {
       entry.messaging.forEach(function(event) {
         if (event.message) {
           receivedMessage(event);
+          console.log('-------------------- message ---------------------');
           console.log(event);
+          console.log('--------------------------------------------------');
         } else if (event.postback) {
           receivedPostback(event);
           console.log(event);
         } else {
+          console.log('-------------------- postback ---------------------');
           console.log("Webhook received unknown event: ", event);
+          console.log('--------------------------------------------------');
         }
       });
     });
