@@ -24,6 +24,8 @@ const path = require('path');
 var Q1 = false;
 var Q2 = false;
 var watch = false;
+var reserve_watch = false;
+var other_restaurant = false;
 
 var token = "EAADQZCNZCxtAgBADmnbPXCtFrZAKtUNHnugh9mLRHljfVZAa5BN4x9oie3HZBFsRHlkQeBCS3U63zToqnQ70teqw93lDzg56f5UijZC1SmcZBZCtrHdxMy2swXFPgStAUh8CKxZBT3qtJkNVhLxZAPKBQVDEM9UkWDAGANDHhIPSP4wgZDZD";
 
@@ -417,13 +419,23 @@ function receivedMessage(event) {
       case 'spagetti':
       case 'Sushi':
       case 'sushi':
+      case 'pasta':
+      case 'pasta in hysan place':
           sendRestaurantMessage(senderID);
+          setTimeout(function(){
+            sendTextMessage(senderID, "There are additional western restaurants in the nearby Lee Gardens. Would you like to see them?");
+            sendTextMessage(senderID, "Sure, here is the list of western restaurants in Hysan Place.");
+          }, 1000);
+          other_restaurant = true;
         break;
 
       case 'how': 
       case 'how to get there?': 
       case 'how to go Hysan Place?': 
       case 'how to go hysan place?': 
+      case 'how to get to hysan place':
+      case 'how to get to hysan place?':
+      case 'How to get to Hysan Place?':
         getLocationMessage(senderID);
         break;
       case 'where':
@@ -439,13 +451,32 @@ function receivedMessage(event) {
       if (messageText == 'tag watch') {
         sendShopMessage(senderID);
 
+      } else if (other_restaurant) {
+        if (messageText == 'yes' || messageText == 'Yes' || messageText == 'yup' || messageText == 'yep') {
+          sendRestaurantMessage2(senderID);
+          setTimeout(function(){
+            sendAnythingElseMessage(senderID);
+          }, 1000);
+          other_restaurant = false;
+        }
+
+      } else if (reserve_watch) {
+        if (messageText == 'yes' || messageText == 'Yes' || messageText == 'yup' || messageText == 'yep') {
+          sendTextMessage(senderID, "Great! The watch will be held for 48 hours.");
+          setTimeout(function(){
+            sendAnythingElseMessage(senderID);
+          }, 1000);
+          reserve_watch = false;
+        }
+
       } else if (watch) {
-        if ((messageText == 'yes' || messageText == 'Yes') && watch) {
+        if (messageText == 'yes' || messageText == 'Yes' || messageText == 'yup' || messageText == 'yep') {
           sendShopMessage(senderID);
           setTimeout(function(){
             sendTextMessage(senderID, "Thank you. Here are the stores featuring the Tag Heuer Carrera watches.");
           }, 1000);
         }
+
       } else {
         // sendTextMessage(senderID, messageText);
       }
@@ -478,7 +509,9 @@ function receivedPostback(event) {
 
   // When a postback is called, we'll send a message back to the sender to 
   // let them know it was successful
-  sendTextMessage(senderID, "Postback called");
+  sendTextMessage(senderID, "There is currently a promotion for 15% off for spendings over HKD 500 from 1-Mar to 31-Mar!");
+  sendTextMessage(senderID, "Would you like to reserve this Tag Heuer model for you?");
+  reserve_watch = true;
 }
 
 function sendTextMessage(recipientId, messageText) {
@@ -756,26 +789,50 @@ function sendRestaurantMessage(recipientId) {
         payload: {
           template_type: "generic",
           elements: [{
-            title: "Mcdonald",
-            subtitle: "American hamburger and fast food restaurant chain\u000AShop 15",
-            item_url: "http://www.mcdonalds.com.hk",               
-            image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/mcdonald.jpg",
+            title: "EIGHT GRAND Bar & Restaurant",
+            subtitle: "EIGHT GRAND brings exciting touches in food and beverages as well as ambience.\u000AMon-Sun 1130-2230\u000AHysan Place, Shop 1203",
+            item_url: "https://hp.leegardens.com.hk/?lang=en-US#!/dining-details/hysanplace/dining/Items/Eight-Grand-Bar-Restaurant",               
+            image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/eightgrand.jpg",
             buttons: [{
               type:"phone_number",
               title:"Call the shop",
-              payload:"+85223382338"
+              payload:"+85235688621"
             },{
               "type":"element_share"
             }]
           }, {
-            title: "KFC",
-            subtitle: "Kentucky Fried Chicken\u000AShop 32",
-            item_url: "https://www.kfchk.com",               
-            image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/kfc.jpg",
+            title: "Shelter Italian Bar & Restaurant",
+            subtitle: "The gastronomic sanctuary specializes in Italian food\u000AMon-Sun 1130-0030\u000AHysan Place, Shop 718",
+            item_url: "http://www.shelterhk.com",               
+            image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/shelteritalian.jpg",
             buttons: [{
               type:"phone_number",
               title:"Call the shop",
-              payload:"+85227303730"
+              payload:"+85227788398"
+            },{
+              "type":"element_share"
+            }]
+          }, {
+            title: "caffè HABITŪ the table",
+            subtitle: "The unveiling of caffè HABITŪ the table brings exciting touches in food and beverages as well as ambience.\u000AMon-Sun 1130-2230\u000AHysan Place, Shop 803",
+            item_url: "www.caffehabitu.com",               
+            image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/habitu.jpg",
+            buttons: [{
+              type:"phone_number",
+              title:"Call the shop",
+              payload:"+85235431313"
+            },{
+              "type":"element_share"
+            }]
+          }, {
+            title: "Green Waffle Diner",
+            subtitle: "everyday food for everyday people\u000AMon-Sun 1130-0030\u000AHysan Place, Shop 1303",
+            item_url: "https://www.facebook.com/Green-Waffle-Diner-127660523917542/",               
+            image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/greenwaffle.jpg",
+            buttons: [{
+              type:"phone_number",
+              title:"Call the shop",
+              payload:"+85228805123"
             },{
               "type":"element_share"
             }]
@@ -787,6 +844,65 @@ function sendRestaurantMessage(recipientId) {
 
   callSendAPI(messageData);
 }
+
+
+
+function sendRestaurantMessage2(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "generic",
+          elements: [{
+            title: "Passion by Gérard Dubois",
+            subtitle: "traditional French café experience\u000AMon-Sun 1130-2230\u000ALeee Gardens One, Shop G12",
+            item_url: "www.PassionbyGD.com",               
+            image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/passion.jpg",
+            buttons: [{
+              type:"phone_number",
+              title:"Call the shop",
+              payload:"+85225291311"
+            },{
+              "type":"element_share"
+            }]
+          }, {
+            title: "Panino Giusto",
+            subtitle: "The gastronomic sanctuary specializes in Italian food\u000AMon-Sun 1030-2230\u000ALeee Gardens One, Shop 204",
+            item_url: "www.paninogiusto.com.hk",               
+            image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/paninogiusto.jpg",
+            buttons: [{
+              type:"phone_number",
+              title:"Call the shop",
+              payload:"+85225270222"
+            },{
+              "type":"element_share"
+            }]
+          }, {
+            title: "Seasons by Olivier E.",
+            subtitle: "French contemporary dining\u000AMon-Sun 1230-2230\u000ALeee Gardens Two Shop 1311",
+            item_url: "www.seasonsbyolivier.com",               
+            image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/seasons.jpg",
+            buttons: [{
+              type:"phone_number",
+              title:"Call the shop",
+              payload:"+85225056228"
+            },{
+              "type":"element_share"
+            }]
+          }]
+        }
+      }
+    }
+  };  
+
+  callSendAPI(messageData);
+}
+
+
 
 function sendShopMessage(recipientId) {
   var messageData = {
@@ -800,10 +916,15 @@ function sendShopMessage(recipientId) {
           template_type: "generic",
           elements: [{
             title: "TAG Heuer Boutique",
-            subtitle: "All about watch.\u000AShop 22\u000Amon-sun 10a.m. - 10p.m.",
+            subtitle: "All about watch.\u000AHysan Place, Shop 1202\u000AMon-Sun 1000-2200",
             item_url: "http://tagheuer.com",               
             image_url: "https://anson-messenger.herokuapp.com/img/shop_img/tag.jpg",
-            buttons: [{
+            buttons: [
+            {
+              "type":"postback",
+              "title":"Check Promotion",
+              "payload":"DEVELOPER_DEFINED_PAYLOAD"
+            },{
               type:"phone_number",
               title:"Call the shop",
               payload:"+85227509262"
@@ -812,7 +933,7 @@ function sendShopMessage(recipientId) {
             }]
           }, {
             title: "City Chain Glam Timepieces",
-            subtitle: "All about watch.\u000AShop 22\u000Amon-sun 11a.m. - 11p.m.",
+            subtitle: "All about watch.\u000AHysan Place, Shop 0221\u000AMon-Sun 1100-2300",
             item_url: "http://www.citychain.com",               
             image_url: "https://anson-messenger.herokuapp.com/img/shop_img/citychain.jpg",
             buttons: [{
@@ -824,7 +945,7 @@ function sendShopMessage(recipientId) {
             }]
           }, {
             title: "Prince Jewellery & Watch",
-            subtitle: "Luxury watch and jewellery collections. \u000AShop 53\u000Amon-sun 9a.m. - 9p.m.",
+            subtitle: "Luxury watch and jewellery collections. \u000AHysan Place, Shop 0503\u000AMon-Sun 0930 - 2130",
             item_url: "www.princejewellerywatch.com",               
             image_url: "https://anson-messenger.herokuapp.com/img/shop_img/prince.jpg",
             buttons: [{
