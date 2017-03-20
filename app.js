@@ -172,7 +172,11 @@ function receivedMessage(event) {
       case 'spagetti':
       case 'Sushi':
       case 'sushi':
+      case 'pasta':
           sendRestaurantMessage(senderID);
+          setTimeout(function(){
+            sendTextMessage(senderID, "Sure, here is the list of western restaurants in Hysan Place.");
+          }, 1000);
         break;
 
       case 'how': 
@@ -523,26 +527,50 @@ function sendRestaurantMessage(recipientId) {
         payload: {
           template_type: "generic",
           elements: [{
-            title: "Mcdonald",
-            subtitle: "American hamburger and fast food restaurant chain\u000AShop 15",
-            item_url: "http://www.mcdonalds.com.hk",               
-            image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/mcdonald.jpg",
+            title: "EIGHT GRAND Bar & Restaurant",
+            subtitle: "EIGHT GRAND brings exciting touches in food and beverages as well as ambience.\u000AMon-Sun 1130-2230\u000AShop 1203",
+            item_url: "https://hp.leegardens.com.hk/?lang=en-US#!/dining-details/hysanplace/dining/Items/Eight-Grand-Bar-Restaurant",               
+            image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/eightgrand.jpg",
             buttons: [{
               type:"phone_number",
               title:"Call the shop",
-              payload:"+85223382338"
+              payload:"+85235688621"
             },{
               "type":"element_share"
             }]
           }, {
-            title: "KFC",
-            subtitle: "Kentucky Fried Chicken\u000AShop 32",
-            item_url: "https://www.kfchk.com",               
-            image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/kfc.jpg",
+            title: "Shelter Italian Bar & Restaurant",
+            subtitle: "The gastronomic sanctuary specializes in Italian food\u000AMon-Sun 1130-0030\u000AShop 718",
+            item_url: "http://www.shelterhk.com",               
+            image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/shelteritalian.jpg",
             buttons: [{
               type:"phone_number",
               title:"Call the shop",
-              payload:"+85227303730"
+              payload:"+85227788398"
+            },{
+              "type":"element_share"
+            }]
+          }, {
+            title: "caffè HABITŪ the table",
+            subtitle: "The unveiling of caffè HABITŪ the table brings exciting touches in food and beverages as well as ambience.\u000AMon-Sun 1130-2230\u000AShop 803",
+            item_url: "www.caffehabitu.com",               
+            image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/habitu.jpg",
+            buttons: [{
+              type:"phone_number",
+              title:"Call the shop",
+              payload:"+85235431313"
+            },{
+              "type":"element_share"
+            }]
+          }, {
+            title: "Green Waffle Diner",
+            subtitle: "everyday food for everyday people\u000AMon-Sun 1130-0030\u000AShop 1303",
+            item_url: "https://www.facebook.com/Green-Waffle-Diner-127660523917542/",               
+            image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/greenwaffle.jpg",
+            buttons: [{
+              type:"phone_number",
+              title:"Call the shop",
+              payload:"+85228805123"
             },{
               "type":"element_share"
             }]
@@ -567,7 +595,7 @@ function sendShopMessage(recipientId) {
           template_type: "generic",
           elements: [{
             title: "TAG Heuer Boutique",
-            subtitle: "All about watch.\u000AShop 22\u000Amon-sun 10a.m. - 10p.m.",
+            subtitle: "All about watch.\u000AShop 1202\u000AMon-Sun 1000-2200",
             item_url: "http://tagheuer.com",               
             image_url: "https://anson-messenger.herokuapp.com/img/shop_img/tag.jpg",
             buttons: [
@@ -584,7 +612,7 @@ function sendShopMessage(recipientId) {
             }]
           }, {
             title: "City Chain Glam Timepieces",
-            subtitle: "All about watch.\u000AShop 22\u000Amon-sun 11a.m. - 11p.m.",
+            subtitle: "All about watch.\u000AShop 0221\u000AMon-Sun 1100-2300",
             item_url: "http://www.citychain.com",               
             image_url: "https://anson-messenger.herokuapp.com/img/shop_img/citychain.jpg",
             buttons: [{
@@ -596,7 +624,7 @@ function sendShopMessage(recipientId) {
             }]
           }, {
             title: "Prince Jewellery & Watch",
-            subtitle: "Luxury watch and jewellery collections. \u000AShop 53\u000Amon-sun 9a.m. - 9p.m.",
+            subtitle: "Luxury watch and jewellery collections. \u000AShop 0503\u000AMon-Sun 0930 - 2130",
             item_url: "www.princejewellerywatch.com",               
             image_url: "https://anson-messenger.herokuapp.com/img/shop_img/prince.jpg",
             buttons: [{
