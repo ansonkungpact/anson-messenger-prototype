@@ -76,6 +76,10 @@ const server = express()
       res.sendStatus(200);
     }
   })
+  .use(express.static('public'))
+  .get('/chatbot', function(req, res){
+     res.sendFile(INDEX);
+  })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
 
