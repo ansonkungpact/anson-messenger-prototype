@@ -14,8 +14,7 @@ const socketIO = require('socket.io');
 const path = require('path');
 
 const PORT = process.env.PORT || 3000;
-const INDEX = path.join(__dirname, '/public/clientchat/index-clientchat.html');
-const INDEXB = path.join(__dirname, '/public/app/login.html');
+var Client = require('node-rest-client').Client;
 
 var Q1 = false;
 var Q2 = false;
@@ -94,6 +93,19 @@ function receivedMessage(event) {
   var messageId = message.mid;
 
   var messageText = message.text;
+  // console.log('https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/08939128-978d-408d-9c01-0f791c357d69?subscription-key=11fed51d7ec04c6bac9d1c0e60a0e9c5&verbose=true&q=');
+  // console.log(messageText);
+  var client = new Client();
+
+  console.log('--------anson--------');
+  client.get("https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/08939128-978d-408d-9c01-0f791c357d69?subscription-key=11fed51d7ec04c6bac9d1c0e60a0e9c5&verbose=true&q=hello", function (data, response) {
+    // parsed response body as js object 
+    console.log(data);
+    // raw response 
+    console.log(response);
+  });
+  console.log('--------anson--------');
+
   var messageAttachments = message.attachments;
 
   if (messageText) {
@@ -866,33 +878,3 @@ function callSendAPI(messageData) {
     }
   });  
 }
-
-
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
-
-var simpleRuleEngine = require('./modules/simepleRuleEngine.js');
-
-var init = function(){
-
-  io.sockets.on('connection', function(socket){
-    socket.on('send_msg', function (question) {
-      console.log(question);
-      simpleRuleEngine.ask(question,function(answer){
-          socket.emit('receive_msg',answer);
-      });
-    });
-  });
-
-  app.use(express.static('public'));
-    app.get('/chatbot_demo', function(req, res){
-     res.sendFile(__dirname + '/public/clientchat/index-clientchat.html');
-  });
-
-}
-
-init();
-
-http.listen(5000, function(){
-  console.log('listening on *:5000');
-});
