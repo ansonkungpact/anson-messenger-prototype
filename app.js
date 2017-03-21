@@ -192,7 +192,7 @@ function receivedMessage(event) {
           sendShopMessage(senderID);
 
         } else if (other_restaurant) {
-          if (messageText == 'yes' || messageText == 'Yes') {
+          if (entityType == positiveFeedback) {
             sendRestaurantMessage2(senderID);
             setTimeout(function(){
               sendAnythingElseMessage(senderID);
@@ -201,7 +201,7 @@ function receivedMessage(event) {
           other_restaurant = false;
 
         } else if (reserve_watch) {
-          if (messageText == 'yes' || messageText == 'Yes') {
+          if (entityType == positiveFeedback) {
             sendTextMessage(senderID, "Great! The watch will be held for 48 hours.");
             setTimeout(function(){
               sendAnythingElseMessage(senderID);
@@ -210,7 +210,7 @@ function receivedMessage(event) {
           reserve_watch = false;
 
         } else if (watch) {
-          if (messageText == 'yes' || messageText == 'Yes') {
+          if (entityType == positiveFeedback) {
             sendShopMessage(senderID);
             setTimeout(function(){
               sendTextMessage(senderID, "Thank you. Here are the stores featuring the Tag Heuer Carrera watches.");
