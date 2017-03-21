@@ -132,9 +132,6 @@ function receivedMessage(event) {
         break;
 
         case 'thanks':
-          sendAnythingElseMessage(senderID);
-        break;
-
         case 'bye':
           sendByeMessage(senderID);
           Q1 = false;
