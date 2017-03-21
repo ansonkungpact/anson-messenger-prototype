@@ -13,7 +13,6 @@ var ExpressWaf = require('express-waf');
 const socketIO = require('socket.io');
 const path = require('path');
 
-const PORT = process.env.PORT || 3000;
 const INDEX = path.join(__dirname, '/public/clientchat/index-clientchat.html');
 const INDEXB = path.join(__dirname, '/public/app/login.html');
 
@@ -32,6 +31,10 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json());
 
 // Route
+app.use(express.static('public'))
+app.get('/chatbot', function(req, res){
+   res.sendFile(INDEX);
+})
 app.use(express.static('public'))
 app.get('/', function(req, res) {
     res.send(path.join(__dirname, '/public'));
