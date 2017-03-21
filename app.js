@@ -98,11 +98,11 @@ function receivedMessage(event) {
   var client = new Client();
 
   console.log('--------anson--------');
-  client.get("https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/08939128-978d-408d-9c01-0f791c357d69?subscription-key=11fed51d7ec04c6bac9d1c0e60a0e9c5&verbose=true&q=hello", function (data, response) {
+  client.get("https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/08939128-978d-408d-9c01-0f791c357d69?subscription-key=11fed51d7ec04c6bac9d1c0e60a0e9c5&verbose=true&q=" + messageText, function (data, response) {
     // parsed response body as js object 
-    console.log(data);
+    console.log(data.intents);
     // raw response 
-    console.log(response);
+    // console.log(response);
   });
   console.log('--------anson--------');
 
