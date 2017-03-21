@@ -76,10 +76,6 @@ const server = express()
       res.sendStatus(200);
     }
   })
-  .use(express.static('public'))
-  .get('/chatbot', function(req, res){
-     res.sendFile(INDEX);
-  })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
 
@@ -194,8 +190,8 @@ function receivedMessage(event) {
       case 'pasta in hysan place':
           sendRestaurantMessage(senderID);
           setTimeout(function(){
-            sendTextMessage(senderID, "Sure, here is the list of western restaurants in Hysan Place.");
             sendTextMessage(senderID, "There are additional western restaurants in the nearby Lee Gardens. Would you like to see them?");
+            sendTextMessage(senderID, "Sure, here is the list of western restaurants in Hysan Place.");
           }, 1000);
           other_restaurant = true;
         break;
@@ -866,3 +862,33 @@ function callSendAPI(messageData) {
     }
   });  
 }
+
+
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+
+var simpleRuleEngine = require('./modules/simepleRuleEngine.js');
+
+var init = function(){
+
+  io.sockets.on('connection', function(socket){
+    socket.on('send_msg', function (question) {
+      console.log(question);
+      simpleRuleEngine.ask(question,function(answer){
+          socket.emit('receive_msg',answer);
+      });
+    });
+  });
+
+  app.use(express.static('public'));
+    app.get('/chatbot_demo', function(req, res){
+     res.sendFile(__dirname + '/public/clientchat/index-clientchat.html');
+  });
+
+}
+
+init();
+
+http.listen(5000, function(){
+  console.log('listening on *:5000');
+});

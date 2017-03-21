@@ -1,0 +1,10 @@
+const luisAppID = "08939128-978d-408d-9c01-0f791c357d69";
+const luisSubscriptionkey = '11fed51d7ec04c6bac9d1c0e60a0e9c5';
+const translatorID = "appid=Bearer%20eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzY29wZSI6Imh0dHBzOi8vYXBpLm1pY3Jvc29mdHRyYW5zbGF0b3IuY29tLyIsInN1YnNjcmlwdGlvbi1pZCI6IjNhYmRlOWJkNTM5ZDQyYTk5MWNjNTc1ZTA4NWJjOGQ1IiwicHJvZHVjdC1pZCI6IlRleHRUcmFuc2xhdG9yLlMxIiwiY29nbml0aXZlLXNlcnZpY2VzLWVuZHBvaW50IjoiaHR0cHM6Ly9hcGkuY29nbml0aXZlLm1pY3Jvc29mdC5jb20vaW50ZXJuYWwvdjEuMC8iLCJhenVyZS1yZXNvdXJjZS1pZCI6Ii9zdWJzY3JpcHRpb25zL2M2Y2NkYmZiLWVlOGEtNGEzZi04MjQ5LWRiNzI0YmZlYjlhNS9yZXNvdXJjZUdyb3Vwcy9BbnNvbi9wcm92aWRlcnMvTWljcm9zb2Z0LkNvZ25pdGl2ZVNlcnZpY2VzL2FjY291bnRzL2NoYXRib3QiLCJpc3MiOiJ1cm46bXMuY29nbml0aXZlc2VydmljZXMiLCJhdWQiOiJ1cm46bXMubWljcm9zb2Z0dHJhbnNsYXRvciIsImV4cCI6MTQ4OTcyODI4Mn0.uwA0J0AM4BVgBG_owwa6KhEObhCrzzSyFO_s5EsEurs&text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%8A%A5%E5%A4%B1%E6%88%91%E7%9A%84%E4%BF%A1%E7%94%A8%E5%8D%A1";
+
+module.exports = {
+    luisAppID: luisAppID,
+    luisSubscriptionkey:luisSubscriptionkey
+};
+
+
