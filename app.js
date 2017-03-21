@@ -24,29 +24,29 @@ var other_restaurant = false;
 
 let token = "EAADQZCNZCxtAgBADmnbPXCtFrZAKtUNHnugh9mLRHljfVZAa5BN4x9oie3HZBFsRHlkQeBCS3U63zToqnQ70teqw93lDzg56f5UijZC1SmcZBZCtrHdxMy2swXFPgStAUh8CKxZBT3qtJkNVhLxZAPKBQVDEM9UkWDAGANDHhIPSP4wgZDZD";
 
-app.set('port', (process.env.PORT || 5000));
+const PORT = process.env.PORT || 5000;
 
 // Allows us to process the data
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json());
 
 // Route
-app.use(express.static('public'))
-app.get('/chatbot', function(req, res){
-   res.sendFile(INDEX);
-})
-app.use(express.static('public'))
-app.get('/', function(req, res) {
-    res.send(path.join(__dirname, '/public'));
-})
-
-// Facebook
-app.get('/webhook/', function(req, res) {
+const server = express()
+  .use(express.static('public'))
+  .get('/chatbot', function(req, res){
+     res.sendFile(INDEX);
+  })
+  .use(express.static('public'))
+  .get('/', function(req, res) {
+      res.send(path.join(__dirname, '/public'));
+  })
+  .get('/webhook/', function(req, res) {
     if (req.query['hub.verify_token'] === "ansontesting") {
         res.send(req.query['hub.challenge'])
     }
     res.send("Wrong token")
-});
+  })
+  .listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
 app.post('/webhook', function (req, res) {
   var data = req.body;
@@ -863,7 +863,3 @@ function callSendAPI(messageData) {
     }
   });  
 }
-
-app.listen(app.get('port'), function() {
-    console.log("running: port")
-})
