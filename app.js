@@ -182,7 +182,8 @@ var setFBChatBotApp = function() {
       // will time out and we will keep trying to resend.
       res.sendStatus(200);
     }
-  });
+  })
+  app.set('port', (process.env.PORT || 5000));
 }
 
 var setFWDApp = function() {
@@ -1070,7 +1071,7 @@ function sendDirectionMessage(recipientId, x, y) {
 function callSendAPI(messageData) {
   request({
     uri: 'https://graph.facebook.com/v2.6/me/messages',
-    qs: { access_token: token },
+    qs: { access_token: 'EAADQZCNZCxtAgBADmnbPXCtFrZAKtUNHnugh9mLRHljfVZAa5BN4x9oie3HZBFsRHlkQeBCS3U63zToqnQ70teqw93lDzg56f5UijZC1SmcZBZCtrHdxMy2swXFPgStAUh8CKxZBT3qtJkNVhLxZAPKBQVDEM9UkWDAGANDHhIPSP4wgZDZD' },
     method: 'POST',
     json: messageData
 
