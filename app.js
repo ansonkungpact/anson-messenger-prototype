@@ -93,6 +93,7 @@ function receivedMessage(event) {
   var messageId = message.mid;
 
   var messageText = message.text;
+  var messageIntent = '';
   // console.log('https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/08939128-978d-408d-9c01-0f791c357d69?subscription-key=11fed51d7ec04c6bac9d1c0e60a0e9c5&verbose=true&q=');
   // console.log(messageText);
   var client = new Client();
@@ -100,7 +101,7 @@ function receivedMessage(event) {
   console.log('--------ansonv2--------');
   client.get("https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/08939128-978d-408d-9c01-0f791c357d69?subscription-key=11fed51d7ec04c6bac9d1c0e60a0e9c5&verbose=true&q=" + messageText, function (data, response) {
     // parsed response body as js object 
-    var messageIntent = data.intents[0].intent;
+    messageIntent = data.intents[0].intent;
     // raw response 
     // console.log(response);
   });
