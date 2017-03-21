@@ -106,176 +106,176 @@ function receivedMessage(event) {
     messageIntent = data.intents[0].intent;
     // raw response 
     // console.log(response);
+
+    var messageAttachments = message.attachments;
+
+    console.log(messageIntent);
+    if (messageText) {
+
+      // If we receive a text message, check to see if it matches a keyword
+      // and send back the example. Otherwise, just echo the text we received.
+      switch (messageText) {
+        case 'testing':
+          sendTestingMessage(senderID);
+          break;
+
+        case 'generic':
+          sendGenericMessage(senderID);
+          break;
+
+
+
+        case 'Hello':
+        case 'hello':
+        case 'Hey':
+        case 'hey':
+        case 'Hi':
+        case 'hi':
+          sendGreetingMessage(senderID);
+        break;
+
+        case 'Thank you':
+        case 'thank you':
+        case 'thankyou':
+        case 'Thanks':
+        case 'thanks':
+          sendAnythingElseMessage(senderID);
+        break;
+
+        case 'no':
+        case 'No':
+        case 'nah':
+        case 'Nah':
+        case 'Bye':
+        case 'bye':
+        case 'See you':
+        case 'see you':
+          sendByeMessage(senderID);
+          Q1 = false;
+          Q2 = false;
+        break;
+
+        case 'shopping':
+        case 'Shopping':
+        case 'shop':
+        case 'Shop':
+        case 'Entertainment':
+          Q1 = true;
+          sendShoppingMessage(senderID);
+          break;
+          
+        // case 'Cosmetics':
+        // case 'cosmetics':
+        // case 'makeup':
+        // case 'facial cream':
+        // case 'beauty':
+        //   if (Q1) {
+        //     Q2 = true;
+        //     sendTextMessage(senderID, "Here is the list of cosmetics shops.");
+        //     sendShopMessage(senderID);
+        //     setTimeout(function(){
+        //       sendTextMessage(senderID, "What product you are searching?");
+        //     }, 1000);
+        //   } else {
+        //     sendGreetingMessage(senderID);
+        //   }
+        //   break;
+
+
+        case 'Dining':
+        case 'dining':
+        case 'dinning':
+            sendFoodMessage(senderID);
+          break;
+
+        case 'Dim sum':
+        case 'dim sum':
+        case 'dimsum':
+        case 'Fast food':
+        case 'fast food':
+        case 'fastfood':
+        case 'Hotpot':
+        case 'hotpot':
+        case 'Spagetti':
+        case 'spagetti':
+        case 'Sushi':
+        case 'sushi':
+        case 'pasta':
+        case 'pasta in hysan place':
+            sendRestaurantMessage(senderID);
+            setTimeout(function(){
+              sendTextMessage(senderID, "There are additional western restaurants in the nearby Lee Gardens. Would you like to see them?");
+              sendTextMessage(senderID, "Sure, here is the list of western restaurants in Hysan Place.");
+            }, 1000);
+            other_restaurant = true;
+          break;
+
+        case 'how': 
+        case 'how to get there?': 
+        case 'how to go Hysan Place?': 
+        case 'how to go hysan place?': 
+        case 'how to get to hysan place':
+        case 'how to get to hysan place?':
+        case 'How to get to Hysan Place?':
+          getLocationMessage(senderID);
+          break;
+        case 'where':
+        case 'where is it?':
+        case 'where is hysan place?':
+        case 'where is Hysan Place?':
+          sendLocationMessage(senderID);
+          break;
+
+
+
+        default:
+        if (messageText == 'tag watch') {
+          sendShopMessage(senderID);
+
+        } else if (other_restaurant) {
+          if (messageText == 'yes' || messageText == 'Yes') {
+            sendRestaurantMessage2(senderID);
+            setTimeout(function(){
+              sendAnythingElseMessage(senderID);
+            }, 1000);
+            other_restaurant = false;
+          }
+
+        } else if (reserve_watch) {
+          if (messageText == 'yes' || messageText == 'Yes') {
+            sendTextMessage(senderID, "Great! The watch will be held for 48 hours.");
+            setTimeout(function(){
+              sendAnythingElseMessage(senderID);
+            }, 1000);
+            reserve_watch = false;
+          }
+
+        } else if (watch) {
+          if (messageText == 'yes' || messageText == 'Yes') {
+            sendShopMessage(senderID);
+            setTimeout(function(){
+              sendTextMessage(senderID, "Thank you. Here are the stores featuring the Tag Heuer Carrera watches.");
+            }, 1000);
+          }
+
+        } else {
+          // sendTextMessage(senderID, messageText);
+        }
+      }
+    } else if (messageAttachments) {
+      if (messageAttachments[0].payload.coordinates) {
+        var lat = messageAttachments[0].payload.coordinates.lat;
+        var long = messageAttachments[0].payload.coordinates.long;
+        sendDirectionMessage(senderID, lat, long, "We are at 500 Hennessy Rd, Causeway Bay");
+        // sendTextMessage(senderID, "We are at 500 Hennessy Rd, Causeway Bay");
+      } else {   
+        sendTextMessage(senderID, "Thank you for the picture! I see that it's the Tag Heuer Carrera watch, right? ;)");
+        watch = true;
+      }
+      // console.log(message.attachments.delivery);
+    }
   });
   console.log('--------ansonv3--------');
-
-  var messageAttachments = message.attachments;
-
-  console.log(messageIntent);
-  if (messageText) {
-
-    // If we receive a text message, check to see if it matches a keyword
-    // and send back the example. Otherwise, just echo the text we received.
-    switch (messageText) {
-      case 'testing':
-        sendTestingMessage(senderID);
-        break;
-
-      case 'generic':
-        sendGenericMessage(senderID);
-        break;
-
-
-
-      case 'Hello':
-      case 'hello':
-      case 'Hey':
-      case 'hey':
-      case 'Hi':
-      case 'hi':
-        sendGreetingMessage(senderID);
-      break;
-
-      case 'Thank you':
-      case 'thank you':
-      case 'thankyou':
-      case 'Thanks':
-      case 'thanks':
-        sendAnythingElseMessage(senderID);
-      break;
-
-      case 'no':
-      case 'No':
-      case 'nah':
-      case 'Nah':
-      case 'Bye':
-      case 'bye':
-      case 'See you':
-      case 'see you':
-        sendByeMessage(senderID);
-        Q1 = false;
-        Q2 = false;
-      break;
-
-      case 'shopping':
-      case 'Shopping':
-      case 'shop':
-      case 'Shop':
-      case 'Entertainment':
-        Q1 = true;
-        sendShoppingMessage(senderID);
-        break;
-        
-      // case 'Cosmetics':
-      // case 'cosmetics':
-      // case 'makeup':
-      // case 'facial cream':
-      // case 'beauty':
-      //   if (Q1) {
-      //     Q2 = true;
-      //     sendTextMessage(senderID, "Here is the list of cosmetics shops.");
-      //     sendShopMessage(senderID);
-      //     setTimeout(function(){
-      //       sendTextMessage(senderID, "What product you are searching?");
-      //     }, 1000);
-      //   } else {
-      //     sendGreetingMessage(senderID);
-      //   }
-      //   break;
-
-
-      case 'Dining':
-      case 'dining':
-      case 'dinning':
-          sendFoodMessage(senderID);
-        break;
-
-      case 'Dim sum':
-      case 'dim sum':
-      case 'dimsum':
-      case 'Fast food':
-      case 'fast food':
-      case 'fastfood':
-      case 'Hotpot':
-      case 'hotpot':
-      case 'Spagetti':
-      case 'spagetti':
-      case 'Sushi':
-      case 'sushi':
-      case 'pasta':
-      case 'pasta in hysan place':
-          sendRestaurantMessage(senderID);
-          setTimeout(function(){
-            sendTextMessage(senderID, "There are additional western restaurants in the nearby Lee Gardens. Would you like to see them?");
-            sendTextMessage(senderID, "Sure, here is the list of western restaurants in Hysan Place.");
-          }, 1000);
-          other_restaurant = true;
-        break;
-
-      case 'how': 
-      case 'how to get there?': 
-      case 'how to go Hysan Place?': 
-      case 'how to go hysan place?': 
-      case 'how to get to hysan place':
-      case 'how to get to hysan place?':
-      case 'How to get to Hysan Place?':
-        getLocationMessage(senderID);
-        break;
-      case 'where':
-      case 'where is it?':
-      case 'where is hysan place?':
-      case 'where is Hysan Place?':
-        sendLocationMessage(senderID);
-        break;
-
-
-
-      default:
-      if (messageText == 'tag watch') {
-        sendShopMessage(senderID);
-
-      } else if (other_restaurant) {
-        if (messageText == 'yes' || messageText == 'Yes') {
-          sendRestaurantMessage2(senderID);
-          setTimeout(function(){
-            sendAnythingElseMessage(senderID);
-          }, 1000);
-          other_restaurant = false;
-        }
-
-      } else if (reserve_watch) {
-        if (messageText == 'yes' || messageText == 'Yes') {
-          sendTextMessage(senderID, "Great! The watch will be held for 48 hours.");
-          setTimeout(function(){
-            sendAnythingElseMessage(senderID);
-          }, 1000);
-          reserve_watch = false;
-        }
-
-      } else if (watch) {
-        if (messageText == 'yes' || messageText == 'Yes') {
-          sendShopMessage(senderID);
-          setTimeout(function(){
-            sendTextMessage(senderID, "Thank you. Here are the stores featuring the Tag Heuer Carrera watches.");
-          }, 1000);
-        }
-
-      } else {
-        // sendTextMessage(senderID, messageText);
-      }
-    }
-  } else if (messageAttachments) {
-    if (messageAttachments[0].payload.coordinates) {
-      var lat = messageAttachments[0].payload.coordinates.lat;
-      var long = messageAttachments[0].payload.coordinates.long;
-      sendDirectionMessage(senderID, lat, long, "We are at 500 Hennessy Rd, Causeway Bay");
-      // sendTextMessage(senderID, "We are at 500 Hennessy Rd, Causeway Bay");
-    } else {   
-      sendTextMessage(senderID, "Thank you for the picture! I see that it's the Tag Heuer Carrera watch, right? ;)");
-      watch = true;
-    }
-    // console.log(message.attachments.delivery);
-  }
 }
 
 function receivedPostback(event) {
