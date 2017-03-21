@@ -93,21 +93,18 @@ function receivedMessage(event) {
   var messageId = message.mid;
 
   var messageText = message.text;
-  var messageIntent = '';
   // console.log('https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/08939128-978d-408d-9c01-0f791c357d69?subscription-key=11fed51d7ec04c6bac9d1c0e60a0e9c5&verbose=true&q=');
   // console.log(messageText);
   var client = new Client();
 
-  console.log('--------ansonv2--------');
+  console.log('--------ansonv3--------');
   client.get("https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/08939128-978d-408d-9c01-0f791c357d69?subscription-key=11fed51d7ec04c6bac9d1c0e60a0e9c5&verbose=true&q=" + messageText, function (data, response) {
     // parsed response body as js object 
-    messageIntent = data.intents[0].intent;
     console.log(data.intents[0].intent);
-    console.log(messageIntent);
     // raw response 
     // console.log(response);
   });
-  console.log('--------ansonv2--------');
+  console.log('--------ansonv3--------');
 
   var messageAttachments = message.attachments;
 
@@ -115,7 +112,7 @@ function receivedMessage(event) {
 
     // If we receive a text message, check to see if it matches a keyword
     // and send back the example. Otherwise, just echo the text we received.
-    switch (messageIntent) {
+    switch (messageText) {
       case 'testing':
         sendTestingMessage(senderID);
         break;
@@ -126,22 +123,41 @@ function receivedMessage(event) {
 
 
 
-      case 'greetings':
+      case 'Hello':
+      case 'hello':
+      case 'Hey':
+      case 'hey':
+      case 'Hi':
+      case 'hi':
         sendGreetingMessage(senderID);
       break;
 
+      case 'Thank you':
+      case 'thank you':
+      case 'thankyou':
+      case 'Thanks':
       case 'thanks':
         sendAnythingElseMessage(senderID);
       break;
 
+      case 'no':
+      case 'No':
+      case 'nah':
+      case 'Nah':
+      case 'Bye':
       case 'bye':
+      case 'See you':
+      case 'see you':
         sendByeMessage(senderID);
         Q1 = false;
         Q2 = false;
       break;
 
       case 'shopping':
-      case 'entertainment':
+      case 'Shopping':
+      case 'shop':
+      case 'Shop':
+      case 'Entertainment':
         Q1 = true;
         sendShoppingMessage(senderID);
         break;
@@ -164,11 +180,26 @@ function receivedMessage(event) {
       //   break;
 
 
+      case 'Dining':
       case 'dining':
+      case 'dinning':
           sendFoodMessage(senderID);
         break;
 
-      case 'food':
+      case 'Dim sum':
+      case 'dim sum':
+      case 'dimsum':
+      case 'Fast food':
+      case 'fast food':
+      case 'fastfood':
+      case 'Hotpot':
+      case 'hotpot':
+      case 'Spagetti':
+      case 'spagetti':
+      case 'Sushi':
+      case 'sushi':
+      case 'pasta':
+      case 'pasta in hysan place':
           sendRestaurantMessage(senderID);
           setTimeout(function(){
             sendTextMessage(senderID, "There are additional western restaurants in the nearby Lee Gardens. Would you like to see them?");
@@ -177,10 +208,19 @@ function receivedMessage(event) {
           other_restaurant = true;
         break;
 
-      case 'transportation':
+      case 'how': 
+      case 'how to get there?': 
+      case 'how to go Hysan Place?': 
+      case 'how to go hysan place?': 
+      case 'how to get to hysan place':
+      case 'how to get to hysan place?':
+      case 'How to get to Hysan Place?':
         getLocationMessage(senderID);
         break;
-      case 'location':
+      case 'where':
+      case 'where is it?':
+      case 'where is hysan place?':
+      case 'where is Hysan Place?':
         sendLocationMessage(senderID);
         break;
 
