@@ -18,9 +18,9 @@ var Client = require('node-rest-client').Client;
 
 var Q1 = false;
 var Q2 = false;
-var watch = false;
-var reserve_watch = false;
-var other_restaurant = false;
+var watch             = false;
+var reserve_watch     = false;
+var other_restaurant  = false;
 
 let token = "EAADQZCNZCxtAgBADmnbPXCtFrZAKtUNHnugh9mLRHljfVZAa5BN4x9oie3HZBFsRHlkQeBCS3U63zToqnQ70teqw93lDzg56f5UijZC1SmcZBZCtrHdxMy2swXFPgStAUh8CKxZBT3qtJkNVhLxZAPKBQVDEM9UkWDAGANDHhIPSP4wgZDZD";
 
@@ -197,8 +197,8 @@ function receivedMessage(event) {
             setTimeout(function(){
               sendAnythingElseMessage(senderID);
             }, 1000);
-            other_restaurant = false;
           }
+          other_restaurant = false;
 
         } else if (reserve_watch) {
           if (messageText == 'yes' || messageText == 'Yes') {
@@ -206,8 +206,8 @@ function receivedMessage(event) {
             setTimeout(function(){
               sendAnythingElseMessage(senderID);
             }, 1000);
-            reserve_watch = false;
           }
+          reserve_watch = false;
 
         } else if (watch) {
           if (messageText == 'yes' || messageText == 'Yes') {
@@ -216,6 +216,7 @@ function receivedMessage(event) {
               sendTextMessage(senderID, "Thank you. Here are the stores featuring the Tag Heuer Carrera watches.");
             }, 1000);
           }
+          watch = false;
 
         } else {
           // sendTextMessage(senderID, messageText);
