@@ -24,61 +24,61 @@ var other_restaurant = false;
 
 let token = "EAADQZCNZCxtAgBADmnbPXCtFrZAKtUNHnugh9mLRHljfVZAa5BN4x9oie3HZBFsRHlkQeBCS3U63zToqnQ70teqw93lDzg56f5UijZC1SmcZBZCtrHdxMy2swXFPgStAUh8CKxZBT3qtJkNVhLxZAPKBQVDEM9UkWDAGANDHhIPSP4wgZDZD";
 
-const PORT = process.env.PORT || 5000;
+app.set('port', (process.env.PORT || 5000));
 
 // Allows us to process the data
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json());
 
 // Route
-const server = express()
-  .use(express.static('public'))
-  .get('/chatbot', function(req, res){
-     res.sendFile(INDEX);
-  })
-  .use(express.static('public'))
-  .get('/', function(req, res) {
-      res.send(path.join(__dirname, '/public'));
-  })
-  .get('/webhook/', function(req, res) {
+app.use(express.static('public'))
+app.get('/chatbot', function(req, res){
+   res.sendFile(INDEX);
+})
+app.use(express.static('public'))
+app.get('/', function(req, res) {
+    res.send(path.join(__dirname, '/public'));
+})
+
+// Facebook
+app.get('/webhook/', function(req, res) {
     if (req.query['hub.verify_token'] === "ansontesting") {
         res.send(req.query['hub.challenge'])
     }
     res.send("Wrong token")
-  })
-  .post('/webhook', function (req, res) {
-    var data = req.body;
+});
 
-    // Make sure this is a page subscription
-    if (data.object === 'page') {
+app.post('/webhook', function (req, res) {
+  var data = req.body;
 
-      // Iterate over each entry - there may be multiple if batched
-      data.entry.forEach(function(entry) {
-        var pageID = entry.id;
-        var timeOfEvent = entry.time;
+  // Make sure this is a page subscription
+  if (data.object === 'page') {
 
-        // Iterate over each messaging event
-        entry.messaging.forEach(function(event) {
-          if (event.message) {
-            receivedMessage(event);
-          } else if (event.postback) {
-            receivedPostback(event);
-          } else {
-            console.log("Webhook received unknown event: ", event);
-          }
-        });
+    // Iterate over each entry - there may be multiple if batched
+    data.entry.forEach(function(entry) {
+      var pageID = entry.id;
+      var timeOfEvent = entry.time;
+
+      // Iterate over each messaging event
+      entry.messaging.forEach(function(event) {
+        if (event.message) {
+          receivedMessage(event);
+        } else if (event.postback) {
+          receivedPostback(event);
+        } else {
+          console.log("Webhook received unknown event: ", event);
+        }
       });
+    });
 
-      // Assume all went well.
-      //
-      // You must send back a 200, within 20 seconds, to let us know
-      // you've successfully received the callback. Otherwise, the request
-      // will time out and we will keep trying to resend.
-      res.sendStatus(200);
-    }
-  })
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`));
-
+    // Assume all went well.
+    //
+    // You must send back a 200, within 20 seconds, to let us know
+    // you've successfully received the callback. Otherwise, the request
+    // will time out and we will keep trying to resend.
+    res.sendStatus(200);
+  }
+});
 
 function receivedMessage(event) {
   console.log(event.sender);
@@ -863,3 +863,7 @@ function callSendAPI(messageData) {
     }
   });  
 }
+
+app.listen(app.get('port'), function() {
+    console.log("running: port")
+})
