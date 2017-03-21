@@ -541,12 +541,16 @@ function sendByeMessage(recipientId) {
       id: recipientId
     },
     message: {
-      "text":"You're welcome! :) \u000AWe hope to see you soon! :)  \u000ATo know more about us, watch this clip!"
+      "text":"You're welcome! :) \u000AWe hope to see you soon! :)"
     }
   };  
 
   callSendAPI(messageData);
   sendVideoMessage(recipientId);
+
+  setTimeout(function(){
+    sendTextMessage(senderID, "To know more about us, watch this clip!");
+  }, 1000);
 }
 
 function sendRestaurantMessage(recipientId) {
