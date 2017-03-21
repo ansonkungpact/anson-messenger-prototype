@@ -521,7 +521,7 @@ function sendByeMessage(recipientId) {
   sendVideoMessage(recipientId);
 
   setTimeout(function(){
-    sendTextMessage(senderID, "To know more about us, watch this clip!");
+    sendTextMessage(recipientId, "To know more about us, watch this clip!");
   }, 1000);
 }
 
