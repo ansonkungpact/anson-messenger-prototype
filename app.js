@@ -194,9 +194,9 @@ function receivedMessage(event) {
       case 'pasta in hysan place':
           sendRestaurantMessage(senderID);
           setTimeout(function(){
+            sendTextMessage(senderID, "Sure, here is the list of western restaurants in Hysan Place.");
             sendTextMessage(senderID, "There are additional western restaurants in the nearby Lee Gardens. Would you like to see them?");
           }, 1000);
-            sendTextMessage(senderID, "Sure, here is the list of western restaurants in Hysan Place.");
           other_restaurant = true;
         break;
 
