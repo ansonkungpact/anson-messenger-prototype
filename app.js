@@ -417,7 +417,7 @@ var food_options = [
         },
         {
           "content_type":"text",
-          "title":"Spagetti",
+          "title":"Spaghetti",
           "payload":"",
           "image_url":"https://anson-messenger.herokuapp.com/img/icon/food/spagetti.png"
         },
