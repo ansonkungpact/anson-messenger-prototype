@@ -141,24 +141,6 @@ function receivedMessage(event) {
           Q1 = true;
           sendShoppingMessage(senderID);
           break;
-          
-        // case 'Cosmetics':
-        // case 'cosmetics':
-        // case 'makeup':
-        // case 'facial cream':
-        // case 'beauty':
-        //   if (Q1) {
-        //     Q2 = true;
-        //     sendTextMessage(senderID, "Here is the list of cosmetics shops.");
-        //     sendShopMessage(senderID);
-        //     setTimeout(function(){
-        //       sendTextMessage(senderID, "What product you are searching?");
-        //     }, 1000);
-        //   } else {
-        //     sendGreetingMessage(senderID);
-        //   }
-        //   break;
-
 
         case 'dining':
             sendFoodMessage(senderID);
@@ -456,7 +438,6 @@ function sendShoppingMessage(recipientId) {
 }
 
 function sendGreetingMessage(recipientId) {
-  sendVideoMessage(recipientId);
   var messageData = {
     recipient: {
       id: recipientId
@@ -512,6 +493,11 @@ function sendByeMessage(recipientId) {
   };  
 
   callSendAPI(messageData);
+  sendVideoMessage(recipientId);
+
+  setTimeout(function(){
+    sendTextMessage(recipientId, "To know more about us, watch this clip!");
+  }, 1000);
 }
 
 function sendRestaurantMessage(recipientId) {
@@ -595,7 +581,7 @@ function sendRestaurantMessage2(recipientId) {
           template_type: "generic",
           elements: [{
             title: "Passion by Gérard Dubois",
-            subtitle: "traditional French café experience\u000AMon-Sun 1130-2230\u000ALee Gardens One, Shop G12",
+            subtitle: "traditional French café experience\u000AMon-Sun 1130-2230\u000ALeee Gardens One, Shop G12",
             item_url: "www.PassionbyGD.com",               
             image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/passion.jpg",
             buttons: [{
@@ -607,7 +593,7 @@ function sendRestaurantMessage2(recipientId) {
             }]
           }, {
             title: "Panino Giusto",
-            subtitle: "The gastronomic sanctuary specializes in Italian food\u000AMon-Sun 1030-2230\u000ALee Gardens One, Shop 204",
+            subtitle: "The gastronomic sanctuary specializes in Italian food\u000AMon-Sun 1030-2230\u000ALeee Gardens One, Shop 204",
             item_url: "www.paninogiusto.com.hk",               
             image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/paninogiusto.jpg",
             buttons: [{
@@ -619,7 +605,7 @@ function sendRestaurantMessage2(recipientId) {
             }]
           }, {
             title: "Seasons by Olivier E.",
-            subtitle: "French contemporary dining\u000AMon-Sun 1230-2230\u000ALee Gardens Two Shop 1311",
+            subtitle: "French contemporary dining\u000AMon-Sun 1230-2230\u000ALeee Gardens Two Shop 1311",
             item_url: "www.seasonsbyolivier.com",               
             image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/seasons.jpg",
             buttons: [{
@@ -683,7 +669,7 @@ function sendShopMessage(recipientId) {
             title: "Prince Jewellery & Watch",
             subtitle: "Luxury watch and jewellery collections. \u000AHysan Place, Shop 0503\u000AMon-Sun 0930 - 2130",
             item_url: "www.princejewellerywatch.com",               
-            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/prince.jpg",
+            image_url: "https://anson-messenger.herokuapp.com/img/shop_img/prince.png",
             buttons: [{
               type:"phone_number",
               title:"Call the shop",
