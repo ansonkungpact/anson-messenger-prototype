@@ -444,11 +444,12 @@ function sendGreetingMessage(recipientId) {
     },
     message: {
       "text":"Hello! How can I help you today? :)",
-      "quick_replies":mall_option
+      // "quick_replies":mall_option
     }
   };  
 
   callSendAPI(messageData);
+  sendVideoMessage(recipientId);
 }
 
 function sendAnythingElseMessage(recipientId) {
@@ -493,11 +494,9 @@ function sendByeMessage(recipientId) {
   };  
 
   callSendAPI(messageData);
-  sendVideoMessage(recipientId);
-
-  setTimeout(function(){
-    sendTextMessage(recipientId, "To know more about us, watch this clip!");
-  }, 1000);
+  // setTimeout(function(){
+  //   sendTextMessage(recipientId, "To know more about us, watch this clip!");
+  // }, 1000);
 }
 
 function sendRestaurantMessage(recipientId) {
