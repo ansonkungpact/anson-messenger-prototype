@@ -512,10 +512,6 @@ function sendByeMessage(recipientId) {
 
   callSendAPI(messageData);
   sendVideoMessage(recipientId);
-
-  setTimeout(function(){
-    sendTextMessage(recipientId, "To know more about us, watch this clip!");
-  }, 1000);
 }
 
 function sendRestaurantMessage(recipientId) {
