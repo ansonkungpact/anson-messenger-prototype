@@ -125,10 +125,6 @@ function receivedMessage(event) {
           sendGenericMessage(senderID);
           break;
 
-        case 'None':
-          sendTextMessage(senderID, "I'm sorry, but I didn't understand your answer.");
-          break;
-
         case 'greetings':
           sendGreetingMessage(senderID);
         break;
