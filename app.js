@@ -467,6 +467,7 @@ function sendGreetingMessage(recipientId) {
   };  
 
   callSendAPI(messageData);
+  sendVideoMessage(recipientId);
 }
 
 function sendAnythingElseMessage(recipientId) {
@@ -511,7 +512,6 @@ function sendByeMessage(recipientId) {
   };  
 
   callSendAPI(messageData);
-  sendVideoMessage(recipientId);
 }
 
 function sendRestaurantMessage(recipientId) {
