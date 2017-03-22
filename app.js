@@ -169,8 +169,7 @@ function receivedMessage(event) {
         case 'food':
             sendRestaurantMessage(senderID);
             setTimeout(function(){
-              sendTextMessage(senderID, "There are additional western restaurants in the nearby Lee Gardens. Would you like to see them?");
-              sendTextMessage(senderID, "Sure, here is the list of western restaurants in Hysan Place.");
+              sendTextMessage(senderID, "Sure, here is the list of western restaurants in Hysan Place. \u000A \u000AThere are additional western restaurants in the nearby Lee Gardens. Would you like to see them?");
             }, 1000);
             other_restaurant = true;
           break;
@@ -249,8 +248,7 @@ function receivedPostback(event) {
 
   // When a postback is called, we'll send a message back to the sender to 
   // let them know it was successful
-  sendTextMessage(senderID, "There is currently a promotion for 15% off for spendings over HKD 500 from 1-Mar to 31-Mar!");
-  sendTextMessage(senderID, "Would you like to reserve this Tag Heuer model for you?");
+  sendTextMessage(senderID, "There is currently a promotion for 15% off for spendings over HKD 500 from 1-Mar to 31-Mar! \u000A \u000AWould you like to reserve this Tag Heuer model for you?");
   reserve_watch = true;
 }
 
