@@ -213,7 +213,7 @@ function receivedMessage(event) {
           watch = false;
 
         } else {
-          // sendTextMessage(senderID, messageText);
+          sendTextMessage(senderID, "I'm sorry, but I didn't understand your answer.");
         }
       }
     } else if (messageAttachments) {
