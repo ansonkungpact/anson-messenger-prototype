@@ -167,6 +167,9 @@ function receivedMessage(event) {
 
 
         default:
+        console.log('-----------------others----------------');
+        console.log(other_restaurant);
+        console.log('-----------------others----------------');
         if (messageText == 'tag watch') {
           sendShopMessage(senderID);
 
