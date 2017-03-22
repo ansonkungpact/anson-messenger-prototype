@@ -599,7 +599,7 @@ function sendRestaurantMessage2(recipientId) {
           template_type: "generic",
           elements: [{
             title: "Passion by Gérard Dubois",
-            subtitle: "traditional French café experience\u000AMon-Sun 1130-2230\u000ALeee Gardens One, Shop G12",
+            subtitle: "traditional French café experience\u000AMon-Sun 1130-2230\u000ALee Gardens One, Shop G12",
             item_url: "www.PassionbyGD.com",               
             image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/passion.jpg",
             buttons: [{
@@ -611,7 +611,7 @@ function sendRestaurantMessage2(recipientId) {
             }]
           }, {
             title: "Panino Giusto",
-            subtitle: "The gastronomic sanctuary specializes in Italian food\u000AMon-Sun 1030-2230\u000ALeee Gardens One, Shop 204",
+            subtitle: "The gastronomic sanctuary specializes in Italian food\u000AMon-Sun 1030-2230\u000ALee Gardens One, Shop 204",
             item_url: "www.paninogiusto.com.hk",               
             image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/paninogiusto.jpg",
             buttons: [{
@@ -623,7 +623,7 @@ function sendRestaurantMessage2(recipientId) {
             }]
           }, {
             title: "Seasons by Olivier E.",
-            subtitle: "French contemporary dining\u000AMon-Sun 1230-2230\u000ALeee Gardens Two Shop 1311",
+            subtitle: "French contemporary dining\u000AMon-Sun 1230-2230\u000ALee Gardens Two Shop 1311",
             item_url: "www.seasonsbyolivier.com",               
             image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/seasons.jpg",
             buttons: [{
