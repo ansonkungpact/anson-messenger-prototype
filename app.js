@@ -111,6 +111,9 @@ function receivedMessage(event) {
     // console.log(response);
 
     var messageAttachments = message.attachments;
+    console.log('---------------------testing--------------------');
+    console.log(message);
+    console.log('---------------------testing--------------------');
 
     if (messageText) {
 
