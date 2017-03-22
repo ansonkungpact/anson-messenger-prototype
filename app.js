@@ -456,7 +456,6 @@ function sendShoppingMessage(recipientId) {
 }
 
 function sendGreetingMessage(recipientId) {
-  sendVideoMessage(recipientId);
   var messageData = {
     recipient: {
       id: recipientId
@@ -512,6 +511,7 @@ function sendByeMessage(recipientId) {
   };  
 
   callSendAPI(messageData);
+  sendVideoMessage(recipientId);
 }
 
 function sendRestaurantMessage(recipientId) {
