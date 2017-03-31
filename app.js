@@ -450,7 +450,7 @@ function sendGreetingMessage(recipientId) {
     },
     message: {
       "text":"Hello! How can I help you today? :)",
-      // "quick_replies":mall_option
+      "quick_replies":mall_option
     }
   };  
 
