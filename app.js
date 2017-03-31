@@ -455,7 +455,7 @@ function sendGreetingMessage(recipientId) {
   };  
 
   callSendAPI(messageData);
-  sendVideoMessage(recipientId);
+  // sendVideoMessage(recipientId);
 }
 
 function sendAnythingElseMessage(recipientId) {
