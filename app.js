@@ -125,11 +125,11 @@ function receivedMessage(event) {
 
           setTimeout(function(){
             sendTextMessage(senderID, "But first,  do you mind telling me a bit more about your trip?");
-          }, 2000);
+          }, 1000);
 
           setTimeout(function(){
             sendTextMessage(senderID, "When will you be traveling?");
-          }, 4000);
+          }, 2000);
         break;
       }
       // If we receive a text message, check to see if it matches a keyword
