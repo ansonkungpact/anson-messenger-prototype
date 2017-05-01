@@ -117,10 +117,19 @@ function receivedMessage(event) {
 
     if (messageText) {
       switch(messageText) {
+        case 'hi':
+          sendTextMessage(senderID, "Hi! How can I help you today?");
+        break;
         case 'travel insurance':
           sendTextMessage(senderID, "Sure, I can definitely help you with that!");
-          sendTextMessage(senderID, "But first,  do you mind telling me a bit more about your trip?");
-          sendTextMessage(senderID, "When will you be traveling?");
+
+          setTimeout(function(){
+            sendTextMessage(senderID, "But first,  do you mind telling me a bit more about your trip?");
+          }, 2000);
+
+          setTimeout(function(){
+            sendTextMessage(senderID, "When will you be traveling?");
+          }, 4000);
         break;
       }
       // If we receive a text message, check to see if it matches a keyword
