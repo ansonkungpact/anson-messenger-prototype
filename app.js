@@ -388,31 +388,31 @@ var insur_option = [
           "content_type":"text",
           "title":"General Practitioner",
           "payload":"",
-          "image_url":"https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT0XYyk-AuTlPlOe_q3D68igLdqdXDsD47MAz7GKMVGEM9_YyUW"
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/insur/practitioner.png"
         },
         {
           "content_type":"text",
           "title":"Chinese Medicine",
           "payload":"",
-          "image_url":"https://www.google.com.hk/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwi9r6mGj8_TAhUDbrwKHS5kDLAQjRwIBw&url=https%3A%2F%2Fwww.onlinewebfonts.com%2Ficon%2F266612&psig=AFQjCNGdXpMu2HQyqadv238bxOfdvzdeNQ&ust=1493742614650298"
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/insur/chinese.png"
         },
         {
           "content_type":"text",
           "title":"Specialist",
           "payload":"",
-          "image_url":"https://www.google.com.hk/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjokJySj8_TAhUCW7wKHZuGC8UQjRwIBw&url=https%3A%2F%2Fwww.iconfinder.com%2Ficons%2F372152%2Fseo_specialist_icon&psig=AFQjCNFxdstY0jUFyW2tdEiYt8qQuyUKQA&ust=1493742638016294"
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/insur/specialist.png"
         },
         {
           "content_type":"text",
           "title":"Physiotherapy",
           "payload":"",
-          "image_url":"https://www.google.com.hk/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwi94eOZj8_TAhUGVrwKHUSPAYQQjRwIBw&url=https%3A%2F%2Fwww.iconfinder.com%2Ficons%2F1083920%2Fmassage_physical_medicine_physiotherapy_rehabilitation_icon&psig=AFQjCNHUlKVghuUJlB42DkFjHACa8kN-PA&ust=1493742662520989"
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/insur/physiotherapy.png"
         },
         {
           "content_type":"text",
           "title":"Chiropractor",
           "payload":"",
-          "image_url":"https://www.google.com.hk/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjlw7ylj8_TAhWJXrwKHYCFCzwQjRwIBw&url=http%3A%2F%2Fjourneydownthescale.info%2Fmngcrif-chiropractor-icon.asp&psig=AFQjCNEvUJwaycBPDVBotiiZzAP6N1809A&ust=1493742679751076"
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/insur/chiropractor.png"
         }
       ];
 var mall_option = [
