@@ -131,6 +131,33 @@ function receivedMessage(event) {
             sendTextMessage(senderID, "When will you be traveling?");
           }, 2000);
         break;
+        case '15-May to 19-May':
+          sendTextMessage(senderID, "Great! Will you be traveling by yourself or with someone else?");
+        break;
+        case 'myself':
+          sendTextMessage(senderID, "Perfect. Based on what you just told me, a single-trip travel insurance is available for as low as HKD 155.");
+
+          setTimeout(function(){
+            sendTextMessage(senderID, "Are you interested in more details?");
+          }, 1000);
+        break;
+        case 'yes':
+          sendTextMessage(senderID, "Great! Please click below link and I would be happy to take you to the FWD web site with more information.");
+          
+          setTimeout(function(){
+            sendTextMessage(senderID, "https://i.fwd.com.hk/en/travel-insurance?departureDate=15-05-2017&returnDate=19-05-2017&plan=personal&traveler=1&utm_source=corpsite&utm_campaign=ST_singletriptravel&utm_medium=referral&utm_content=getquotenow");
+          }, 1000);
+        break;
+        case 'doctor lookup':
+          sendTextMessage(senderID, "Sure, I would be glad to help!");
+          
+          setTimeout(function(){
+            sendTextMessage(senderID, "But first, just so I can give you the right information, what is your policy number?");
+          }, 1000);
+        break;
+        case '500019198':
+          sendInsurMessage(senderID);
+        break;
       }
       // If we receive a text message, check to see if it matches a keyword
       // and send back the example. Otherwise, just echo the text we received.
@@ -356,6 +383,38 @@ function sendGenericMessage(recipientId) {
 ////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////
+var insur_option = [
+        {
+          "content_type":"text",
+          "title":"General Practitioner",
+          "payload":"",
+          "image_url":"https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT0XYyk-AuTlPlOe_q3D68igLdqdXDsD47MAz7GKMVGEM9_YyUW"
+        },
+        {
+          "content_type":"text",
+          "title":"Chinese Medicine",
+          "payload":"",
+          "image_url":"https://www.google.com.hk/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwi9r6mGj8_TAhUDbrwKHS5kDLAQjRwIBw&url=https%3A%2F%2Fwww.onlinewebfonts.com%2Ficon%2F266612&psig=AFQjCNGdXpMu2HQyqadv238bxOfdvzdeNQ&ust=1493742614650298"
+        },
+        {
+          "content_type":"text",
+          "title":"Specialist",
+          "payload":"",
+          "image_url":"https://www.google.com.hk/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjokJySj8_TAhUCW7wKHZuGC8UQjRwIBw&url=https%3A%2F%2Fwww.iconfinder.com%2Ficons%2F372152%2Fseo_specialist_icon&psig=AFQjCNFxdstY0jUFyW2tdEiYt8qQuyUKQA&ust=1493742638016294"
+        },
+        {
+          "content_type":"text",
+          "title":"Physiotherapy",
+          "payload":"",
+          "image_url":"https://www.google.com.hk/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwi94eOZj8_TAhUGVrwKHUSPAYQQjRwIBw&url=https%3A%2F%2Fwww.iconfinder.com%2Ficons%2F1083920%2Fmassage_physical_medicine_physiotherapy_rehabilitation_icon&psig=AFQjCNHUlKVghuUJlB42DkFjHACa8kN-PA&ust=1493742662520989"
+        },
+        {
+          "content_type":"text",
+          "title":"Chiropractor",
+          "payload":"",
+          "image_url":"https://www.google.com.hk/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjlw7ylj8_TAhWJXrwKHYCFCzwQjRwIBw&url=http%3A%2F%2Fjourneydownthescale.info%2Fmngcrif-chiropractor-icon.asp&psig=AFQjCNEvUJwaycBPDVBotiiZzAP6N1809A&ust=1493742679751076"
+        }
+      ];
 var mall_option = [
         {
           "content_type":"text",
@@ -468,6 +527,22 @@ function sendGreetingMessage(recipientId) {
     message: {
       "text":"Hello! How can I help you today? :)",
       "quick_replies":mall_option
+    }
+  };  
+
+  callSendAPI(messageData);
+  // sendVideoMessage(recipientId);
+}
+
+
+function sendInsurMessage(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      "text":"Great! What type of doctor are you looking for?",
+      "quick_replies":insur_option
     }
   };  
 
