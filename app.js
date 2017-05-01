@@ -22,7 +22,7 @@ var watch             = false;
 var reserve_watch     = false;
 var other_restaurant  = false;
 
-let token = "EAADQZCNZCxtAgBALGgjqopLp6ovZANwdoFvGvGiUL4GS9KFd1fNg2JlP3GbrS2piH7cUBoz5uxSPZCpy9mSyq9TRrZCMYkHvaGam0Y6VjBg3ipqUU9Ny3xXHHQQyApzOAMYzxT109ZAibcbJTJJZCi8fqjvMlaz03yUxeDirZAd2ZAQZDZD";
+let token = "EAADQZCNZCxtAgBAISDtYOdgVYsb3PBojZAweBame28jmVPGkIXhZCtvapwgS1qAbcTMyMyuple4tKYTFgiOUcfZCFFKCWH9IZCKfKgR5iZC7aXLUUJZC6LugUHpB5O2gqhQA3Gp0KLm9dsCoZBupNmeId86cjj6lMu5lZBnRdsgJOwNAZDZD";
 
 const server = express()
 
