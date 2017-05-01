@@ -412,7 +412,7 @@ var insur_option = [
           "content_type":"text",
           "title":"Chiropractor",
           "payload":"",
-          "image_url":"https://anson-messenger.herokuapp.com/img/icon/insur/chiropractor.png"
+          "image_url":"https://anson-messenger.herokuapp.com/img/icon/insur/chiropractor.jpg"
         }
       ];
 var mall_option = [
