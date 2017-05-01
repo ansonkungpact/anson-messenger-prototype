@@ -116,106 +116,114 @@ function receivedMessage(event) {
     console.log('---------------------testing--------------------');
 
     if (messageText) {
-
+      switch(messageText) {
+        case 'travel insurance':
+          sendTextMessage(senderID, "Sure, I can definitely help you with that!");
+          sendTextMessage(senderID, "But first,  do you mind telling me a bit more about your trip?");
+          sendTextMessage(senderID, "When will you be traveling?");
+        break;
+      }
       // If we receive a text message, check to see if it matches a keyword
       // and send back the example. Otherwise, just echo the text we received.
-      switch (messageIntent) {
-        case 'testing':
-          sendTestingMessage(senderID);
-          break;
+      // Intent
+      // switch (messageIntent) {
+      //   case 'testing':
+      //     sendTestingMessage(senderID);
+      //     break;
 
-        case 'generic':
-          sendGenericMessage(senderID);
-          break;
+      //   case 'generic':
+      //     sendGenericMessage(senderID);
+      //     break;
 
-        case 'greetings':
-          sendGreetingMessage(senderID);
-        break;
+      //   case 'greetings':
+      //     sendGreetingMessage(senderID);
+      //   break;
 
-        case 'thanks':
-        case 'bye':
-          sendByeMessage(senderID);
-          Q1 = false;
-          Q2 = false;
-        break;
+      //   case 'thanks':
+      //   case 'bye':
+      //     sendByeMessage(senderID);
+      //     Q1 = false;
+      //     Q2 = false;
+      //   break;
 
-        case 'shopping':
-        case 'entertainment':
-          Q1 = true;
-          sendShoppingMessage(senderID);
-          break;
+      //   case 'shopping':
+      //   case 'entertainment':
+      //     Q1 = true;
+      //     sendShoppingMessage(senderID);
+      //     break;
 
-        case 'dining':
-            sendFoodMessage(senderID);
-          break;
+      //   case 'dining':
+      //       sendFoodMessage(senderID);
+      //     break;
 
-        case 'food':
-            sendRestaurantMessage(senderID);
-            setTimeout(function(){
-              sendTextMessage(senderID, "Sure, here is the list of western restaurants in Hysan Place. \u000A \u000AThere are additional western restaurants in the nearby Lee Gardens. Would you like to see them?");
-            }, 1000);
-            other_restaurant = true;
-          break;
+      //   case 'food':
+      //       sendRestaurantMessage(senderID);
+      //       setTimeout(function(){
+      //         sendTextMessage(senderID, "Sure, here is the list of western restaurants in Hysan Place. \u000A \u000AThere are additional western restaurants in the nearby Lee Gardens. Would you like to see them?");
+      //       }, 1000);
+      //       other_restaurant = true;
+      //     break;
 
-        case 'transportation':
-          getLocationMessage(senderID);
-          break;
-        case 'location':
-          sendLocationMessage(senderID);
-          break;
+      //   case 'transportation':
+      //     getLocationMessage(senderID);
+      //     break;
+      //   case 'location':
+      //     sendLocationMessage(senderID);
+      //     break;
 
 
 
-        default:
-        console.log('-----------------others----------------');
-        console.log(other_restaurant);
-        console.log('-----------------others----------------');
-        if (messageText == 'tag watch') {
-          sendShopMessage(senderID);
+      //   default:
+      //   console.log('-----------------others----------------');
+      //   console.log(other_restaurant);
+      //   console.log('-----------------others----------------');
+      //   if (messageText == 'tag watch') {
+      //     sendShopMessage(senderID);
 
-        } else if (other_restaurant) {
-          if (entityType == 'positiveFeedback') {
-            sendRestaurantMessage2(senderID);
-            setTimeout(function(){
-              sendAnythingElseMessage(senderID);
-            }, 1000);
-          }
-          other_restaurant = false;
+      //   } else if (other_restaurant) {
+      //     if (entityType == 'positiveFeedback') {
+      //       sendRestaurantMessage2(senderID);
+      //       setTimeout(function(){
+      //         sendAnythingElseMessage(senderID);
+      //       }, 1000);
+      //     }
+      //     other_restaurant = false;
 
-        } else if (reserve_watch) {
-          if (entityType == 'positiveFeedback') {
-            sendTextMessage(senderID, "Great! The watch will be held for 48 hours.");
-            setTimeout(function(){
-              sendAnythingElseMessage(senderID);
-            }, 1000);
-          }
-          reserve_watch = false;
+      //   } else if (reserve_watch) {
+      //     if (entityType == 'positiveFeedback') {
+      //       sendTextMessage(senderID, "Great! The watch will be held for 48 hours.");
+      //       setTimeout(function(){
+      //         sendAnythingElseMessage(senderID);
+      //       }, 1000);
+      //     }
+      //     reserve_watch = false;
 
-        } else if (watch) {
-          if (entityType == 'positiveFeedback') {
-            sendShopMessage(senderID);
-            setTimeout(function(){
-              sendTextMessage(senderID, "Thank you. Here are the stores featuring the Tag Heuer Carrera watches.");
-            }, 1000);
-          }
-          watch = false;
+      //   } else if (watch) {
+      //     if (entityType == 'positiveFeedback') {
+      //       sendShopMessage(senderID);
+      //       setTimeout(function(){
+      //         sendTextMessage(senderID, "Thank you. Here are the stores featuring the Tag Heuer Carrera watches.");
+      //       }, 1000);
+      //     }
+      //     watch = false;
 
-        } else {
-          sendTextMessage(senderID, "I'm sorry, but I didn't understand your answer.");
-        }
-      }
-    } else if (messageAttachments) {
-      if (messageAttachments[0].payload.coordinates) {
-        var lat = messageAttachments[0].payload.coordinates.lat;
-        var long = messageAttachments[0].payload.coordinates.long;
-        sendDirectionMessage(senderID, lat, long, "We are at 500 Hennessy Rd, Causeway Bay");
-        // sendTextMessage(senderID, "We are at 500 Hennessy Rd, Causeway Bay");
-      } else {   
-        sendTextMessage(senderID, "Thank you for the picture! I see that it's the Tag Heuer Carrera watch, right? ;)");
-        watch = true;
-      }
-      // console.log(message.attachments.delivery);
-    }
+      //   } else {
+      //     sendTextMessage(senderID, "I'm sorry, but I didn't understand your answer.");
+      //   }
+      // }
+    } 
+    // else if (messageAttachments) {
+    //   if (messageAttachments[0].payload.coordinates) {
+    //     var lat = messageAttachments[0].payload.coordinates.lat;
+    //     var long = messageAttachments[0].payload.coordinates.long;
+    //     sendDirectionMessage(senderID, lat, long, "We are at 500 Hennessy Rd, Causeway Bay");
+    //     // sendTextMessage(senderID, "We are at 500 Hennessy Rd, Causeway Bay");
+    //   } else {   
+    //     sendTextMessage(senderID, "Thank you for the picture! I see that it's the Tag Heuer Carrera watch, right? ;)");
+    //     watch = true;
+    //   }
+    //   // console.log(message.attachments.delivery);
+    // }
   });
   console.log('--------ansonv3--------');
 }
