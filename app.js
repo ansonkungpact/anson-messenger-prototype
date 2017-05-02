@@ -615,7 +615,7 @@ function sendDoctorMessage(recipientId) {
             subtitle: "Room 503, On Lok Yuen Building 25 Des Voeux Road, Central",   
             buttons: [{
               type:"phone_number",
-              title:"Call me",
+              title:"Contact",
               payload:"28696112"
             },{
               "type":"element_share"
@@ -625,7 +625,7 @@ function sendDoctorMessage(recipientId) {
             subtitle: "14/F., Li Dong Building, 9 Li Yuen Street East, Central",   
             buttons: [{
               type:"phone_number",
-              title:"Call me",
+              title:"Contact",
               payload:"25258158"
             },{
               "type":"element_share"
@@ -635,7 +635,7 @@ function sendDoctorMessage(recipientId) {
             subtitle: "Rm 1200, Asia Standard Tower 59-65 Queen's Road Central",   
             buttons: [{
               type:"phone_number",
-              title:"Call me",
+              title:"Contact",
               payload:"28510688"
             },{
               "type":"element_share"
