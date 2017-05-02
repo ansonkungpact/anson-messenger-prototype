@@ -612,12 +612,11 @@ function sendDoctorMessage(recipientId) {
           template_type: "generic",
           elements: [{
             title: "Dr. Kwong Wai Yan",
-            subtitle: "EIGHT GRAND brings exciting touches in food and beverages as well as ambience.\u000AMon-Sun 1130-2230\u000AHysan Place, Shop 1203",
-            item_url: "https://hp.leegardens.com.hk/?lang=en-US#!/dining-details/hysanplace/dining/Items/Eight-Grand-Bar-Restaurant",     
+            subtitle: "Room 503, On Lok Yuen Building 25 Des Voeux Road",   
             buttons: [{
               type:"phone_number",
-              title:"Call the shop",
-              payload:"+85235688621"
+              title:"Call me",
+              payload:"28696112"
             },{
               "type":"element_share"
             }]
