@@ -613,48 +613,11 @@ function sendDoctorMessage(recipientId) {
           elements: [{
             title: "Dr. Kwong Wai Yan",
             subtitle: "EIGHT GRAND brings exciting touches in food and beverages as well as ambience.\u000AMon-Sun 1130-2230\u000AHysan Place, Shop 1203",
-            item_url: "https://hp.leegardens.com.hk/?lang=en-US#!/dining-details/hysanplace/dining/Items/Eight-Grand-Bar-Restaurant",               
-            image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/eightgrand.jpg",
+            item_url: "https://hp.leegardens.com.hk/?lang=en-US#!/dining-details/hysanplace/dining/Items/Eight-Grand-Bar-Restaurant",     
             buttons: [{
               type:"phone_number",
               title:"Call the shop",
               payload:"+85235688621"
-            },{
-              "type":"element_share"
-            }]
-          }, {
-            title: "Shelter Italian Bar & Restaurant",
-            subtitle: "The gastronomic sanctuary specializes in Italian food\u000AMon-Sun 1130-0030\u000AHysan Place, Shop 718",
-            item_url: "http://www.shelterhk.com",               
-            image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/shelteritalian.jpg",
-            buttons: [{
-              type:"phone_number",
-              title:"Call the shop",
-              payload:"+85227788398"
-            },{
-              "type":"element_share"
-            }]
-          }, {
-            title: "caffè HABITŪ the table",
-            subtitle: "The unveiling of caffè HABITŪ the table brings exciting touches in food and beverages as well as ambience.\u000AMon-Sun 1130-2230\u000AHysan Place, Shop 803",
-            item_url: "www.caffehabitu.com",               
-            image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/habitu.jpg",
-            buttons: [{
-              type:"phone_number",
-              title:"Call the shop",
-              payload:"+85235431313"
-            },{
-              "type":"element_share"
-            }]
-          }, {
-            title: "Green Waffle Diner",
-            subtitle: "everyday food for everyday people\u000AMon-Sun 1130-0030\u000AHysan Place, Shop 1303",
-            item_url: "https://www.facebook.com/Green-Waffle-Diner-127660523917542/",               
-            image_url: "https://anson-messenger.herokuapp.com/img/restaurant_img/greenwaffle.jpg",
-            buttons: [{
-              type:"phone_number",
-              title:"Call the shop",
-              payload:"+85228805123"
             },{
               "type":"element_share"
             }]
