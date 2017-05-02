@@ -631,12 +631,12 @@ function sendDoctorMessage(recipientId) {
               "type":"element_share"
             }]
           }, {
-            title: "Dr. Kwong Wai Yan",
-            subtitle: "Room 503, On Lok Yuen Building 25 Des Voeux Road",   
+            title: "Dr. Lam Wai Fat",
+            subtitle: "Rm 1200, Asia Standard Tower 59-65 Queen's Road Central",   
             buttons: [{
               type:"phone_number",
               title:"Call me",
-              payload:"28696112"
+              payload:"28510688"
             },{
               "type":"element_share"
             }]
