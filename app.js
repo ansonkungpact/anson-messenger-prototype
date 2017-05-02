@@ -612,6 +612,26 @@ function sendDoctorMessage(recipientId) {
           template_type: "generic",
           elements: [{
             title: "Dr. Kwong Wai Yan",
+            subtitle: "Room 503, On Lok Yuen Building 25 Des Voeux Road, Central",   
+            buttons: [{
+              type:"phone_number",
+              title:"Call me",
+              payload:"28696112"
+            },{
+              "type":"element_share"
+            }]
+          }, {
+            title: "Dr. Lam Paul CHC-Group Medical Practice",
+            subtitle: "14/F., Li Dong Building, 9 Li Yuen Street East, Central",   
+            buttons: [{
+              type:"phone_number",
+              title:"Call me",
+              payload:"25258158"
+            },{
+              "type":"element_share"
+            }]
+          }, {
+            title: "Dr. Kwong Wai Yan",
             subtitle: "Room 503, On Lok Yuen Building 25 Des Voeux Road",   
             buttons: [{
               type:"phone_number",
