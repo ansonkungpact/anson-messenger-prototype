@@ -118,6 +118,7 @@ function receivedMessage(event) {
     if (messageText) {
       switch(messageText) {
         case 'hi':
+        case 'Hi':
           sendTextMessage(senderID, "Hi! How can I help you today?");
         break;
         case 'travel insurance':
@@ -145,7 +146,7 @@ function receivedMessage(event) {
           sendTextMessage(senderID, "Great! Please click below link and I would be happy to take you to the FWD web site with more information.");
           
           setTimeout(function(){
-            sendTextMessage(senderID, "https://i.fwd.com.hk/en/travel-insurance?departureDate=15-05-2017&returnDate=19-05-2017&plan=personal&traveler=1&utm_source=corpsite&utm_campaign=ST_singletriptravel&utm_medium=referral&utm_content=getquotenow");
+            sendFWDlinkMessage(senderID);
           }, 1000);
         break;
         case 'doctor lookup':
@@ -598,6 +599,36 @@ function sendByeMessage(recipientId) {
   // setTimeout(function(){
   //   sendTextMessage(recipientId, "To know more about us, watch this clip!");
   // }, 1000);
+}
+
+function sendFWDlinkMessage(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "generic",
+          elements: [{
+            title: "FWD", 
+            item_url: "https://www.fwd.com.hk",               
+            image_url: "https://anson-messenger.herokuapp.com/img/icon/insur/fwd.jpg", 
+            buttons: [{
+              type:"web_url",
+              title:"Policy details",
+              url:"https://www.fwd.com.hk"
+            },{
+              "type":"element_share"
+            }]
+          }]
+        }
+      }
+    }
+  };  
+
+  callSendAPI(messageData);
 }
 
 function sendDoctorMessage(recipientId) {
