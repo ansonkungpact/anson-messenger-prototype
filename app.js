@@ -122,7 +122,6 @@ function receivedMessage(event) {
           sendTextMessage(senderID, "Hi! How can I help you today?");
         break;
         case 'travel insurance':
-        case 'Travel insurance':
           sendTextMessage(senderID, "Sure, I can definitely help you with that!");
 
           setTimeout(function(){
@@ -134,18 +133,15 @@ function receivedMessage(event) {
           }, 2000);
         break;
         case '15-May to 19-May':
-        case '15-may to 19-may':
           sendTextMessage(senderID, "Great! Will you be traveling by yourself or with someone else?");
         break;
         case 'myself':
-        case 'Myself':
           sendTextMessage(senderID, "Perfect. Based on what you just told me, a single-trip travel insurance is available for as low as HKD 155.");
 
           setTimeout(function(){
             sendTextMessage(senderID, "Are you interested in more details?");
           }, 1000);
         break;
-        case 'Yes':
         case 'yes':
           sendTextMessage(senderID, "Great! Please click below link and I would be happy to take you to the FWD web site with more information.");
           
@@ -153,7 +149,6 @@ function receivedMessage(event) {
             sendFWDlinkMessage(senderID);
           }, 1000);
         break;
-        case 'Doctor lookup':
         case 'doctor lookup':
           sendTextMessage(senderID, "Sure, I would be glad to help!");
           
@@ -164,7 +159,6 @@ function receivedMessage(event) {
         case '500019198':
           sendInsurMessage(senderID);
         break;
-        case 'General practitioner':
         case 'General Practitioner':
           sendDoctorMessage(senderID);
         break;
@@ -625,7 +619,9 @@ function sendFWDlinkMessage(recipientId) {
               type:"web_url",
               title:"Policy details",
               url:"https://www.fwd.com.hk"
-            }x]
+            },{
+              "type":"element_share"
+            }]
           }]
         }
       }
